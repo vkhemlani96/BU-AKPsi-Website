@@ -12,7 +12,7 @@ $link = mysqli_connect($hostname,$username, $password) or die ("<html><script la
 mysqli_select_db($link, $dbname);
 
 $firstGraduatingClass = 2008;
-$lastGraduatingClass = 2015;
+$lastGraduatingClass = 2016;
 $graduateClasses = array();
 ?>
 
