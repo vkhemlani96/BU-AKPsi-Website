@@ -53,7 +53,8 @@
 	</div>
 -->
 
-<!--
+<!-- REMOVE COMMENT to bring back to rush theme
+	++++ Look in navbar.css and styles.css for more
 	<div id="banner">
 		<div class="center" style="width:1056px">
 			<h5 class="banner_text">dare to be <a class="banner_change">professional.</a></h5>
@@ -63,15 +64,30 @@
 	</div>
 -->
 	
+<!--REMOVE the follow to return to rush theme-->
+	<style>
+	#navbar {
+		background-color: rgba(0,0,51,.7);
+	}
+	.banner_text {
+		text-transform: none;
+		font-size: 40px !important;
+		text-align: center !important;
+		width: 100%;
+	}
+	</style>
 	
-	<div id="banner" style="padding-bottom:575px; background-color: rgba(0,0,51,.7)">
-		<div style="opacity: 1; position: absolute; z-index: -1; top: 0;">
-			<h5 class="banner_text">dare to be <a class="banner_change">professional.</a></h5>
+	<div id="banner" style="padding-bottom:475px; background-color: rgba(0,0,51,.7); margin-top: -000px">
+			<h5 class="banner_text" style="position: absolute; top: 190px">The International Co-Ed Professional Business Fraternity</h5>
+			<div style=" position: absolute; width: inherit; top: 350px;">
+				<p style="text-align:center;"><a href="./about.php" class="button_gold">Learn More</a></p>
+			</div>
+		<div style="opacity: 1; position: absolute; z-index: -1; top: -100px; margin-top: 0px">
 <!--			Padding required below in order to make sure it doesn't fall on blue-white border-->
-			<p style="text-align:center; padding-bottom: 80px;"><a href="rush/" class="button_gold">Rush Alpha Kappa Psi</a></p>
-			<video autoplay="autoplay" loop="loop" src="img/index_video_2.mov"></video>
+			<video autoplay="autoplay" loop="loop" src="img/index_video_2.mov" style="width: 100vw"></video>
 		</div>
 	</div>
+<!--END RETURN-->
 	
 <!--
 	<div id="about" class="center">
