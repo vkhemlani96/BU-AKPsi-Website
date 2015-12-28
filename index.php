@@ -11,47 +11,6 @@
 
 <body>
 <?php include("navbar.php"); getNavbar(false); ?>
-<!--
-	<div id="navbar">
-		<h1>Alpha Kappa Psi <a style="color:#bda75d; font-weight:300">Nu Chapter</a></h1>
-		<div class="gold_seperator" style="margin-top:0px; margin-bottom:0px;"></div>
-		<ul>
-			<li>
-				<p>About</p>
-			</li><li>
-				<div class="dropdown" style="left:406px">
-					<div class="arrow-up"></div>
-					<ul>
-						<li><p>Active</p></li>
-						<li><p>Alumni</p></li>
-						<li><p>Faculty</p></li>
-					</ul>
-				</div>
-				<p>Brothers</p>
-			</li><li>
-				<p style="color:#bda75d">Rush</p>
-			</li><li>
-				<p>Elevate</p>
-			</li><li>
-				<div class="dropdown" style="left:646px">
-					<div class="arrow-up"></div>
-					<ul>
-						<li><p>About</p></li>
-						<li><p>The Team</p></li>
-						<li><p>Advisors</p></li>
-						<li><p>Partners</p></li>
-						<li><p>Clients</p></li>
-					</ul>
-				</div>
-				<p>Consulting</p>
-			</li><li>
-				<p>FAQ</p>
-			</li><li>
-				<p>Contact Us</p>
-			</li>
-		</ul>
-	</div>
--->
 
 <!-- REMOVE COMMENT to bring back to rush theme
 	++++ Look in navbar.css and styles.css for more
@@ -66,26 +25,49 @@
 	
 <!--REMOVE the follow to return to rush theme-->
 	<style>
-	#navbar {
-		background-color: rgba(0,0,51,.7);
-	}
-	.banner_text {
-		text-transform: none;
-		font-size: 40px !important;
-		text-align: center !important;
-		width: 100%;
-	}
+		#navbar {
+			background-color: rgba(0,0,0,0);
+			position: absolute;
+			z-index: 10;
+		}
+		 
+		#banner {
+			height: 90vh !important;
+			overflow: hidden;
+			background-color: rgba(0,0,51,.7);
+			position: relative
+		}
+		 
+		.banner_text {
+			text-transform: none;
+			font-size: 40px !important;
+			text-align: center !important;
+			width: 100%;
+		}
+		 
+		#banner #overlay {
+			background-color: rgba(0,0,51,.7);
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			bottom: 0px;
+			left: 0px;
+		}
+		
+		#about {
+			position: relative;	
+		}
 	</style>
 	
-	<div id="banner" style="padding-bottom:475px; background-color: rgba(0,0,51,.7); margin-top: -000px">
-			<h5 class="banner_text" style="position: absolute; top: 190px">The International Co-Ed Professional Business Fraternity</h5>
-			<div style=" position: absolute; width: inherit; top: 350px;">
-				<p style="text-align:center;"><a href="./about.php" class="button_gold">Learn More</a></p>
+	<div id="banner">
+		<div style="position: absolute; z-index: 10; top: 190px; left: 0; right: 0;">
+			<h5 class="banner_text">The International Co-Ed Professional Business Fraternity</h5>
+			<div style="position: absolute; z-index: 10; width: inherit; top: 160px;left: 0; right: 0">
+				<p style="text-align:center"><a href="./about.php" class="button_gold">Learn More</a></p>
 			</div>
-		<div style="opacity: 1; position: absolute; z-index: -1; top: -100px; margin-top: 0px">
-<!--			Padding required below in order to make sure it doesn't fall on blue-white border-->
-			<video autoplay="autoplay" loop="loop" src="img/index_video_2.mov" style="width: 100vw"></video>
 		</div>
+		<div id="overlay"></div>
+		<video autoplay="autoplay" loop="loop" src="img/index_video_2.mov" style="width: 100vw"></video>
 	</div>
 <!--END RETURN-->
 	
