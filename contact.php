@@ -62,7 +62,7 @@ if ($sendEmail)
 						<div class="seperator"></div>
 						
 						
-						<form action="#"  style="margin-right: 17px">
+						<form action="#"  style="margin-right: 17px"  onsubmit="return validateForm()">
 							<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo" style="width:49.5%; display:inline-block">
 								<input class="mdl-textfield__input" type="text" id="messageName" name="messageName" />
 								<label class="mdl-textfield__label" for="sample1">Name*</label>
@@ -241,4 +241,14 @@ if ($sendEmail)
 	<?php getFooter(); ?>
 	
 </body> 
+
+<script>
+	function validateForm() {
+		if (confirm("Are you sure you want to send this message?")) {
+			return true;
+		} else {
+			return false;	
+		}
+	}
+</script>
 </html>
