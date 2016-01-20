@@ -45,7 +45,7 @@ if (isset($_POST["rushEmail"]) && isset($_POST["gpa"]) && isset($_POST['q1_why']
 		die("Connection failed: " . $conn->connect_error);
 	} 
 
-	$sql = "INSERT INTO rushFall2015Apps (email, gpa, q1_why, q2_words, q3_excite, q4_orgs, q5_work, q6_goals, q7_bro, q8_brohood, q9_second, q10_hear, q11_improve)
+	$sql = "INSERT INTO $rushTableApps (email, gpa, q1_why, q2_words, q3_excite, q4_orgs, q5_work, q6_goals, q7_bro, q8_brohood, q9_second, q10_hear, q11_improve)
 	VALUES ('" . $_POST["rushEmail"] . "', " . $_POST["gpa"] . ", '" . $_POST["q1_why"] . "', '" . $_POST["q2_words"] . "', '" . $_POST["q3_excite"] . "', '" . $_POST["q4_orgs"] . "', '" . $_POST["q5_work"] . "', '" . $_POST["q6_goals"] . "', '" . $_POST["q7_bro"] . "', '" . $_POST["q8_brohood"] . "', '" . $_POST["q9_second"] . "', '" . $_POST["q10_hear"] . "', '" . $_POST["q11_improve"] . "')";
 
 	if ($conn->query($sql) === TRUE) {
@@ -75,7 +75,7 @@ if (isset($_POST["rushEmail"]) && isset($_POST["gpa"]) && isset($_POST['q1_why']
 			"How did you hear about Alpha Kappa Psi's recruitment process? " . "\r\n" . $_POST["q10_hear"] . "\r\n". "\r\n".
 			"What did you think of the recruitment events you attended? How do you think they could be improved? " . "\r\n" . $_POST["q11_improve"];
 			
-//	$sql = "INSERT INTO rushFall2015 (FirstName, LastName, Email, Phone, Majors, MajorSchools, Grade, AppSubmitted)
+//	$sql = "INSERT INTO $rushTableApps (FirstName, LastName, Email, Phone, Majors, MajorSchools, Grade, AppSubmitted)
 //	VALUES ('" . $_POST["rushFirstName"] . "', '" . $_POST["rushLastName"] . "', '" . $_POST["rushEmail"] . "', '" . $_POST["rushPhone"] . "', '" . $_POST["rushMajors"] . "', '" . $_POST["rushSchool"] . "', '" . $_POST["rushGrade"] . "', '1') ON DUPLICATE KEY UPDATE AppSubmitted=VALUES(AppSubmitted)";
 			
 		$headers = 'From: AKΨ Nu Chapter <akpsi.nu.recruitment@gmail.com>';
@@ -161,7 +161,7 @@ if ($no_error && isset($_POST['rushEmail'])) {
 	if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
 	} 
-	$sql = "INSERT INTO rushFall2015 (FirstName, LastName, Email, Phone, Majors, MajorSchools, Grade, AppSubmitted)
+	$sql = "INSERT INTO $rushtableApps (FirstName, LastName, Email, Phone, Majors, MajorSchools, Grade, AppSubmitted)
 	VALUES ('" . $_POST["rushFirstName"] . "', '" . $_POST["rushLastName"] . "', '" . $_POST["rushEmail"] . "', '" . $_POST["rushPhone"] . "', '" . $_POST["rushMajors"] . "', '" . $_POST["rushSchool"] . "', '" . $_POST["rushGrade"] . "', '1') ON DUPLICATE KEY UPDATE AppSubmitted=VALUES(AppSubmitted)";
 
 	if ($conn->query($sql) === TRUE) {

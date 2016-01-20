@@ -2,11 +2,30 @@
 <html lang="en">
 
 <head>
-	<title>Nu Chapter | Alpha Kappa Psi</title>
+	<title>Alpha Kappa Psi Nu Chapter</title>
 	<link href="css/styles.css" rel="stylesheet"/>
 	<link href="css/navbar.css" rel="stylesheet" />
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery.color.js"></script>
+	
+	<link rel="apple-touch-icon" sizes="57x57" href="icon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="icon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="icon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="icon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="icon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="icon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="icon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="icon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="icon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="icon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="icon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+	
+	<link rel="manifest" href="icon/manifest.json">
+	<meta name="msapplication-TileColor" content="#000033">
+	<meta name="msapplication-TileImage" content="icon/ms-icon-144x144.png">
+	<meta name="theme-color" content="#000033">
 </head>
 
 <body>
@@ -28,7 +47,7 @@
 		#navbar {
 			background-color: rgba(0,0,0,0);
 			position: absolute;
-			z-index: 10;
+			z-index: 3;
 		}
 		 
 		#banner {
@@ -60,14 +79,20 @@
 	</style>
 	
 	<div id="banner">
-		<div style="position: absolute; z-index: 10; top: 190px; left: 0; right: 0;">
+		<div style="position: absolute; z-index: 1; top: 190px; left: 0; right: 0;">
+<!--
 			<h5 class="banner_text">The International Co-Ed Professional Business Fraternity</h5>
 			<div style="position: absolute; z-index: 10; width: inherit; top: 160px;left: 0; right: 0">
 				<p style="text-align:center"><a href="./about.php" class="button_gold">Learn More</a></p>
 			</div>
+-->
+			<h5 class="banner_text">Aspire. Accelerate. Achieve.</h5>
+			<div style="position: absolute; z-index: 10; width: inherit; top: 160px;left: 0; right: 0">
+				<p style="text-align:center"><a href="./rush/index.php" class="button_gold">Rush Alpha Kappa Psi</a></p>
+			</div>
 		</div>
 		<div id="overlay"></div>
-		<video autoplay="autoplay" loop="loop" src="img/index_video_2.mov" style="width: 100vw"></video>
+		<video autoplay="autoplay" loop="loop" src="img/index_video_2.mov" style="width: 100vw" muted></video>
 	</div>
 <!--END RETURN-->
 	

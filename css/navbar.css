@@ -120,7 +120,7 @@
 
 .dropdown {
 	position: absolute;
-	z-index: 2;
+	z-index: 3;
 	padding: 0;
 	top: 50px;
 	width: 135px;

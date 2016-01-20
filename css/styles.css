@@ -26,7 +26,7 @@ Red - a60033
 		url('../fonts/BEBASNEUE BOLD.svg') format('svg'),
 		url('../fonts/BEBASNEUE BOLD.woff') format('woff'), 
 		url('../fonts/BEBASNEUE BOLD.OTF') format('opentype'), 
-		url('../fonts/BEBASNEUE BOLD.ttf') format('truetype'), 
+		url('../fonts/BEBASNEUE BOLD.ttf') format('truetype');
 	font-weight: bold;
 }
 @font-face {

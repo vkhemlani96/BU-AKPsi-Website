@@ -45,8 +45,8 @@
 			echo "Failed to connect to MySQL: " . mysqli_connect_error();
 			}
 
-			$appsTable = "rushFall2015Apps";
-			$dataTable = "rushFall2015";
+			$appsTable = $rushTableApps;
+			$dataTable = $rushTable;
 			$query = "SELECT * FROM rushFall2015 WHERE Email IN ('nailyay@bu.edu', 'valeriia@bu.edu', 'peggylao@bu.edu', 'nlord@bu.edu', 'kjgrace@bu.edu', 'vsy@bu.edu', 'shonihei@bu.edu', 'alphanlu@bu.edu', 'judymoon@bu.edu', 'Savcurry@bu.edu', 'etin@bu.edu', 'jwang95@bu.edu', 'weichuny@bu.edu', 'kstapes@bu.edu', 'sraghib@bu.edu', 'leewei1@bu.edu', 'arcangel@bu.edu', 'Jnmoon@bu.edu', 'xsiqi@bu.edu') ORDER BY `LastName`";
 			$result = mysqli_query($con,$query);
 

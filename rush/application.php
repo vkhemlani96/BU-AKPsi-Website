@@ -40,7 +40,7 @@
 //		die("Connection failed: " . $conn->connect_error);
 //	} 
 //
-//	$sql = "INSERT INTO rushFall2015Apps (rushEmail, rushGPA, q1_why, q2_words, q3_excite, q4_orgs, q5_work, q6_goals, q7_bro, q8_brohood, q9_second, q10_hear, q11_improve)
+//	$sql = "INSERT INTO $rushTableApps (rushEmail, rushGPA, q1_why, q2_words, q3_excite, q4_orgs, q5_work, q6_goals, q7_bro, q8_brohood, q9_second, q10_hear, q11_improve)
 //	VALUES ('" . $_POST["rushEmail"] . "', '" . $_POST["gpa"] . "', '" . $_POST["q1_why"] . "', '" . $_POST["q2_words"] . "', '" . $_POST["q3_excite"] . "', '" . $_POST["q4_orgs"] . "', '" . $_POST["q5_work"] . "', '" . $_POST["q6_goals"] . "', '" . $_POST["q7_bro"] . "', '" . $_POST["q8_brohood"] . "', '" . $_POST["q9_second"] . "', '" . $_POST["q10_hear"] . "', '" . $_POST["q11_improve"] . "')";
 //
 //	if ($conn->query($sql) === TRUE) {
@@ -263,7 +263,7 @@
 			echo "Failed to connect to MySQL: " . mysqli_connect_error();
 			}
 
-			$result = mysqli_query($con,"SELECT * FROM rushFall2015");
+			$result = mysqli_query($con,"SELECT * FROM $rushTable");
 
 			while($row = mysqli_fetch_array($result)) {
 				echo "var RushInfo = new Array();"

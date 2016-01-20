@@ -2,7 +2,7 @@
 
 $sendEmail = $_REQUEST["messageEmail"] != null;
 
-$to      = 'vinayk@bu.edu';
+$to      = 'akpsi.nu.outreach@gmail.com';
 $subject = $_REQUEST["messageSubject"];
 $message = $_REQUEST["messageName"] . "\r\n" .$_REQUEST["messageEmail"]. "\r\n" . $_REQUEST["message"];
 $headers = 'From: noreply@buakpsi.com';

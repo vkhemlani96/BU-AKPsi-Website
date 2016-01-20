@@ -32,12 +32,12 @@
 		var map;
 		var info1Marker;
 		var info2Marker;
-		var profNightMarker;
-		var socialMarker;
+		var event1Marker;
+//		var event2Marker;
 		var infosession1 = new google.maps.LatLng(42.349639,-71.0995457);
-		var infosession2 = new google.maps.LatLng(42.3494308,-71.098098);
-		var profNight = new google.maps.LatLng(42.348874,-71.102463);
-		var social = new google.maps.LatLng(42.3507745,-71.1060315);
+		var infosession2 = new google.maps.LatLng(42.3498181,-71.1078257);
+		var event1 = new google.maps.LatLng(42.3508572,-71.1089444);
+//		var event2 = new google.maps.LatLng(42.3498181,-71.1078257);
 //		var LatLngList = new Array(infosession1, infosession2, profNight, social);
 //		var bounds = new google.maps.LatLngBounds ();
 //		//  Go through each...
@@ -47,50 +47,51 @@
 //		}
 		
 		var info1Window = new google.maps.InfoWindow({
-			content: "<div class='text-center'><strong>Infosession #1</strong><br>Questrom 105</div>"
+			content: "<div class='text-center'><strong>Info Session I</strong><br>Questrom 105</div>"
 		});
 		var info2Window = new google.maps.InfoWindow({
-			content: "<div class='text-center'><strong>Infosession #2</strong><br>KCB 101</div>",
+			content: "<div class='text-center'><strong>Info Session II, Professional Workshops</strong><br>PHO 206</div>",
 		});
-		var profNightWindow = new google.maps.InfoWindow({
-			content: "<div class='text-center'><strong>Professional Night</strong><br>COM 101</div>"
+		var event1Window = new google.maps.InfoWindow({
+			content: "<div class='text-center'><strong>Fashion Night</strong><br>Metcalf Ballroom</div>"
 		});
-		var socialWindow = new google.maps.InfoWindow({
-			content: "<div class='text-center'><strong>BBQ Social</strong><br>BU Beach</div>"
-		});
+//		var event2Window = new google.maps.InfoWindow({
+//			content: "<div class='text-center'><strong>Professional Workshops</strong><br>PHO 206</div>"
+//		});
 
 		function init() {
 			map = new google.maps.Map(document.getElementById('map-canvas'), {
 				zoom: 17,
-				center: new google.maps.LatLng(42.35023656896355, -71.10206474999995),
+				center: new google.maps.LatLng(42.350608545230195, -71.10411333544312),
+//				center: new google.maps.LatLng(42.35023656896355, -71.10206474999995),
     			scrollwheel: false,
 			  });
 
 			info1Marker = new google.maps.Marker({
 				position: infosession1,
 				map: map,
-				title: 'Infosession #1 (Questrom)'
+				title: 'Info Session I (Questrom)'
 			});
 			info2Marker = new google.maps.Marker({
 				position: infosession2,
 				map: map,
-				title: 'Infosession #2 (KCB)'
+				title: 'Info Session II, Professional Night (PHO)'
 			});
-			profNightMarker = new google.maps.Marker({
-				position: profNight,
+			event1Marker = new google.maps.Marker({
+				position: event1,
 				map: map,
-				title: 'Professional Night (COM)'
+				title: 'Fashion Night (Metcalf Ballroom)'
 			});
-			socialMarker = new google.maps.Marker({
-				position: social,
-				map: map,
-				title: 'BBQ Social (KCB)'
-			});
+//			event2Marker = new google.maps.Marker({
+//				position: event2,
+//				map: map,
+//				title: 'Professional Night (PHO)'
+//			});
 			
 			info1Window.open(map,info1Marker);
 			info2Window.open(map,info2Marker);
-			profNightWindow.open(map,profNightMarker);
-			socialWindow.open(map,socialMarker);
+			event1Window.open(map,event1Marker);
+//			event2Window.open(map,event2Marker);
 
 		}
 
@@ -115,25 +116,32 @@
 			<div class="title_section vertical_padding col-md-12">
 				<h1>Rush Alpha Kappa Psi</h1>
 				<div class="seperator"></div>
-				<h2>Dare to be Remarkable</h2>
+				<h2>Aspire. Accelerate. Achieve.</h2>
 			</div>
 		</div>
 		
 		<div class="row">
-			<div class="col-md-10 col-md-offset-1" style="padding-top: 35px">
-				<p>Recruitment (also known as Rush) is a process held at the beginning of each semester, during which the Fraternity holds infosessions and other events to welcome potential members. The purpose of recruitment is to allow potential members to learn about the Fraternity, network with current Brothers and determine if Alpha Kappa Psi is a good fit for them. In order to be considered for admission to the Fraternity, recruits must attend at least one infosession, one other open recruitment event and submit the Recruitment Application (which will be posted at a future time). For more information about the recruitment process, visit our <a href="faq.php">FAQ page</a>.</p>
+			<div class="col-md-8 col-md-offset-2" style="padding-top: 35px">
+				<p>Recruitment (also known as Rush) is a process held at the beginning of each semester, during which the Fraternity holds infosessions and other events to welcome potential members. The purpose of recruitment is to allow potential members to learn about the Fraternity, network with current Brothers and determine if Alpha Kappa Psi is a good fit for them. In order to be considered for admission to the Fraternity, recruits must attend at least one infosession, one other open recruitment event and submit the Recruitment Application (which will be posted at a future time). For more information about the recruitment process, visit our <a href="faq.php">FAQ page</a>.
 			</div>
 		</div>
 		
 		<div class="row vertical_padding">
-			<div class="col-md-4 col-md-offset-2">
-				<a href="signup.php?src=web" style="text-decoration: none"><p class="button text-center">Sign up for Recruitment!</p></a>
+			<div class="col-md-4 col-md-offset-4">
+				<a href="signup.php?source=web" style="text-decoration: none"><p class="button text-center">Sign up for Recruitment!</p></a>
 			</div>
+<!--
 			<div class="col-md-4">
 				<a href="application.php" style="text-decoration: none"><p class="button text-center">Fill out our Application!</p></a>
 			</div>
+-->
 		</div>
 		
+		<div class="row vertical_padding" style="padding-top: 0px">
+			<div class="col-md-6 col-md-offset-3">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/sju8yD9JJLU" frameborder="0" allowfullscreen style="width:560px; margin: 0 auto;"></iframe></p>
+			</div>
+		</div>
 		
 <!--
 		<div class="row" style="background-color: #000033">
@@ -174,14 +182,14 @@
 			<div class="vertical_padding">
 				<div class="row">
 					<div class="col-md-5 col-md-offset-1">
-						<h2><strong>Infosession #1</strong> Monday, Sept. 14</h2>
-						<h4 style="padding-bottom: 5px;"><strong>Presented by Pinch</strong></h4>
+						<h2><strong>Info Session I</strong> Tuesday, Jan. 26</h2>
+<!--						<h4 style="padding-bottom: 5px;"><strong>Presented by Pinch</strong></h4>-->
 						<h4>Questrom 105 | 6-8PM</h4>
 					</div>
 					<div class="col-md-5">
-						<h2><strong>Infosession #2</strong> Tuesday, Sept. 15</h2>
-						<h4 style="padding-bottom: 5px;"><strong>Presented by Fundraise.com</strong></h4>
-						<h4>KCB 101 | 6-8PM</h4>
+						<h2><strong>Info Session II</strong> Wednesday, Jan. 27</h2>
+<!--						<h4 style="padding-bottom: 5px;"><strong>Presented by Fundraise.com</strong></h4>-->
+						<h4>PHO 206 | 6-8PM</h4>
 					</div>
 				</div>
 				<div class="row" style="margin-top:20px;">
@@ -196,21 +204,22 @@
 			
 			<div class="row vertical_padding">
 				<div class="col-md-5 col-md-offset-1">
-					<h2><strong>Professional Night</strong> Thursday, Sept. 17</h2>
-					<h4 style="padding-bottom: 6px"><strong>Presented by Ann Taylor and Ministry of Supply</strong></h4>
-					<h4>COM 101 | 6-8PM</h4>
-					<p style="margin-top: 20px;">Professional night will begin with an informative fashion show in which our own brothers will be modeling outfits and explaining the fundamentals of professional attire! The show will be followed by a panel of brothers speaking about their experiences within the brotherhood and answering many of your questions. At the end of the event, you will again have the chance to network with all of the brothers in attendance! <i>Professional attire is not required.</i></p>
+					<h2><strong>Fashion Night</strong> Saturday, Jan. 30</h2>
+<!--					<h4 style="padding-bottom: 6px"><strong>Presented by Ann Taylor and Ministry of Supply</strong></h4>-->
+					<h4>Metcalf Ballroom | 7-9PM</h4>
+					<p style="margin-top: 20px;">Fashion Night will consist of a fashion show from multiple sponsors of our recruitment process with brothers modeling the outfits. The purpose of the event is to explain the fundamentals of professional attire for every purpose from interviews to everyday business casual and more. At the end of the event, you will again have the opportunity to network with brothers that are in attendance! <i>Professional attire is not required.</i></p>
 				</div>
 				<div class="col-md-5">
-					<h2><strong>BBQ Social</strong> Saturday, Sept. 19</h2>
-					<h4 style="padding-bottom: 6px;"><strong>Presented By Luvo</strong></h4>
-					<h4>BU Beach | 12-2PM</h4>
-					<p style="margin-top:20px;">Our BBQ Social is the last chance to meet the brothers before recruitment applications are due! This networking-focused event will feature food from local vendors around campus and a few lawn games to show your competitive side.</p>
+					<h2><strong>Professional Workshops</strong> Monday, Feb. 1</h2>
+<!--					<h4 style="padding-bottom: 6px;"><strong>Presented By Luvo</strong></h4>-->
+					<h4>PHO 206 | 6-8PM</h4>
+					<p style="margin-top:20px;">Professional Workshops will consist of multiple mini-workshops that will explain the how-to's and important tips for building resumes, cover letters, and public speaking. Following the workshops there will be a speaker series consisting of brothers and Alpha Kappa Psi alumni to discuss their experiences at Boston University, their career aspirations, and more. After this, the room will open up for more networking so that we can learn more about each of you!</p>
 				</div>
 			</div>
 			
 		</div>
 		
+<!--
 		<div class="row vertical_padding" style="padding-bottom: 0">
 			<div class="col-md-12">
 				<h2>A Special Thank You to <strong>Our Sponsors</strong></h2>
@@ -231,6 +240,7 @@
 				<a href="http://ministryofsupply.com/" target="_blank"><img src="../img/sponsors/ministry_of_supply.png" width="100%"></a>
 			</div>
 		</div>
+-->
 		
 	</div>
 	

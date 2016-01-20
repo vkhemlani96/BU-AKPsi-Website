@@ -3,6 +3,7 @@
 //foreach ($_POST as $key => $value)
 //	echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
 
+// IF DATA HAS BEEN POSTED, ADD TO DB
 if (isset($_POST["rushFirstName"]) && isset($_POST["rushLastName"]) && isset($_POST['rushEmail'])  && isset($_POST['rushPhone'])  && isset($_POST['rushMajors'])  && isset($_POST['rushSchool']) && isset($_POST['rushGrade']) ) {
 	include("../manage_db/db_credentials.php");
 
@@ -12,8 +13,8 @@ if (isset($_POST["rushFirstName"]) && isset($_POST["rushLastName"]) && isset($_P
 	if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
 	} 
-	$sql = "INSERT INTO rushFall2015 (FirstName, LastName, Email, Phone, Majors, MajorSchools, Grade, " . $_GET["event"] . ")
-	VALUES ('" . $_POST["rushFirstName"] . "', '" . $_POST["rushLastName"] . "', '" . $_POST["rushEmail"] . "', '" . $_POST["rushPhone"] . "', '" . $_POST["rushMajors"] . "', '" . $_POST["rushSchool"] . "', '" . $_POST["rushGrade"] . "', '1') ON DUPLICATE KEY UPDATE " . $_GET["event"] . "=VALUES(".$_GET['event'].")";
+	$sql = "INSERT INTO $rushTable (Channel, FirstName, LastName, Email, Phone, Majors, MajorSchools, Grade, " . $_GET["event"] . ")
+	VALUES ('Event', '" . $_POST["rushFirstName"] . "', '" . $_POST["rushLastName"] . "', '" . $_POST["rushEmail"] . "', '" . $_POST["rushPhone"] . "', '" . $_POST["rushMajors"] . "', '" . $_POST["rushSchool"] . "', '" . $_POST["rushGrade"] . "', '1') ON DUPLICATE KEY UPDATE " . $_GET["event"] . "=VALUES(".$_GET['event'].")";
 
 	if ($conn->query($sql) === TRUE) {
 //		echo "New record created successfully";
@@ -41,14 +42,24 @@ switch ($event) {
 	case "Info2":
 		$title = "Infosession 2";
 		break;
-	case "Prof":
-		$title = "Professional Night";
+	case "Fashion":
+		$title = "Fashion Night";
 		break;
-	case "BBQ":
-		$title = "BBQ Social";
+	case "Professional":
+		$title = "Professional Workshops";
 		break;
+//	case "Trivia":
+//		$title = "Fashion Night";
+//		break;
+//	case "Professional":
+//		$title = "Professional Workshops";
+//		break;
 	default:
-		die('NO Event PROVIDED');
+		die('NO Event PROVIDED
+		<p><a href="http://www.buakpsi.com/rush/event.php?event=Info1">Infosession 1</a></p>
+		<p><a href="http://www.buakpsi.com/rush/event.php?event=Info2">Infosession 2</a></p>
+		<p><a href="http://www.buakpsi.com/rush/event.php?event=Fashion">Fashion Night</a></p>
+		<p><a href="http://www.buakpsi.com/rush/event.php?event=Professional">Professional Workshops</a></p>');
 }
 
 ?>
@@ -99,7 +110,7 @@ switch ($event) {
 			</div>
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
 				<input class="mdl-textfield__input" type="text" id="rushGrade" name="rushGrade"/>
-				<label class="mdl-textfield__label" for="sample1">Grade</label>
+				<label class="mdl-textfield__label" for="sample1">Grade (ex. Freshman, Sophomore...)</label>
 			</div>
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
 				<input class="mdl-textfield__input" type="text" id="rushSchool" name="rushSchool"/>
@@ -173,7 +184,8 @@ switch ($event) {
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
 		}
 
-		$result = mysqli_query($con,"SELECT * FROM rushFall2015");
+		//Get all entries to populate Javascript Object
+		$result = mysqli_query($con,"SELECT * FROM $rushTable");
 
 		while($row = mysqli_fetch_array($result)) {
 			echo "var RushInfo = new Array();"

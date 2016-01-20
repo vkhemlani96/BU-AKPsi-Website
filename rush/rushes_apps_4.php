@@ -45,9 +45,9 @@
 			echo "Failed to connect to MySQL: " . mysqli_connect_error();
 			}
 
-			$appsTable = "rushFall2015Apps";
-			$dataTable = "rushFall2015";
-			$query = "SELECT * FROM rushFall2015 WHERE Email IN ('acastano@bu.edu', 'nmcollet@bu.edu', 'cku@bu.edu', 'gautama@bu.edu', 'racheld1@bu.edu', 'cgxu@bu.edu', 'samodaro@bu.edu', 'Grf96@bu.edu', 'Cdwelsh@bu.edu', 'ineslee@bu.edu', 'chermant@bu.edu', 'sonalipa@bu.edu', 'ctager@bu.edu', 'kpatel11@bu.edu', 'ysuh95@bu.edu', 'shannahm@bu.edu', 'vteng@bu.edu', 'linh4@bu.edu', 'emmawu@bu.edu', 'shengli@bu.edu', 'rtaylor9@bu.edu') ORDER BY `LastName`";
+			$appsTable = $rushTableApps;
+			$dataTable = $rushTable;
+			$query = "SELECT * FROM $rushTableApps WHERE Email IN ('acastano@bu.edu', 'nmcollet@bu.edu', 'cku@bu.edu', 'gautama@bu.edu', 'racheld1@bu.edu', 'cgxu@bu.edu', 'samodaro@bu.edu', 'Grf96@bu.edu', 'Cdwelsh@bu.edu', 'ineslee@bu.edu', 'chermant@bu.edu', 'sonalipa@bu.edu', 'ctager@bu.edu', 'kpatel11@bu.edu', 'ysuh95@bu.edu', 'shannahm@bu.edu', 'vteng@bu.edu', 'linh4@bu.edu', 'emmawu@bu.edu', 'shengli@bu.edu', 'rtaylor9@bu.edu') ORDER BY `LastName`";
 			$result = mysqli_query($con,$query);
 
 			while($row = mysqli_fetch_array($result)) {

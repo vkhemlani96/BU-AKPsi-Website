@@ -4,18 +4,18 @@
 // echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
 
 if (isset($_POST["rushFirstName"]) && isset($_POST["rushLastName"]) && isset($_POST['rushEmail'])  && isset($_POST['rushPhone'])  && isset($_POST['rushMajors'])  && isset($_POST['rushSchool']) && isset($_POST['rushGrade']) ) {
-	include("../mamage_db/db_credentials.php");
+	include("../manage_db/db_credentials.php");
 
 	// Create connection
 	$conn = new mysqli($hostname, $username, $password, $dbname);
 	// Check connection
 	if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
-	} 
+	}
 
-	$sql = "INSERT INTO rushFall2015 (FirstName, LastName, Email, Phone, Majors, MajorSchools, Grade, Channel)
+	$sql = "INSERT INTO $rushTable (FirstName, LastName, Email, Phone, Majors, MajorSchools, Grade, Channel)
 	VALUES ('" . $_POST["rushFirstName"] . "', '" . $_POST["rushLastName"] . "', '" . $_POST["rushEmail"] . "', '" . $_POST["rushPhone"] . "', '" . $_POST["rushMajors"] . "', '" . $_POST["rushSchool"] . "', '" . $_POST["rushGrade"] . "', '" . $_POST["rushChannel"] . "')";
-
+	
 	if ($conn->query($sql) === TRUE) {
 		echo "New record created successfully";
 	} else {
@@ -32,7 +32,7 @@ if (isset($_POST["rushFirstName"]) && isset($_POST["rushLastName"]) && isset($_P
 //			die('NO SRC PROVIDED');
 //}
 
-$src = $_GET["src"];
+$src = $_GET["source"];
 $title = $link = "";
 
 switch ($src) {
@@ -48,12 +48,21 @@ switch ($src) {
 		$title = "Website";
 		$link = "ZL8PEOa1bfTTJDkKRrZjs8VXsZeBec4JQUx";
 		break;
-	case "splash":
-		$title = "SPLASH";
+	case "trirush":
+		$title = "Tri-Rush";
+		$link = "xAmSFqwEN8ym1HQy1xdhnyQ09lep8vqX30M";
+		break;
+	case "gsu":
+		$title = "GSU Tabling";
 		$link = "xAmSFqwEN8ym1HQy1xdhnyQ09lep8vqX30M";
 		break;
 	default:
-		die('NO SRC PROVIDED');
+		die('NO SRC PROVIDED
+		<p><a href="http://www.buakpsi.com/rush/signup.php?source=fb">Facebook</a></p>
+		<p><a href="http://www.buakpsi.com/rush/signup.php?source=tabling">Tabling</a></p>
+		<p><a href="http://www.buakpsi.com/rush/signup.php?source=trirush">TriRush</a></p>
+		<p><a href="http://www.buakpsi.com/rush/signup.php?source=web">Website</a></p>
+		<p><a href="http://www.buakpsi.com/rush/signup.php?source=gsu">GSU Tabling</a></p>');
 }
 
 //echo $title;
@@ -87,7 +96,7 @@ switch ($src) {
 	</div>
 	
 	<div class="vertical_padding center">
-		<form style="text-align:center; width: 60%; margin: 0 auto;" action="signup.php?src=<?php echo $src; ?>" id="rushForm" method="post">
+		<form style="text-align:center; width: 60%; margin: 0 auto;" action="signup.php?source=<?php echo $src; ?>" id="rushForm" method="post">
 			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo" style="display:none">
 				<input class="mdl-textfield__input" type="text" id="rushChannel" name="rushChannel" hidden="hidden" value="<?php echo $title; ?>" />
 			</div>
