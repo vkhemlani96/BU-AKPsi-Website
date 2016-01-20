@@ -12,8 +12,8 @@ function getNavbar($small) {
 	else
 		$prefix = "http://localhost:8888/BU%20AKPsi%20New";
 
+	include_once("analyticstracking.php");
 	echo "
-		<?php include_once(\"analyticstracking.php\") ?>
 		<div id=\"navbar$text\">
 				<h1><a href=\"$prefix\">Alpha Kappa Psi <a style=\"color:#bda75d; font-weight:500\" href=\"$prefix\">Nu Chapter</a></a></h1>
 				$sep
