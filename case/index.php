@@ -85,7 +85,7 @@
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
 					<input class="mdl-textfield__input" type="text" id="School" name="School"/>
-					<label class="mdl-textfield__label" for="sample1">School within BU (ex: SMG, CAS, SHA)</label>
+					<label class="mdl-textfield__label" for="sample1">School within BU (ex: Questrom, CAS, SHA)</label>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
 					<input class="mdl-textfield__input" type="text" id="Phone" name="Phone"/>
@@ -98,12 +98,14 @@
 			<div class="vertical_padding">
 				<p><strong>Why have you applied for the competition? (Max 650 Characters)</strong></p>
 				<textarea name="q1" maxlength="650"></textarea>
+<!--
 				<p><strong>Give 3 reasons why global consulting firm YSC is requesting help from students from Boston University & Newcastle University (Max 2,200 Characters)</strong></p>
 				<textarea name="q2" maxlength="2200"></textarea>
+-->
 				<p><strong>How would winning this competition help you? (Max 700 Characters)</strong></p>
-				<textarea name="q3" maxlength="700"></textarea>
+				<textarea name="q2" maxlength="700"></textarea>
 				<p><strong>Have you ever worked in a culturally diverse team? If yes, did you work effectively? If not, why would you like to work in a culturally diverse team? (Max 1,000 Characters)</strong></p>
-				<textarea name="q4" maxlength="1000"></textarea>
+				<textarea name="q3" maxlength="1000"></textarea>
 <!--
 				<p><strong>What is your most notable work experience?</strong></p>
 				<textarea name="q5_work"></textarea>

@@ -34,7 +34,7 @@
 
 $no_error = false;
 
-if (isset($_POST["Email"]) && isset($_POST['q1'])  && isset($_POST['q2'])  && isset($_POST['q3']) && isset($_POST['q4'])) {
+if (isset($_POST["Email"]) && isset($_POST['q1'])  && isset($_POST['q2'])  && isset($_POST['q3'])) {
 	
 	include("../manage_db/db_credentials.php");
 	
@@ -45,8 +45,8 @@ if (isset($_POST["Email"]) && isset($_POST['q1'])  && isset($_POST['q2'])  && is
 		die("Connection failed: " . $conn->connect_error);
 	} 
 
-	$sql = "INSERT INTO $caseTable (FirstName, LastName, Email, Grade, School, Phone, q1, q2, q3, q4)
-	VALUES ('" . $_POST["FirstName"] . "', '" . $_POST["LastName"] . "', '" . $_POST["Email"] . "', '" . $_POST["Grade"] . "', '" . $_POST["School"] . "', '" . $_POST["Phone"] . "', '" . $_POST["q1"] . "', '" . $_POST["q2"] . "', '" . $_POST["q3"] . "', '" . $_POST["q4"] . "')";
+	$sql = "INSERT INTO $caseTable (FirstName, LastName, Email, Grade, School, Phone, q1, q2, q3)
+	VALUES ('" . $_POST["FirstName"] . "', '" . $_POST["LastName"] . "', '" . $_POST["Email"] . "', '" . $_POST["Grade"] . "', '" . $_POST["School"] . "', '" . $_POST["Phone"] . "', '" . $_POST["q1"] . "', '" . $_POST["q2"] . "', '" . $_POST["q3"] . "')";
 	
 	if ($conn->query($sql) === TRUE) {
 //		echo "New record created successfully";

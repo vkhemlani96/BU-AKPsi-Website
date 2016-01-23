@@ -37,7 +37,12 @@ while($row = mysql_fetch_row($export)) {
 		}
 		$line .= $value;
 	}
-	$resume_link = 'http://www.buakpsi.com/case/resumes/' . $row[1] . "_" . $row[0] . '.pdf';
+	$resume_link = 'http://www.buakpsi.com/case/';
+	foreach (glob("resumes/".$row[1] . "_" . $row[0].".*") as $filename) {
+		$resume_link .= $filename;
+		break;
+	}
+//	$resume_link = 'http://www.buakpsi.com/case/resumes/' . $row[1] . "_" . $row[0] . '.pdf';
 	$line .= '<Cell ss:StyleID="s65" ss:HRef="'.$resume_link.'"><Data ss:Type="String">'.$resume_link.'</Data></Cell>\t';
 	$data .= trim("<Row>".$line."</Row>")."\n";
 }
