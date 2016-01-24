@@ -139,7 +139,8 @@
 		
 		<div class="row vertical_padding" style="padding-top: 0px">
 			<div class="col-md-6 col-md-offset-3">
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/sju8yD9JJLU" frameborder="0" allowfullscreen style="width:560px; margin: 0 auto;"></iframe></p>
+<!--				<iframe width="560" height="315" src="https://www.youtube.com/embed/sju8yD9JJLU" frameborder="0" allowfullscreen style="width:560px; margin: 0 auto;"></iframe></p>-->
+		<div id="fb-root"></div><script>(function(d, s, id) {  var js, fjs = d.getElementsByTagName(s)[0];  if (d.getElementById(id)) return;  js = d.createElement(s); js.id = id;  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";  fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script><div class="fb-video" data-allowfullscreen="1" data-href="/buakpsi/videos/vb.332191163535/10153853410268536/?type=3"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/buakpsi/videos/10153853410268536/"><a href="https://www.facebook.com/buakpsi/videos/10153853410268536/">Spring Recruitment Infographic Video</a><p>Aspire. Accelerate. Achieve. RUSH ALPHA KAPPA PSISpring Recruitment 2016</p>Posted by <a href="https://www.facebook.com/buakpsi/">Alpha Kappa Psi &#064; Boston University</a> on Friday, January 22, 2016</blockquote></div></div>
 			</div>
 		</div>
 		
