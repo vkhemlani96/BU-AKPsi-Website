@@ -20,7 +20,7 @@
 	
 	<div class="center vertical_padding">
 		<p>
-			<img src="../img/nccg/logo.png" style="float:right; padding-left:20px" height="100">
+			<img src="../img/nccg/logo.png" style="float:right; padding-left:20px" height="200">
 			Nu Chapter Consulting Group is a student consulting group that was founded by Alpha Kappa Psi at Boston University in 2012. The group provides consulting services in the fields of finance, accounting, marketing, operations management, and information systems to small and medium sized businesses and startups like yours.
 			<br><br>
 			We have 4 critical advantages:
