@@ -1,6 +1,8 @@
 <?php
 // Author: Linmic, email: linmicya@gmail.com
 
+include("/home/content/03/5577503/html/rush/password_protect.php");
+
 include("../manage_db/db_credentials.php");
 
 $host = $hostname; // your db host (ip/dn)
