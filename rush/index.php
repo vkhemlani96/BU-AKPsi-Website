@@ -214,7 +214,7 @@
 					<h2><strong>Professional Workshops</strong> Monday, Feb. 1</h2>
 <!--					<h4 style="padding-bottom: 6px;"><strong>Presented By Luvo</strong></h4>-->
 					<h4>PHO 206 | 6-8PM</h4>
-					<p style="margin-top:20px;">Professional Workshops will consist of multiple mini-workshops that will explain the how-to's and important tips for building resumes, cover letters, and public speaking. Following the workshops there will be a speaker series consisting of brothers and Alpha Kappa Psi alumni to discuss their experiences at Boston University, their career aspirations, and more. After this, the room will open up for more networking so that we can learn more about each of you!</p>
+					<p style="margin-top:20px;">Professional Workshops will consist of multiple mini-workshops that will explain the how-to's and important tips for building resumes, cover letters, and public speaking. Following the workshops there will be a speaker series consisting of brothers and Alpha Kappa Psi alumni to discuss their experiences at Boston University, their career aspirations, and more. After this, the room will open up for more networking so that we can learn more about each of you! <i>Business casual attire is required.</i></p>
 				</div>
 			</div>
 			

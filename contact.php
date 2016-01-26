@@ -3,9 +3,9 @@
 $sendEmail = $_REQUEST["messageEmail"] != null;
 
 $to      = 'akpsi.nu.outreach@gmail.com';
-$subject = $_REQUEST["messageSubject"];
-$message = $_REQUEST["messageName"] . "\r\n" .$_REQUEST["messageEmail"]. "\r\n" . $_REQUEST["message"];
-$headers = 'From: noreply@buakpsi.com';
+$subject = $_REQUEST["messageSubject"] . " - buakpsi.com";
+$message = "Sender's Name: " . $_REQUEST["messageName"] . "\r\n" . "Sender's IP Address: " . $_SERVER["REMOTE_ADDR"] . "\r\n" . "Sender's Email: " . $_REQUEST["messageEmail"] . "\r\n" . $_REQUEST["message"];
+$headers = 'From: ' . $_REQUEST["messageName"] . ' <' . $_REQUEST["messageEmail"] . '>';
 	
 if ($sendEmail)
 	mail($to, $subject, $message, $headers);
