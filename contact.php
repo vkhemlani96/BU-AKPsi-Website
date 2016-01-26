@@ -206,14 +206,14 @@ if ($sendEmail)
 			
 			
 			<div class="nccg_media" style="text-align:right">
-				<a href="mailto:nuchapterconsultinggroup@gmail.com">
+				<a href="mailto:nuchapterconsultinggroup@gmail.com" target="_blank">
 					<div>
 						<h5>nuchapterconsultinggroup@gmail.com</h5>
 						<img src="img/social_media/email_white.png" height="30">
 					</div>
 				</a>
 			</div><div class="nccg_media">
-				<a href="https://www.linkedin.com/company/nu-chapter-consulting-group ">
+				<a href="https://www.linkedin.com/company/nu-chapter-consulting-group " target="_blank">
 					<div>
 						<img src="img/social_media/linkedin_white.png" height="30">
 						<h5>Nu Chapter Consulting Group</h5>
@@ -221,14 +221,14 @@ if ($sendEmail)
 				</a>
 			</div>
 			<div class="nccg_media" style="text-align:right">
-				<a href="http://www.facebook.com/bunccg">
+				<a href="http://www.facebook.com/bunccg" target="_blank">
 					<div>
 						<h5>facebook.com/BUNCCG</h5>
 						<img src="img/social_media/facebook_white.png" height="30">
 					</div>
 				</a>
 			</div><div class="nccg_media">
-				<a href="https://twitter.com/nuconsulting">
+				<a href="https://twitter.com/nuconsulting" target="_blank">
 					<div>
 						<img src="img/social_media/twitter_white.png" height="30">
 						<h5>@NuConsulting</h5>

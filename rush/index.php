@@ -208,7 +208,7 @@
 					<h2><strong>Fashion Night</strong> Saturday, Jan. 30</h2>
 <!--					<h4 style="padding-bottom: 6px"><strong>Presented by Ann Taylor and Ministry of Supply</strong></h4>-->
 					<h4>Metcalf Ballroom | 7-9PM</h4>
-					<p style="margin-top: 20px;">Fashion Night will consist of a fashion show from multiple sponsors of our recruitment process with brothers modeling the outfits. The purpose of the event is to explain the fundamentals of professional attire for every purpose from interviews to everyday business casual and more. At the end of the event, you will again have the opportunity to network with brothers that are in attendance! <i>Professional attire is not required.</i></p>
+					<p style="margin-top: 20px;">Fashion Night will consist of a fashion show from multiple sponsors of our recruitment process with brothers modeling the outfits. The purpose of the event is to explain the fundamentals of professional attire for every purpose from interviews to everyday business casual and more. At the end of the event, you will again have the opportunity to network with brothers that are in attendance! <i>Cocktail attire is required.</i></p>
 				</div>
 				<div class="col-md-5">
 					<h2><strong>Professional Workshops</strong> Monday, Feb. 1</h2>

@@ -1,7 +1,8 @@
 <?php
 	include("/home/content/03/5577503/html/rush/password_protect.php");
 
-	include("../mamage_db/db_credentials.php");
+	include("../manage_db/db_credentials.php");
+	include("application_questions.php");
 
 	// Create connection
 	$con = new mysqli($hostname, $username, $password, $dbname);
@@ -12,48 +13,27 @@
 	echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	}
 
-	$appsTable = "rushFall2015Apps";
-	$dataTable = "rushFall2015";
-	$query = "SELECT * FROM rushFall2015Apps JOIN rushFall2015 ON rushFall2015Apps.email = rushFall2015.Email AND rushFall2015Apps.email = '".$_GET["email"]."'";
+	$query = "SELECT * FROM $rushTableApps JOIN $rushTable ON $rushTableApps.email = $rushTable.Email AND $rushTableApps.email = '".$_GET["email"]."'";
 	$result = mysqli_query($con,$query);
-//	echo "SELECT * FROM $appsTable WHERE email = ".$_GET["email"]." JOIN $dataTable ON $appsTable.email = $dataTable.Email";
 
-//$query = "SELECT *
-//    FROM $usertable
-//    JOIN $eboardTable
-//    ON $usertable.firstName = $eboardTable.firstName AND $usertable.lastName = $eboardTable.lastName and $usertable.status = 'Active'
-//	ORDER BY $eboardTable.order";
+	$row = mysqli_fetch_array($result);
+	$firstName = $row["FirstName"];
+	$lastName = $row["LastName"];
+	$email = $row["Email"];
+	$phone = $row["Phone"];
+	$major = $row["Majors"];
+	$majorSchools = $row["MajorSchools"];
+	$grade = $row["Grade"];
+	$channel = $row["Channel"];
+	$info1 = $row["Info1"] ? "Yes" : "No";
+	$info2 = $row["Info2"] ? "Yes" : "No";
+	$event1 = $row["Fashion"] ? "Yes" : "No";
+	$event2 = $row["Professional"] ? "Yes" : "No";
+	$gpa = $row["gpa"];
+	$time = $row["timestamp"];
 
-	while($row = mysqli_fetch_object($result)) {
-		$firstName = $row->FirstName;
-		$lastName = $row->LastName;
-		$email = $row->Email;
-		$phone = $row->Phone;
-		$major = $row->Majors;
-		$majorSchools = $row->MajorSchools;
-		$grade = $row->Grade;
-		$channel = $row->Channel;
-		$info1 = $row->Info1 ? "Yes" : "No";
-		$info2 = $row->Info2 ? "Yes" : "No";
-		$prof = $row->Prof ? "Yes" : "No";
-		$bbq = $row->BBQ ? "Yes" : "No";
-		$gpa = $row->gpa;
-		$q1 = $row->q1_why;
-		$q2 = $row->q2_words;
-		$q3 = $row->q3_excite;
-		$q4 = $row->q4_orgs;
-		$q5 = $row->q5_work;
-		$q6 = $row->q6_goals;
-		$q7 = $row->q7_bro;
-		$q8 = $row->q8_brohood;
-		$q9 = $row->q9_second;
-		$q10 = $row->q10_hear;
-		$q11 = $row->q11_improve;
-		$time = $row->timestamp;
-		
-		$dir    = '/home/content/03/5577503/html/rush/rushPics/';
-		$files1 = scandir($dir);
-	}
+	$dir    = '/home/content/03/5577503/html/rush/rushPics/';
+	$files1 = scandir($dir);
 ?>
 
 
@@ -117,38 +97,34 @@
 					<p><strong>Channel: </strong><? echo $channel;?></p>
 					<p><strong>Info1: </strong><? echo $info1;?></p>
 					<p><strong>Info2: </strong><? echo $info2;?></p>
-					<p><strong>Professional Night: </strong><? echo $prof;?></p>
-					<p><strong>BBQ Social: </strong><? echo $bbq;?></p>
+					<p><strong>Fashion Night: </strong><? echo $event1;?></p>
+					<p><strong>Professional Workshops: </strong><? echo $event2;?></p>
 					<p><strong>Submitted At: </strong><? echo $time;?></p>
 				</td>
 			</tr>
 		</table>
 		<div class="applicationBody">
-				<p class="question">Why should Alpha Kappa Psi select you?</p>
-				<p><? echo $q1;?></p>
-				<p class="question">What are three words that describe you?</p>
-				<p><? echo $q2;?></p>
-				<p class="question">What excites you about your major?</p>
-				<p><? echo $q3;?></p>
-				<p class="question">What organizations are you involved with or planning on involving yourself with on campus?</p>
-				<p><? echo $q4;?></p>
-				<p class="question">What is your most notable work experience?</p>
-				<p><? echo $q5;?></p>
-				<p class="question">What are your goals for the next few years of college/post-college?</p>
-				<p><? echo $q6;?></p>
-				<p class="question">Please list two notable interactions you had with brothers throughout the recruitment process:</p>
-				<p><? echo $q7;?></p>
-				<p class="question">What does brotherhood mean to you?</p>
-				<p><? echo $q8;?></p>
-				<? if ($q9) {?>
-				<p class="question"><i>If this is not your first time applying</i>, what have you done to strengthen your candidacy?</p>
-				<? echo $q9;
-					} ?>
+			<?
+				foreach($appQuestions as $key => $question) {
+					if (isset($row["q".$key])) {
+			?>
+				<p class="question"><? echo $question[0]; ?></p>
+				<p><? echo $row["q".$key];?></p>
+			<?
+					}
+				}
+			?>
 				<div style="opacity:.5">
-					<p class="question">How did you hear about Alpha Kappa Psi's recruitment process?</p>
-					<p><? echo $q10;?></p>
-					<p class="question">What did you think of the recruitment events you attended? How do you think they could be improved?</p>
-					<p><? echo $q11;?></p>
+					<?
+						foreach($feedbackQuestions as $key => $question) {
+							if (isset($row["fb".$key])) {
+					?>
+						<p class="question"><? echo $question; ?></p>
+						<p><? echo $row["fb".$key];?></p>
+					<?
+							}
+						}
+					?>
 				</div>
 		</div>
 	</div>

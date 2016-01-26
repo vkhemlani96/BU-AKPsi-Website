@@ -1,59 +1,5 @@
 <?php
-//ini_set('display_errors', 1);
-//
-////foreach ($_POST as $key => $value)
-//// echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
-////echo $_POST["rushEmail"];
-//
-//foreach( $_POST as $stuff ) {
-//    if( is_array( $stuff ) ) {
-//        foreach( $stuff as $thing ) {
-//            echo $thing;
-//        }
-//    } else {
-//        echo $stuff;
-//    }
-//}
-//
-//if (isset($_POST["rushEmail"]) && isset($_POST["gpa"]) && isset($_POST['q1_why'])  && isset($_POST['q2_words'])  && isset($_POST['q3_excite']) && isset($_POST['q4_orgs']) && isset($_POST['q5_work']) && isset($_POST['q6_goals']) && isset($_POST['q7_bro']) && isset($_POST['q8_brohood']) && isset($_POST['q9_second']) && isset($_POST['q10_hear']) && isset($_POST['q11_improve']) ) {
-//	
-//include("db_credentials.php");
-//	
-////	gpa
-////q1_why
-////q2_words
-////q3_excite
-////q4_orgs
-////q5_work
-////q6_goals
-////
-////q7_bro
-////q8_brohood
-////q9_second
-////q10_hear
-////q11_improve
-//
-//	// Create connection
-//	$conn = new mysqli($hostname, $username, $password, $dbname);
-//	// Check connection
-//	if ($conn->connect_error) {
-//		die("Connection failed: " . $conn->connect_error);
-//	} 
-//
-//	$sql = "INSERT INTO $rushTableApps (rushEmail, rushGPA, q1_why, q2_words, q3_excite, q4_orgs, q5_work, q6_goals, q7_bro, q8_brohood, q9_second, q10_hear, q11_improve)
-//	VALUES ('" . $_POST["rushEmail"] . "', '" . $_POST["gpa"] . "', '" . $_POST["q1_why"] . "', '" . $_POST["q2_words"] . "', '" . $_POST["q3_excite"] . "', '" . $_POST["q4_orgs"] . "', '" . $_POST["q5_work"] . "', '" . $_POST["q6_goals"] . "', '" . $_POST["q7_bro"] . "', '" . $_POST["q8_brohood"] . "', '" . $_POST["q9_second"] . "', '" . $_POST["q10_hear"] . "', '" . $_POST["q11_improve"] . "')";
-//
-//	if ($conn->query($sql) === TRUE) {
-//		echo "New record created successfully";
-//	} else {
-////		echo "Error: " . $sql . "<br>" . $conn->error;
-//		if (strpos($conn->error,'Duplicate') !== false) {
-//			die('THIS USER ALREADY EXISTS');
-//		}
-//	}
-//
-//	$conn->close();
-//}
+include("application_questions.php");
 ?>
 
 <!DOCTYPE html>
@@ -165,36 +111,58 @@
 			
 			<div class="table_seperator" style="width: 66%"></div>
 			
-			<div class="vertical_padding">
-				<p><strong>Why should Alpha Kappa Psi select you?</strong></p>
-				<textarea name="q1_why"></textarea>
-				<p><strong>What are three words that describe you?</strong></p>
-				<textarea name="q2_words"></textarea>
-				<p><strong>What excites you about your major?</strong></p>
-				<textarea name="q3_excite"></textarea>
-				<p><strong>What organizations are you involved with or planning on involving yourself with on campus?</strong></p>
-				<textarea name="q4_orgs"></textarea>
-				<p><strong>What is your most notable work experience?</strong></p>
-				<textarea name="q5_work"></textarea>
-				<p><strong>What are your goals for the next few years of college/post-college?</strong></p>
-				<textarea name="q6_goals"></textarea>
-				<p><strong>Please list two notable interactions you had with brothers throughout the recruitment process:</strong></p>
-				<textarea name="q7_bro"></textarea>
-				<p><strong>What does brotherhood mean to you?</strong></p>
-				<textarea name="q8_brohood"></textarea>
-				<p><strong><i>If this is not your first time applying</i>, what have you done to strengthen your candidacy?</strong></p>
-				<textarea name="q9_second" class="notRequired"></textarea>
-			</div>
+<!--			
+2.       What are your two biggest strengths?
+
+3.       What are your academic interests?
+
+4.       What are you passionate about outside of academics?
+
+5.       What organizations are you involved with or planning on involving yourself with on campus?
+
+6.       Describe your past work experience:
+
+7.       What are your professional goals and how do you hope to reach them?
+
+8.       Define what brotherhood means to you.
+
+9.       Please list two notable interactions you had with brothers throughout the recruitment process:
+
+10.   If this is not your first time applying, what have you done to strengthen your candidacy?
+
+-->
+		
+		<div class="vertical_padding">
+			<?
+				foreach($appQuestions as $count => $question) {
+			?>
+				<p><strong><? echo $question[0] ?></strong></p>
+				<textarea name="q<? echo $count; ?>" <? if (isset($question["isRequired"]) && !$question["isRequired"]) {echo 'class="notRequired"';}?>></textarea>
+			<?
+				}
+			?>
+		</div>
 			
 			<div class="table_seperator" style="width: 66%"></div>
 			
 			<div class="vertical_padding">
 				<p style="color: black; text-align:center"><i><strong>The following questions will have no affect on your candidacy.</strong></i></p>
 				<br><br>
+				
+				<?
+					foreach($feedbackQuestions as $count => $question) {
+				?>
+					<p><strong><? echo $question?></strong></p>
+					<textarea name="fb<? echo $count; ?>"></textarea>
+				<?
+					}
+				?>
+<!--
 				<p><strong>How did you hear about Alpha Kappa Psi's recruitment process?</strong></p>
 				<textarea name="q10_hear"></textarea>
 				<p><strong>What did you think of the recruitment events you attended? How do you think they could be improved?</strong></p>
 				<textarea name="q11_improve"></textarea>
+-->
 			</div>
 			
 			<div style="text-align:center; margin-bottom: 35px;">
