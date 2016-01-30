@@ -263,12 +263,10 @@ include("application_questions.php");
 			}
 		});
 		
-		$("textarea").click(function() {
-			console.log("fskldmfd");
+		$("textarea").focus(function() {
 			$( this ).prev().css( "color", "#000033" );
 		});
-		$("#rushPic").click(function() {
-			console.log("fskldmfd");
+		$("#rushPic").focus(function() {
 			$( this ).prev().css( "color", "#000033" );
 		});
 		

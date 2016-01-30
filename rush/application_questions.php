@@ -16,7 +16,7 @@ $appQuestions = array(
 		"What organizations are you involved with or planning on involving yourself with on campus?"
 	),
 	array(
-		"Describe your past work experience:"
+		"If you've had any past work experience, please describe below:"
 	),
 	array(
 		"What are your professional goals and how do you hope to reach them?"
@@ -28,7 +28,7 @@ $appQuestions = array(
 		"Please list two notable interactions you had with brothers throughout the recruitment process:"
 	),
 	array(
-		"<i>If this is not your first time applying</i>, what have you done to strengthen your candidacy?",
+		"<i>If this is not your first time applying</i>, what have you done to strengthen your candidacy? Otherwise, write N/A.",
 		"isRequired" => false
 	),
 );

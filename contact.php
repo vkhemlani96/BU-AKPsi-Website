@@ -1,6 +1,6 @@
 <?php 
 
-$sendEmail = $_REQUEST["messageEmail"] != null;
+$sendEmail = $_REQUEST["messageEmail"] != null && $_SERVER["REMOTE_ADDR"] != "146.185.234.48";
 
 $to      = 'akpsi.nu.outreach@gmail.com';
 $subject = $_REQUEST["messageSubject"] . " - buakpsi.com";
