@@ -1,5 +1,5 @@
 <?php
-	include("/home/content/03/5577503/html/rush/password_protect.php");
+	include("/home/content/03/5577503/html/rush/password_protect_cookie.php");
 
 	include("../manage_db/db_credentials.php");
 	include("application_questions.php");
@@ -82,6 +82,7 @@
 			<tr>
 				<td>
 					<img src="http://buakpsi.com/rush/rushPics/<?
+		
 		foreach ($files1 as $value) {
 			$img = strpos(".".$value, str_replace("@bu.edu","",$email)) ? $value : $image;
 			echo $img;

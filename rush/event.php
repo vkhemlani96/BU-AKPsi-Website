@@ -48,18 +48,16 @@ switch ($event) {
 	case "Professional":
 		$title = "Professional Workshops";
 		break;
-//	case "Trivia":
-//		$title = "Fashion Night";
-//		break;
-//	case "Professional":
-//		$title = "Professional Workshops";
-//		break;
+	case "Trivia":
+		$title = "Trivia Night";
+		break;
+	case "Mocktail":
+		$title = "Mocktail Night";
+		break;
 	default:
 		die('NO Event PROVIDED
-		<p><a href="http://www.buakpsi.com/rush/event.php?event=Info1">Infosession 1</a></p>
-		<p><a href="http://www.buakpsi.com/rush/event.php?event=Info2">Infosession 2</a></p>
-		<p><a href="http://www.buakpsi.com/rush/event.php?event=Fashion">Fashion Night</a></p>
-		<p><a href="http://www.buakpsi.com/rush/event.php?event=Professional">Professional Workshops</a></p>');
+		<p><a href="http://www.buakpsi.com/rush/event.php?event=Trivia">Trivia Night</a></p>
+		<p><a href="http://www.buakpsi.com/rush/event.php?event=Mocktail">Mocktail Night</a></p>');
 }
 
 ?>

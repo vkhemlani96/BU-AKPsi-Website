@@ -1,6 +1,36 @@
 <?php
 $clients = array(
 	array(
+		"Poly6",
+		"Spring 2016",
+		"Poly6 is combating environmental destruction by introducing high performance sustainable materials to society. As the performance of new sustainable materials improves, sustainable materials will see increased adoption, and Poly6 is strategically poised to enter the materials industry with its high performance citrus-derived bioplastic product Citrene&trade;. ",
+		"http://www.poly6.com/"
+	),
+	array(
+		"Spotlight Parking",
+		"Spring 2016",
+		"SpotLight Parking is a platform that enables national parking operators to put their valets and premium parking spots on-demand so that drivers can reserve them through the SpotLight Parking mobile application. SpotLight is breaking into the $25 Billion smart parking industry by first offering a premium parking service to drivers that allows them to reserve valet parking and premium garage parking in advance. ",
+		"http://www.spotlightparking.com/"
+	),
+	array(
+		"Bedly",
+		"Fall 2015",
+		"Bedly is transforming the way people live by providing renters with a housing experience built for the 21st century. Bedly offers the simplicity and flexibility that helps empower people to live on their own terms. By streamlining everything from the apartment search to the living experience Bedly is providing on-demand housing that saves people time and effort so they can focus on what they do best. ",
+		"https://bedly.co/"
+	),
+	array(
+		"DoDoc",
+		"Fall 2015",
+		"DoDoc is a full document creation and management platform to help generate reports more quickly and cost-effectively. The tool helps businesses maintain workflow capabilities by keeping historical records and allows multiple editors to access documents together. With Microsoft and Google integration, businesses can update all reports with ease. ",
+		"https://www.dodoc.com/"
+	),
+	array(
+		"FuelDrop",
+		"Fall 2015",
+		"FuelDrop is an up and coming start-up that formed out of MIT in the greater Boston area. They are a new kind of fuel delivery service, that is going to revolutionize the current archaic method of getting gas for our cars. With their soon-to-be available app, you will be able to order gasoline for your car at the touch of a button on demand. With fueldrop, you won't ever have to worry about running low on gas again. ",
+		"http://www.myfueldrop.com/"
+	),
+	array(
 		"Bookity (formerly name EdTrips)",
 		"Spring 2015",
 		"Bookity is an online platform designed to allow activity providers, including museums and historic sites, accept group reservations in an efficient, affordable and digital way. EdTrips automates the entire process, removing any room for error and making it easy for workers to collaborate and for businesses to collect payments securely. ",
