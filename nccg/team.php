@@ -14,7 +14,7 @@ $query = "SELECT *
     FROM $usertable
     JOIN $nccgtable
     ON $usertable.firstName = $nccgtable.firstName AND $usertable.lastName = $nccgtable.lastName
-	ORDER BY field($nccgtable.position, 'Executive Director', 'Director of Consulting', 'Engagement Manager', 'Associate'), 					$nccgtable.lastName";
+	ORDER BY field($nccgtable.position, 'Executive Director', 'Associate Director', 'Program Manager', 'Secretary', 'Engagement Manager', 'Associate'), $nccgtable.lastName";
 
 
 $result = mysqli_query($link, $query);
