@@ -40,9 +40,7 @@
 			<p style="text-align:center; padding-bottom: 80px;"><a href="rush/" class="button_gold">Rush Alpha Kappa Psi</a></p>
 		</div>
 	</div>
--->
 	
-<!--REMOVE the follow to return to rush theme-->
 	<style>
 		#navbar {
 			background-color: rgba(0,0,0,0);
@@ -77,19 +75,20 @@
 			position: relative;	
 		}
 	</style>
+-->
 	
 	<div id="banner">
 		<div style="position: absolute; z-index: 1; top: 190px; left: 0; right: 0;">
-<!--
 			<h5 class="banner_text">The International Co-Ed Professional Business Fraternity</h5>
 			<div style="position: absolute; z-index: 10; width: inherit; top: 160px;left: 0; right: 0">
 				<p style="text-align:center"><a href="./about.php" class="button_gold">Learn More</a></p>
 			</div>
--->
+<!--
 			<h5 class="banner_text">Aspire. Accelerate. Achieve.</h5>
 			<div style="position: absolute; z-index: 10; width: inherit; top: 160px;left: 0; right: 0">
 				<p style="text-align:center"><a href="./rush/index.php" class="button_gold">Rush Alpha Kappa Psi</a></p>
 			</div>
+-->
 		</div>
 		<div id="overlay"></div>
 		<video autoplay="autoplay" loop="loop" src="img/index_video_2.mov" style="width: 100vw" muted></video>
