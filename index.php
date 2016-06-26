@@ -40,6 +40,7 @@
 			<p style="text-align:center; padding-bottom: 80px;"><a href="rush/" class="button_gold">Rush Alpha Kappa Psi</a></p>
 		</div>
 	</div>
+-->
 	
 	<style>
 		#navbar {
@@ -75,7 +76,6 @@
 			position: relative;	
 		}
 	</style>
--->
 	
 	<div id="banner">
 		<div style="position: absolute; z-index: 1; top: 190px; left: 0; right: 0;">
