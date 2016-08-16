@@ -12,13 +12,13 @@ $advisors = array(
 		"Associate Professor, Organizational Behavior Department; Director of the Executive Development Roundtable",
 		"Dr. Jack McCarthy is an Associate Professor of Organizational Behavior in the School of Management at Boston University, where he also serves as the Director of the Executive Development Roundtable, a major consortium and research center on leadership. His research interests are in leadership, organizational change and global sustainability, and he teaches courses on leadership and organizational behavior in the undergraduate, MBA, international and executive programs. Additionally, he designs and leads a year-long seminar series on leadership for the Hubert H. Humphrey Fellowship Program at Boston University, comprised of mid-career professionals and scholars from developing nations studying in the United States. He also serves as the Faculty Director for the university's core undergraduate Organizational Behavior course. His work has been published in leading journals and he is a frequent speaker on leadership at academic and professional conferences in the US and abroad. With over fifteen years in corporate finance in several large firms as a financial analyst, manager, and senior executive prior to his career transition into academia, Dr. McCarthy draws heavily upon his real-world management and leadership experience in his teaching and research. He also serves as a leadership development consultant for executives and senior management teams in various industries. He was previously an Assistant Professor at the University of New Hampshire, where he launched and led the undergraduate business program at the university's urban campus in Manchester, NH and was the recipient of the college-wide 2005 Teaching Excellence Award. Having taught for three summers in residence in China, he received the 2009 Faculty of the Year Award from the International MBA Cohort at Boston University. In addition, he was selected to deliver the 2011 Faculty Address for the School of Management's Convocation Ceremony for its Bachelor's degree candidates as part of Boston University's 138th Commencement Exercises. Most recently, Dr. McCarthy received the 2012 Broderick Prize for Excellence in Teaching at the Boston University School of Management, the school's highest honor for teaching.<br><br>
 In addition to a DBA in Organizational Behavior from the Graduate School of Management at Boston University, he received an MBA with a concentration in Finance from Babson College, and a BA in Economics from the University of Massachusetts at Amherst. A native Bostonian, and an alumnus of The Boston Latin School, Jack is an avid Boston sports fan and still plays competitive ice hockey, although at an increasingly less competitive pace."
-	),,
+	),
 	array(
 		"Morrison",
 		"Paul",
 		"Assistant Professor, Operations and Technology Management",
 		""
-	)
+	),
 	array(
 		"Wilson",
 		"Raymond",
