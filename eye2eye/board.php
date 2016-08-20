@@ -1,4 +1,4 @@
-	<?php
+<?php
 
 ini_set('display_errors', 1);
 
@@ -34,7 +34,7 @@ $result = mysqli_query($link, $query);
 	<?php include("../navbar.php"); getNavbar(true); ?>
 	
 	<div class="vertical_padding title_section">
-		<h1>Board of Director</h1>
+		<h1>Board of Directors</h1>
 		<div class="seperator"></div>
 		<h2>Eye2Eye</h2>
 	</div>

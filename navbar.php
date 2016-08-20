@@ -2,15 +2,15 @@
 function getNavbar($small) {
 	$text = $small ? "_small" : "";
 	$left = $small ?
-		array("-20px", "-34px"):
-		array("426px", "647px");
+		array("-20px", "-34px", "-24px"):
+		array("426px", "647px", "");
 	$sep = $small ? "" : "<div class=\"gold_seperator\" style=\"margin-top:0px; margin-bottom:0px;\"></div>";
 	
 	$prefix = "";
 	if (strpos($_SERVER["DOCUMENT_ROOT"],"var") !== false)
 		$prefix = "http://www.buakpsi.com"; 
 	else
-		$prefix = "http://localhost:8888/BU%20AKPsi%20New";
+		$prefix = "http://localhost:8888/BU%20AKPsi";
 
 	include_once("analyticstracking.php");
 	echo "
@@ -46,6 +46,16 @@ function getNavbar($small) {
 							</ul>
 						</div>
 						<p><a href=\"$prefix/nccg/\">NCCG</a></p>
+					</li><li style=\"display:none\">
+						<div class=\"dropdown\" style=\"left:$left[2]\">
+							<div class=\"arrow-up\"></div>
+							<ul>
+								<li><p><a href=\"$prefix/eye2eye/\">About</a></p></li>
+								<li><p><a href=\"$prefix/eye2eye/board.php\">Board of Directors</a></p></li>
+								<li><p><a href=\"https://crowdfunding.bu.edu/project/2626/donate\">Donate Now</a></p></li>
+							</ul>
+						</div>
+						<p><a href=\"$prefix/eye2eye/\">Eye2Eye</a></p>
 					</li><li>
 						<p><a href=\"$prefix/faq.php\">FAQ</a></p>
 					</li><li>
