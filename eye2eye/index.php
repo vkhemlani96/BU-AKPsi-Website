@@ -38,8 +38,9 @@
 				The research continues and the issue of gender inequality is undeniable; something needs to happen. Eye2Eye is fully committed to continue collecting research and help raise awareness on the issue. With our annual conference, we aim to invite professionals from all industries from over the country to talk, discuss, and highlight some of the issues they have faced and noticed as well as how they work to combat this epidemic. Besides the conference, our team will be working hard to research different industries and gender inequality specific to Boston University. If our research is informational and unique, we hope to expand to other universities and help lead the gender inequality research platform among colleges throughout the United States.
 				<br><br>
 				Eye2Eye wants to see a fairer, more equal and just workforce, where hard work, talent, and determination are the main measures of success. In order to achieve our milestones, we need your help. With your support, we can develop a platform that fosters change and raises the awareness that has been mute in many communities. Please help us spread our mission by sharing our website and spreading our name. Additionally, please consider donating to our fund to help us create a meaningful and impactful conference; every dollar helps tremendously. We thank you for your support!
+				<br><br>
 			</p>
-			<p style="text-align:center">
+			<p style="text-align:center;">
 				<a target="_blank" href="https://crowdfunding.bu.edu/project/2626/donate" class="button">Give Now</a>
 			</p>
 
