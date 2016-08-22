@@ -41,7 +41,7 @@
 				<br><br>
 			</p>
 			<p style="text-align:center;">
-				<a target="_blank" href="https://crowdfunding.bu.edu/project/2626/donate" class="button">Give Now</a>
+				<a target="_blank" href="https://www.gofundme.com/eye2eye" class="button">Give Now</a>
 			</p>
 
 		</div>
