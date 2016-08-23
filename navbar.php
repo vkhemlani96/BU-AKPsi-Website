@@ -52,7 +52,7 @@ function getNavbar($small) {
 							<ul>
 								<li><p><a href=\"$prefix/eye2eye/\">About</a></p></li>
 								<li><p><a href=\"$prefix/eye2eye/board.php\">Board of Directors</a></p></li>
-								<li><p><a href=\"$prefix/eye2eye/donate.php">Donate Now</a></p></li>
+								<li><p><a href=\"$prefix/eye2eye/donate.php\" target=\"_blank\">Donate Now</a></p></li>
 							</ul>
 						</div>
 						<p><a href=\"$prefix/eye2eye/\">Eye2Eye</a></p>
