@@ -32,7 +32,7 @@ function getNavbar($small) {
 						<p><a href=\"$prefix/brothers/\">Brothers</a></p>
 					</li><li>
 					<p><a href=\"$prefix/rush/\" style=\"color:#bda75d\">Rush</a></p>
-					</li><li>
+					</li><li style=\"display:none\">
 					<p><a href=\"$prefix/elevate.php\">Elevate</a></p>
 					</li><li>
 						<div class=\"dropdown\" style=\"left:$left[1]\">
@@ -46,7 +46,7 @@ function getNavbar($small) {
 							</ul>
 						</div>
 						<p><a href=\"$prefix/nccg/\">NCCG</a></p>
-					</li><li style=\"display:none\">
+					</li><li>
 						<div class=\"dropdown\" style=\"left:$left[2]\">
 							<div class=\"arrow-up\"></div>
 							<ul>
