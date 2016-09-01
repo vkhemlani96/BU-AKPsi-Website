@@ -31,7 +31,7 @@ function getNavbar($small) {
 						</div>
 						<p><a href=\"$prefix/brothers/\">Brothers</a></p>
 					</li><li>
-					<p><a href=\"$prefix/rush/under_construction.php\" style=\"color:#bda75d\">Rush</a></p>
+					<p><a href=\"$prefix/rush/\" style=\"color:#bda75d\">Rush</a></p>
 					</li><li style=\"display:none\">
 					<p><a href=\"$prefix/elevate.php\">Elevate</a></p>
 					</li><li>
