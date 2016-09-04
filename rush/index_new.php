@@ -34,9 +34,9 @@
 		var info2Marker;
 		var event1Marker;
 //		var event2Marker;
-		var infosession1 = new google.maps.LatLng(42.3515275,-71.116772);
-		var infosession2 = new google.maps.LatLng(42.3500514,-71.106023);
-		var event1 = new google.maps.LatLng(42.3508611,-71.1111331);
+		var infosession1 = new google.maps.LatLng(42.351352, -71.114652);
+		var infosession2 = new google.maps.LatLng(42.350146, -71.103902);
+		var event1 = new google.maps.LatLng(42.350960, -71.108859);
 //		var event2 = new google.maps.LatLng(42.3498181,-71.1078257);
 //		var LatLngList = new Array(infosession1, infosession2, profNight, social);
 		var bounds = new google.maps.LatLngBounds();
@@ -215,7 +215,7 @@
 					<h2><strong>Coffeehouse</strong> Saturday, Sept. 17</h2>
 <!--					<h4 style="padding-bottom: 6px"><strong>Presented by Ann Taylor and Ministry of Supply</strong></h4>-->
 					<h4>GSU Backcourt | 4-6 PM</h4>
-					<p style="margin-top: 20px;">Our Coffeehouse event is an “open mic night” style event, which will feature performers from the brotherhood, and any prospective applicants who would like to participate. It will be a casual setting for you to interact with the brotherhood.</p>
+					<p style="margin-top: 20px;">Our Coffeehouse event is an "open mic night" style event, which will feature performers from the brotherhood, and any prospective applicants who would like to participate. It will be a casual setting for you to interact with the brotherhood.</p>
 				</div>
 				<div class="col-md-5">
 					<h2><strong>Professional Night</strong> Thursday, Sept. 15</h2>
