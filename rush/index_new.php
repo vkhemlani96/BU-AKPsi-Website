@@ -34,12 +34,15 @@
 		var info2Marker;
 		var event1Marker;
 //		var event2Marker;
-		var infosession1 = new google.maps.LatLng(42.349639,-71.0995457);
-		var infosession2 = new google.maps.LatLng(42.3498181,-71.1078257);
-		var event1 = new google.maps.LatLng(42.3508572,-71.1089444);
+		var infosession1 = new google.maps.LatLng(42.3515275,-71.116772);
+		var infosession2 = new google.maps.LatLng(42.3500514,-71.106023);
+		var event1 = new google.maps.LatLng(42.3508611,-71.1111331);
 //		var event2 = new google.maps.LatLng(42.3498181,-71.1078257);
 //		var LatLngList = new Array(infosession1, infosession2, profNight, social);
-//		var bounds = new google.maps.LatLngBounds ();
+		var bounds = new google.maps.LatLngBounds();
+		bounds.extend(infosession1);
+		bounds.extend(infosession2);
+		bounds.extend(event1);
 //		//  Go through each...
 //		for (var i = 0, LtLgLen = LatLngList.length; i < LtLgLen; i++) {
 //		  //  And increase the bounds to take this point
@@ -47,13 +50,13 @@
 //		}
 		
 		var info1Window = new google.maps.InfoWindow({
-			content: "<div class='text-center'><strong>Info Session I</strong><br>Questrom 105</div>"
+			content: "<div class='text-center'><strong>Info Session I, Professional Night</strong><br>CGS 129</div>"
 		});
 		var info2Window = new google.maps.InfoWindow({
-			content: "<div class='text-center'><strong>Info Session II, Professional Workshops</strong><br>PHO 206</div>",
+			content: "<div class='text-center'><strong>Info Session II</strong><br>STO B50</div>",
 		});
 		var event1Window = new google.maps.InfoWindow({
-			content: "<div class='text-center'><strong>Fashion Night</strong><br>Metcalf Ballroom</div>"
+			content: "<div class='text-center'><strong>Coffeehouse</strong><br>GSU Backcourt</div>"
 		});
 //		var event2Window = new google.maps.InfoWindow({
 //			content: "<div class='text-center'><strong>Professional Workshops</strong><br>PHO 206</div>"
@@ -70,17 +73,17 @@
 			info1Marker = new google.maps.Marker({
 				position: infosession1,
 				map: map,
-				title: 'Info Session I (Questrom)'
+				title: 'Info Session I, Professional Night (CGS)'
 			});
 			info2Marker = new google.maps.Marker({
 				position: infosession2,
 				map: map,
-				title: 'Info Session II, Professional Night (PHO)'
+				title: 'Info Session II (STO)'
 			});
 			event1Marker = new google.maps.Marker({
 				position: event1,
 				map: map,
-				title: 'Fashion Night (Metcalf Ballroom)'
+				title: 'Coffeehouse (GSU Backcourt)'
 			});
 //			event2Marker = new google.maps.Marker({
 //				position: event2,
@@ -92,6 +95,8 @@
 			info2Window.open(map,info2Marker);
 			event1Window.open(map,event1Marker);
 //			event2Window.open(map,event2Marker);
+			
+			map.fitBounds(bounds);
 
 		}
 
@@ -127,20 +132,24 @@
 		</div>
 		
 		<div class="row vertical_padding">
-			<div class="col-md-4 col-md-offset-2">
+			<div class="col-md-4 col-md-offset-4">
 				<a href="signup.php?source=web" style="text-decoration: none"><p class="button text-center">Sign up for Recruitment!</p></a>
 			</div>
+<!--
 			<div class="col-md-4">
 				<a href="application.php" style="text-decoration: none"><p class="button text-center">Fill out our Application!</p></a>
 			</div>
+-->
 		</div>
 		
+<!--
 		<div class="row vertical_padding" style="padding-top: 0px">
 			<div class="col-md-6 col-md-offset-3">
-<!--				<iframe width="560" height="315" src="https://www.youtube.com/embed/sju8yD9JJLU" frameborder="0" allowfullscreen style="width:560px; margin: 0 auto;"></iframe></p>-->
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/sju8yD9JJLU" frameborder="0" allowfullscreen style="width:560px; margin: 0 auto;"></iframe></p>
 		<div id="fb-root"></div><script>(function(d, s, id) {  var js, fjs = d.getElementsByTagName(s)[0];  if (d.getElementById(id)) return;  js = d.createElement(s); js.id = id;  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";  fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script><div class="fb-video" data-allowfullscreen="1" data-href="/buakpsi/videos/vb.332191163535/10153853410268536/?type=3"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/buakpsi/videos/10153853410268536/"><a href="https://www.facebook.com/buakpsi/videos/10153853410268536/">Spring Recruitment Infographic Video</a><p>Aspire. Accelerate. Achieve. RUSH ALPHA KAPPA PSISpring Recruitment 2016</p>Posted by <a href="https://www.facebook.com/buakpsi/">Alpha Kappa Psi &#064; Boston University</a> on Friday, January 22, 2016</blockquote></div></div>
 			</div>
 		</div>
+-->
 		
 <!--
 		<div class="row" style="background-color: #000033">
@@ -181,14 +190,14 @@
 			<div class="vertical_padding">
 				<div class="row">
 					<div class="col-md-5 col-md-offset-1">
-						<h2><strong>Info Session I</strong> Tuesday, Jan. 26</h2>
+						<h2><strong>Info Session I</strong> Monday, Sept. 12</h2>
 <!--						<h4 style="padding-bottom: 5px;"><strong>Presented by Pinch</strong></h4>-->
-						<h4>Questrom 105 | 6-8PM</h4>
+						<h4>CGS 129 | 6-8 PM</h4>
 					</div>
 					<div class="col-md-5">
-						<h2><strong>Info Session II</strong> Wednesday, Jan. 27</h2>
+						<h2><strong>Info Session II</strong> Tuesday, Sept. 13</h2>
 <!--						<h4 style="padding-bottom: 5px;"><strong>Presented by Fundraise.com</strong></h4>-->
-						<h4>PHO 206 | 6-8PM</h4>
+						<h4>STO B50 | 6:30-8:30 PM</h4>
 					</div>
 				</div>
 				<div class="row" style="margin-top:20px;">
@@ -203,16 +212,16 @@
 			
 			<div class="row vertical_padding">
 				<div class="col-md-5 col-md-offset-1">
-					<h2><strong>Fashion Night</strong> Saturday, Jan. 30</h2>
+					<h2><strong>Coffeehouse</strong> Saturday, Sept. 17</h2>
 <!--					<h4 style="padding-bottom: 6px"><strong>Presented by Ann Taylor and Ministry of Supply</strong></h4>-->
-					<h4>Metcalf Ballroom | 7-9PM</h4>
-					<p style="margin-top: 20px;">Fashion Night will consist of a fashion show from multiple sponsors of our recruitment process with brothers modeling the outfits. The purpose of the event is to explain the fundamentals of professional attire for every purpose from interviews to everyday business casual and more. At the end of the event, you will again have the opportunity to network with brothers that are in attendance! <i>Cocktail attire is required.</i></p>
+					<h4>GSU Backcourt | 4-6 PM</h4>
+					<p style="margin-top: 20px;">Our Coffeehouse event is an “open mic night” style event, which will feature performers from the brotherhood, and any prospective applicants who would like to participate. It will be a casual setting for you to interact with the brotherhood.</p>
 				</div>
 				<div class="col-md-5">
-					<h2><strong>Professional Workshops</strong> Monday, Feb. 1</h2>
+					<h2><strong>Professional Night</strong> Thursday, Sept. 15</h2>
 <!--					<h4 style="padding-bottom: 6px;"><strong>Presented By Luvo</strong></h4>-->
-					<h4>PHO 206 | 6-8PM</h4>
-					<p style="margin-top:20px;">Professional Workshops will consist of multiple mini-workshops that will explain the how-to's and important tips for building resumes, cover letters, and public speaking. Following the workshops there will be a speaker series consisting of brothers and Alpha Kappa Psi alumni to discuss their experiences at Boston University, their career aspirations, and more. After this, the room will open up for more networking so that we can learn more about each of you! <i>Business casual attire is required.</i></p>
+					<h4>CGS 129 | 6-8 PM</h4>
+					<p style="margin-top:20px;">Professional Night will include a brief speech from one of our faculty brothers, presentations from our consulting group, NCCG, and our gender equality non-profit, Eye2Eye. Following the presentation, a panel of senior brothers will answer questions and share their experiences in Alpha Kappa Psi and business. At the end of the event, you will have an opportunity to network with the brothers in attendance. <i>Business casual attire is required.</i></p>
 				</div>
 			</div>
 			
