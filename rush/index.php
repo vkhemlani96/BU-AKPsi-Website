@@ -121,7 +121,7 @@
 			<div class="title_section vertical_padding col-md-12">
 				<h1>Rush Alpha Kappa Psi</h1>
 				<div class="seperator"></div>
-				<h2>Aspire. Accelerate. Achieve.</h2>
+				<h2>STAND OUT</h2>
 			</div>
 		</div>
 		
