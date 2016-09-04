@@ -1,3 +1,10 @@
+<?php
+
+include("/home/content/03/5577503/html/rush/password_protect_cookie.php");
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +43,6 @@
 </head>
 
 <?php
-include("/home/content/03/5577503/html/rush/password_protect_cookie.php");
 
 include("../manage_db/db_credentials.php");
 
