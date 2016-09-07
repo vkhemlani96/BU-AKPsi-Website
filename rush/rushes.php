@@ -129,7 +129,8 @@ while($row = mysqli_fetch_array($result)) {
 echo "</table>";
 
 	
-$result = mysqli_query($con,"SELECT * FROM $rushTable ORDER BY `InvitedToClosed` DESC, `AppSubmitted` DESC, `LastName`");
+//$result = mysqli_query($con,"SELECT * FROM $rushTable ORDER BY `InvitedToClosed` DESC, `AppSubmitted` DESC, `LastName`");
+$result = mysqli_query($con,"SELECT * FROM $rushTable ORDER BY `Sign Up Time`");
 
 echo "<table id='table' class='mdl-data-table mdl-js-data-table mdl-shadow--2dp' style='margin:10px'>
 <tr>
