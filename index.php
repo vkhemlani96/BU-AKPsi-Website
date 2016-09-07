@@ -51,8 +51,9 @@ Padding required below in order to make sure it doesn't fall on blue-white borde
 
 			#banner {
 				height: 90vh !important;
+				height: 585px !important;
 				overflow: hidden;
-				background-color: rgba(0,0,51,.7);
+				/*				background-color: rgba(0,0,51,.7);*/
 				position: relative
 			}
 
@@ -75,37 +76,80 @@ Padding required below in order to make sure it doesn't fall on blue-white borde
 			#about {
 				position: relative;	
 			}
+
+			#rush_theme {
+				margin-top: 160px;
+				background-color: #000033;
+				text-align: center;
+				/*
+				display: table-cell;
+				vertical-align: middle;
+				*/
+			}
+
+			#rush_theme h2 {
+				margin: 0 auto;
+				width: 1480px;
+				max-width: 1480px;
+				font-family: 'Bebas Neue';
+				font-weight: bold;
+				font-size: 80px;
+			}
+
+			#rush_theme h2 a {
+				color: rgba(255, 255, 255, .2)
+			}
+
+			#rush_theme > div {
+				position: absolute;
+				top: 160px;
+				height: 425px;
+				width: 100vw;
+				display: none;
+				opacity: 0;
+				background-color: rgba(0, 0, 51, .9);
+			}
+
+			#rush_theme > div > div {
+				height: 425px;
+				width: 100vw;
+				display: table-cell;
+				vertical-align: middle;
+			}
+
+			#rush_theme h1 {
+				color: white;
+				margin-top: 0;
+				font-size: 180px;
+			}
 		</style>
 
-		<div id="banner">
-			<div style="position: absolute; z-index: 1; top: 190px; left: 0; right: 0;">
-				<h5 class="banner_text">The International Co-Ed Professional Business Fraternity</h5>
-				<div style="position: absolute; z-index: 10; width: inherit; top: 160px;left: 0; right: 0">
-					<p style="text-align:center"><a href="./about.php" class="button_gold">Learn More</a></p>
-				</div>
-				<!--
-<h5 class="banner_text">Aspire. Accelerate. Achieve.</h5>
+		<!--
+<div id="banner">
+<div style="position: absolute; z-index: 1; top: 190px; left: 0; right: 0;">
+<h5 class="banner_text">The International Co-Ed Professional Business Fraternity</h5>
 <div style="position: absolute; z-index: 10; width: inherit; top: 160px;left: 0; right: 0">
-<p style="text-align:center"><a href="./rush/index.php" class="button_gold">Rush Alpha Kappa Psi</a></p>
+<p style="text-align:center"><a href="./about.php" class="button_gold">Learn More</a></p>
+</div>
+</div>
+<div id="overlay"></div>
+<video autoplay="autoplay" loop="loop" src="img/index_video_2.mov" style="width: 100vw" muted></video>
 </div>
 -->
+		<div id="banner">
+			<div id="rush_theme">
+				<h2><a>Omega&emsp;</a><a class="stand_out">Alpha</a><a>&emsp;Beta&emsp;Gamma&emsp;Delta&emsp;Epsilon&emsp;Zeta&emsp;Eta&emsp;Theta&emsp;Iota&emsp;</a><a class="stand_out">Kappa</a><a>&emsp;Lambda&emsp;Mu&emsp;Nu&emsp;Xi&emsp;Omicron&emsp;Pi&emsp;Rho&emsp;Sigma&emsp;Tau&emsp;Upsilon&emsp;Phi&emsp;Chi&emsp;</a><a class="stand_out">Psi</a><a>&emsp;Omega&emsp;Alpha&emsp;Beta&emsp;Gamma&emsp;Delta&emsp;Epsilon&emsp;Zeta&emsp;Eta&emsp;Theta&emsp;Iota</a></h2>
+
+				<div>
+					<div>
+						<h1>STAND OUT</h1>
+						<p style="text-align:center"><a href="./about.php" class="button_gold">Rush Alpha Kappa Psi</a></p>
+					</div>
+				</div>
 			</div>
-			<div id="overlay"></div>
-			<video autoplay="autoplay" loop="loop" src="img/index_video_2.mov" style="width: 100vw" muted></video>
 		</div>
 		<!--END RETURN-->
 
-		<!--
-<div id="about" class="center">
-<img src="img/index_coat_of_arms_large.png">
-<div>
-<h2>About Alpha Kappa Psi</h2>
-<div class="seperator"></div>
-<p class="width:800px">In 1904, Alpha Kappa Psi was founded on the principles of educating its members and the public to appreciate and demand higher ideals in business and to further the individual welfare of members during college and beyond. College men and women everywhere are discovering that Alpha Kappa Psi is much more than just another organization or club—it is a unique, prestigious association of students, professors, graduates and professionals with common interests and goals. They join Alpha Kappa Psi to take advantage of valuable educational, friendship and networking opportunities.</p>
-</div>
-
-</div>
--->
 		<div id="about" class="center">
 			<table>
 				<tr>
@@ -187,21 +231,21 @@ Padding required below in order to make sure it doesn't fall on blue-white borde
 	</body>
 
 	<script>
-		//Changes Text at the end of the banner line
-		var bannerChangeDelay = 500;
-		$(".banner_change").delay(bannerChangeDelay).fadeOut(function() {
-			$(this).text("successful.");
-		}).fadeIn().delay(bannerChangeDelay).fadeOut(function() {
-			$(this).text("yourself.");
-		}).fadeIn().delay(bannerChangeDelay).fadeOut(function() {
-			$(this).text("remarkable.");
-		}).fadeIn(function() {
-			var textPadding = ($("#banner > div").width() - $("#banner h5").width())/2 + "px";
-			$("#banner h5").delay(350).animate({
-				color: "#bda75d",
-				'padding-left': textPadding
-			});
-		})
+		$("#rush_theme h2 a.stand_out").each(function(index) {
+			var anchor = $(this);
+			setTimeout(function() {
+				console.log(anchor.css("color"));
+				anchor.animate({
+					color: "white"
+				}, 400);
+			}, index * 800)
+		});
+		setTimeout(function() {
+			$("#rush_theme > div").css("display", "block");
+			$("#rush_theme > div").animate({
+				opacity: 1
+			}, 500);
+		}, 2700)
 
 		//Counter to go throw array containing image links
 		var imgCellIndex = 1;
@@ -251,13 +295,13 @@ Padding required below in order to make sure it doesn't fall on blue-white borde
 		setTimeout(function() {
 			$(".dropdown").each(function(index){
 				$(this).css("left", "0");
-				
+
 				var parent = $(this).parent();
 				var parentLeft = parent.offset().left;
 				var parentRight = parentLeft + parent.outerWidth();
 				var parentCenter = (parentLeft + parentRight)/2;
 				var newOffset = $(this).offset();
-				
+
 				newOffset.top = 0;
 				newOffset.left = parentCenter - $(this).outerWidth()/2;
 				$(this).offset(newOffset);
