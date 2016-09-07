@@ -237,15 +237,15 @@ Padding required below in order to make sure it doesn't fall on blue-white borde
 				console.log(anchor.css("color"));
 				anchor.animate({
 					color: "white"
-				}, 400);
-			}, index * 800)
+				}, 600);
+			}, index * 1000)
 		});
 		setTimeout(function() {
 			$("#rush_theme > div").css("display", "block");
 			$("#rush_theme > div").animate({
 				opacity: 1
-			}, 500);
-		}, 2700)
+			}, 700);
+		}, 3200)
 
 		//Counter to go throw array containing image links
 		var imgCellIndex = 1;
