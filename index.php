@@ -143,7 +143,7 @@ Padding required below in order to make sure it doesn't fall on blue-white borde
 				<div>
 					<div>
 						<h1>STAND OUT</h1>
-						<p style="text-align:center"><a href="./about.php" class="button_gold">Rush Alpha Kappa Psi</a></p>
+						<p style="text-align:center"><a href="./rush/" class="button_gold">Rush Alpha Kappa Psi</a></p>
 					</div>
 				</div>
 			</div>
