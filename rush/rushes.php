@@ -54,7 +54,7 @@ ini_set('display_errors', 1);
 	if (mysqli_connect_errno())
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
 
-	$fields = [
+	$fields = array(
 		"Info1",
 		"Info2",
 		"Coffeehouse",
@@ -62,7 +62,7 @@ ini_set('display_errors', 1);
 		"Fashion",
 		"Interview",
 		"Mocktail"
-	];
+	);
 
 
 	$queryBody = "";

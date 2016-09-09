@@ -31,7 +31,7 @@ if (isset($_POST["rushFirstName"]) && isset($_POST["rushLastName"]) && isset($_P
 $event = $_GET["event"];
 $title = "";
 
-$eventList = [
+$eventList = array(
 	"Info1" => "Infosession 1",
 	"Info2" => "Infosession 2",
 	"Coffeehouse" => "Coffeehouse",
@@ -39,7 +39,7 @@ $eventList = [
 	"Fashion" => "Fashion Night",
 	"Interview" => "Interview Workshops",
 	"Mocktail" => "Mocktail Night",
-];
+);
 
 
 if (array_key_exists($event, $eventList)) {
