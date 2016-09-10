@@ -50,8 +50,8 @@ switch ($src) {
 		$title = "Website";
 		$link = "ZL8PEOa1bfTTJDkKRrZjs8VXsZeBec4JQUx";
 		break;
-	case "trirush":
-		$title = "Tri-Rush";
+	case "splash":
+		$title = "Splash";
 		$link = "xAmSFqwEN8ym1HQy1xdhnyQ09lep8vqX30M";
 		break;
 	case "gsu":
@@ -166,22 +166,22 @@ switch ($src) {
 				alert("Please use your BU email");
 				return;
 			}
-			$.post("https://recruitmentpro-app.chapterspot.com/f/post/<?php echo $link ?>", {
-				organization_id: 1347,
-				firstname: $("#rushFirstName").val(),
-				lastname: $("#rushLastName").val(),
-				email: $("#rushEmail").val(),
-				phone: $("#rushPhone").val(),
-				facebook: "",
-				profile_field_30: $("#rushEmail").val(),
-				profile_field_31: $("#rushMajors").val(),
-				profile_field_33: "",
-				profile_field_32: "", 
-				profile_field_28 : "", 
-				profile_field_29 : "", 
-			}, function(result){
-	//			alert(result);
-			});
+//			$.post("https://recruitmentpro-app.chapterspot.com/f/post/<?php echo $link ?>", {
+//				organization_id: 1347,
+//				firstname: $("#rushFirstName").val(),
+//				lastname: $("#rushLastName").val(),
+//				email: $("#rushEmail").val(),
+//				phone: $("#rushPhone").val(),
+//				facebook: "",
+//				profile_field_30: $("#rushEmail").val(),
+//				profile_field_31: $("#rushMajors").val(),
+//				profile_field_33: "",
+//				profile_field_32: "", 
+//				profile_field_28 : "", 
+//				profile_field_29 : "", 
+//			}, function(result){
+//	//			alert(result);
+//			});
 
 			$("#rushForm").submit();
 		} else {
