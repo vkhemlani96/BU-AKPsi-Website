@@ -60,9 +60,9 @@ switch ($src) {
 		break;
 	default:
 		die('NO SRC PROVIDED
+		<p><a href="http://www.buakpsi.com/rush/signup.php?source=splash">SPLASH</a></p>
 		<p><a href="http://www.buakpsi.com/rush/signup.php?source=fb">Facebook</a></p>
 		<p><a href="http://www.buakpsi.com/rush/signup.php?source=tabling">Tabling</a></p>
-		<p><a href="http://www.buakpsi.com/rush/signup.php?source=trirush">TriRush</a></p>
 		<p><a href="http://www.buakpsi.com/rush/signup.php?source=web">Website</a></p>
 		<p><a href="http://www.buakpsi.com/rush/signup.php?source=gsu">GSU Tabling</a></p>');
 }
