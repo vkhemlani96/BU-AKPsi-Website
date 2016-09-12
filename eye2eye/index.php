@@ -40,9 +40,11 @@
 				Eye2Eye wants to see a fairer, more equal and just workforce, where hard work, talent, and determination are the main measures of success. In order to achieve our milestones, we need your help. With your support, we can develop a platform that fosters change and raises the awareness that has been mute in many communities. Please help us spread our mission by sharing our website and name. Additionally, please consider donating to our fund to help us create a meaningful and impactful conference; every dollar helps tremendously. We thank you for your support!
 				<br><br>
 			</p>
+<!--
 			<p style="text-align:center;">
 				<a target="_blank" href="https://www.gofundme.com/eye2eye" class="button">Give Now</a>
 			</p>
+-->
 
 		</div>
 
