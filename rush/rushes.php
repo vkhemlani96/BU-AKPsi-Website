@@ -177,7 +177,9 @@ ini_set('display_errors', 1);
 		echo "<td>" . $x++ . "</td>";
 		for ($i = 0; $i < count($row); $i++) {
 
-			if(mysqli_fetch_field_direct($result, $i)->type == 1) {
+			if (mysqli_fetch_field_direct($result, $i)->name == "AppSubmitted" && $row[$i]) {
+				echo "<td><a href=\"http://buakpsi.com/rush/view_app.php?email=" . $row[3] . "\">" . ($row[$i] ? "Yes" : "No") . "</a></td>";
+			} else if (mysqli_fetch_field_direct($result, $i)->type == 1) {
 				echo "<td>" . ($row[$i] ? "Yes" : "No") . "</td>";
 			} else {
 				echo "<td>" . $row[$i] . "</td>";
