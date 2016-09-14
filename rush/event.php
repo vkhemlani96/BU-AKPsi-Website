@@ -202,6 +202,7 @@ if (array_key_exists($event, $eventList)) {
 		$result = mysqli_query($con,"SELECT * FROM $rushTable");
 
 		while($row = mysqli_fetch_array($result)) {
+			
 			echo "var RushInfo = new Array();"
 				. "RushInfo['FirstName'] = '" . str_replace("'","",$row['FirstName']) . "';\n"
 				. "RushInfo['LastName'] = '" . str_replace("'","",$row['LastName']) . "';\n"
