@@ -83,7 +83,7 @@ if (isValid($appQuestions, $feedbackQuestions)) {
 		$no_error = true;
 
 		$to      = $_POST["rushEmail"];
-		$subject = "Alpha Kappa Psi Spring 2016 Recruitment Application Confirmation";
+		$subject = "Alpha Kappa Psi Fall 2016 Recruitment Application Confirmation";
 		$message = "Dear ".$_POST['rushFirstName'].",\r\n\r\nThank you for your application! We look forward to reviewing your application and will contact you with further details on your candidacy by Monday morning. Below is a copy of your application for your own record.\r\n\r\n------------------------------\r\n\r\n".
 			"Email: " . $_POST["rushEmail"] . "\r\n".
 			"First Name: " . $_POST["rushFirstName"] . "\r\n".
