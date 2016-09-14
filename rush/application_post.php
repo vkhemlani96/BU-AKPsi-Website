@@ -110,7 +110,7 @@ if (isValid($appQuestions, $feedbackQuestions)) {
 		
 		
 	?>
-		<h2 style="margin: 200px 0;"><strong>Thank you for your submission!</strong><br>We will review your application and contact you with further details by Monday morning. A confirmation email will be sent to you shortly.</h2>
+		<h2 style="margin: 200px 100px;"><strong>Thank you for your submission!</strong><br>We will review your application and contact you with further details by Monday morning. A confirmation email will be sent to you shortly.</h2>
 	
 	<?
 		

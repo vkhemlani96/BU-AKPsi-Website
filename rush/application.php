@@ -146,14 +146,14 @@ include("application_questions.php");
 			<div class="table_seperator" style="width: 66%"></div>
 			
 			<div class="vertical_padding">
-				<p style="color: black; text-align:center"><i><strong>The following questions will have no affect on your candidacy.</strong></i></p>
+				<p style="color: black; text-align:center"><i><strong>The following questions are optional and will have no affect on your candidacy.</strong></i></p>
 				<br><br>
 				
 				<?
 					foreach($feedbackQuestions as $count => $question) {
 				?>
 					<p><strong><? echo $question?></strong></p>
-					<textarea name="fb<? echo $count; ?>"></textarea>
+					<textarea name="fb<? echo $count; ?>" class="notRequired"></textarea>
 				<?
 					}
 				?>
@@ -191,8 +191,9 @@ include("application_questions.php");
 		inputs = document.getElementById("rushForm").getElementsByTagName('textarea');
 		for (var i = 0; i < inputs.length; i++) {
 			// only validate the inputs that have the required attribute
-			if(inputs[i].value == "" && inputs[i].name != "q9_second"){
+			if(inputs[i].className != "notRequired" && inputs[i].value == "" && inputs[i].name != "q9_second"){
 				// found an empty field that is required
+				console.log("textarea" + i);
 				return false;
 			}
 		}
