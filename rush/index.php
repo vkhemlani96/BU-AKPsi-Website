@@ -137,7 +137,7 @@
 				<a href="signup.php?source=web" style="text-decoration: none"><p class="button text-center">Sign up for Recruitment!</p></a>
 			</div>
 -->
-			<div class="col-md-4 col-md-offset-2">
+			<div class="col-md-4 col-md-offset-4">
 				<a href="application.php" style="text-decoration: none"><p class="button text-center">Fill out our Application!</p></a>
 			</div>
 		</div>
