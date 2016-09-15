@@ -27,8 +27,8 @@
 	$channel = $row["Channel"];
 	$info1 = $row["Info1"] ? "Yes" : "No";
 	$info2 = $row["Info2"] ? "Yes" : "No";
-	$event1 = $row["Fashion"] ? "Yes" : "No";
-	$event2 = $row["Professional"] ? "Yes" : "No";
+	$event1 = $row["Professional"] ? "Yes" : "No";
+	$event2 = $row["Coffeehouse"] ? "Yes" : "No";
 	$gpa = $row["gpa"];
 	$time = $row["timestamp"];
 
@@ -98,8 +98,8 @@
 					<p><strong>Channel: </strong><? echo $channel;?></p>
 					<p><strong>Info1: </strong><? echo $info1;?></p>
 					<p><strong>Info2: </strong><? echo $info2;?></p>
-					<p><strong>Fashion Night: </strong><? echo $event1;?></p>
-					<p><strong>Professional Workshops: </strong><? echo $event2;?></p>
+					<p><strong>Professional Workshops: </strong><? echo $event1;?></p>
+					<p><strong>Coffeehouse: </strong><? echo $event2;?></p>
 					<p><strong>Submitted At: </strong><? echo $time;?></p>
 				</td>
 			</tr>

@@ -57,8 +57,8 @@ ini_set('display_errors', 1);
 	$fields = array(
 		"Info1",
 		"Info2",
-		"Coffeehouse",
 		"Professional",
+		"Coffeehouse",
 		"Fashion",
 		"Interview",
 		"Mocktail"
