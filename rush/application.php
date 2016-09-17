@@ -100,7 +100,7 @@ include("application_questions.php");
 					<label class="mdl-textfield__label" for="sample1">Phone Number</label>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
-					<input class="mdl-textfield__input" type="number" pattern="\d+(\.\d*)?"  id="gpa" name="gpa"/>
+					<input class="mdl-textfield__input" pattern="\d+(\.\d*)?" id="gpa" name="gpa"/>
 					<label class="mdl-textfield__label" for="sample1"style="overflow:initial">Cummulative College GPA (HS GPA for freshman)</label>
 				</div>
 				<div class="pic">
