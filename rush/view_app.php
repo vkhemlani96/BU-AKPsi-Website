@@ -30,7 +30,10 @@
 	$event1 = $row["Professional"] ? "Yes" : "No";
 	$event2 = $row["Coffeehouse"] ? "Yes" : "No";
 	$gpa = $row["gpa"];
+
 	$time = $row["timestamp"];
+	$time = strtotime($time) + (3600 * 3);
+	$time = date("m/d/Y h:i A", $time);
 
 	$dir    = '/home/content/03/5577503/html/rush/rushPics/';
 	$files1 = scandir($dir);
@@ -43,7 +46,7 @@
 <head>
 
 	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.indigo-pink.min.css">
-	<title>Contact Us | Alpha Kappa Psi Nu Chapter</title>
+	<title>View Application | Alpha Kappa Psi Nu Chapter</title>
 	
 	<link href="../css/styles.css" rel="stylesheet"/>
 	<link href="../css/navbar.css" rel="stylesheet" />
