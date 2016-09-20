@@ -87,8 +87,11 @@
 					<img src="http://buakpsi.com/rush/rushPics/<?
 		
 		foreach ($files1 as $value) {
-			$img = strpos(".".$value, str_replace("@bu.edu","",$email)) ? $value : $image;
-			echo $img;
+			if (strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($email))) !== FALSE) {
+				echo $value;
+			}
+//			$img = strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($email))) >= 0 ? $value : $image;
+//			echo $img;
 		}?>" height="200">
 				</td><td>
 					<p><strong>Grade: </strong><? echo $grade;?></p>
