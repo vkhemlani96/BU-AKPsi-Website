@@ -1,4 +1,4 @@
-<?php include("/home/content/03/5577503/html/rush/password_protect_cookie.php"); ini_set('display_errors', 1); ?>
+<?php include("/home/content/03/5577503/html/rush/password_protect.php"); ini_set('display_errors', 1); ?>
 <!DOCTYPE html>
 <html lang="en">
 
