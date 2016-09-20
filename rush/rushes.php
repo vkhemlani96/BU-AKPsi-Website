@@ -165,17 +165,24 @@ ini_set('display_errors', 1);
 	<th><div><span>#</span></div></th>";
 
 	for ($i = 0; $i < $fields; $i++) {
+		if (strpos(mysqli_fetch_field_direct($result, $i)->name, 'Interview') !== false) {
+			continue;
+		}
 		echo "<th class='mdl-data-table__cell--non-numeric'><div><span>".mysqli_fetch_field_direct($result, $i)->name."</span></div></th>";
 	}
 
 	echo "</tr>";
 
 	$x = 1;
-	while($row = mysqli_fetch_row($result))
-	{
+	while($row = mysqli_fetch_row($result)) {
+		//		$direct = 
+
 		echo "<tr>";
 		echo "<td>" . $x++ . "</td>";
 		for ($i = 0; $i < count($row); $i++) {
+			if (strpos(mysqli_fetch_field_direct($result, $i)->name, 'Interview') !== false) {
+				continue;
+			}
 
 			if (mysqli_fetch_field_direct($result, $i)->name == "AppSubmitted" && $row[$i]) {
 				echo "<td><a href=\"http://buakpsi.com/rush/view_app.php?email=" . $row[3] . "\">" . ($row[$i] ? "Yes" : "No") . "</a></td>";
