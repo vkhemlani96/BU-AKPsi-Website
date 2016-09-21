@@ -75,7 +75,7 @@
 
 		$(".name").html(delibs[0][0] + " " + delibs[0][1]);
 		$(".details").html(delibs[0][2] + " - " + delibs[0][3]);
-		$(".picture").attr("src", "http://buakpsi.com/rush/rushPics/" + delibs[4]);
+		$(".picture").attr("src", "http://buakpsi.com/rush/rushPics/" + delibs[0][4]);
 
 	</script>
 
