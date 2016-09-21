@@ -98,6 +98,10 @@
 		document.onkeydown = function(e) {
 			e = e || window.event;
 			console.log("keydown!");
+			
+			$("textarea").each(function() {
+				$(this).val("");
+			});
 
 			if (e.keyCode == '37') {
 				// left arrow
