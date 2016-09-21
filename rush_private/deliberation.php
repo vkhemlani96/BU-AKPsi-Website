@@ -88,6 +88,10 @@
 		var delibs = <? echo json_encode($resultArray); ?>;
 
 		function updatePage(index) {
+			$("textarea").each(function() {
+				$(this).val("");
+			});
+			
 			$(".name").html(delibs[index][0] + " " + delibs[index][1]);
 			$(".details").html(delibs[index][2] + " - " + delibs[index][3]);
 			$(".picture").attr("src", "http://buakpsi.com/rush/rushPics/" + delibs[index][4]);
@@ -99,9 +103,6 @@
 			e = e || window.event;
 			console.log("keydown!");
 			
-			$("textarea").each(function() {
-				$(this).val("");
-			});
 
 			if (e.keyCode == '37') {
 				// left arrow
