@@ -14,15 +14,12 @@
 				width: 100vw;
 				display: table;
 			}
-			.content > div {
-				height: 100%;
-				width: 100%;
-				display: table-cell;
-				vertical-align: middle;
-				text-align: center;
-			}
 			td:first-child {
 				width: 60%;
+				height: 100%;
+				width: 100%;
+				vertical-align: middle;
+				text-align: center;
 			}
 			textarea {
 				width: 80%;
