@@ -39,7 +39,6 @@
 	if (mysqli_connect_errno())
 		die("Failed to connect to MySQL: " . mysqli_connect_error());
 
-	//	$result = mysqli_query($con,"SELECT Email, SUM(`InvitedToClosed`), SUM(`AppSubmitted`)" . $queryBody . " FROM $rushTable");
 	$result = mysqli_query($con,"SELECT FirstName, LastName, MajorSchools, Grade, Email FROM $rushTable WHERE Interview_Bid = 1 ORDER BY Interview_Wave, LastName");
 	$resultArray = array();
 
@@ -60,10 +59,10 @@
 	<body>
 		<div class="content">
 			<div>
-				<h1 class="name">Vinay Khemlani</h1>
+				<h1 class="name"></h1>
 				<h2 class="details"></h2>
 				<img class="picture" style="max-height: 60vh; margin-top: 20px;">
-				<h4 class="count" style="margin-top: 20px">3/23</h4>
+				<h4 class="count" style="margin-top: 20px"></h4>
 			</div>
 		</div>
 		</div>

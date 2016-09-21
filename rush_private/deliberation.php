@@ -60,10 +60,10 @@
 	<body>
 		<div class="content">
 			<div>
-				<h1 class="name">Vinay Khemlani</h1>
+				<h1 class="name"></h1>
 				<h2 class="details"></h2>
 				<img class="picture" style="max-height: 60vh; margin-top: 20px;">
-				<h4 class="count" style="margin-top: 20px">3/23</h4>
+				<h4 class="count" style="margin-top: 20px"></h4>
 			</div>
 		</div>
 		</div>
