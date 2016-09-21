@@ -49,9 +49,8 @@
 		foreach ($files1 as $value) {
 			if (strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($row[4]))) !== FALSE) {
 				$row[4] = $value;
+				break;
 			}
-			//			$img = strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($email))) >= 0 ? $value : $image;
-			//			echo $img;
 		}
 		$resultArray[] = $row;
 	}
