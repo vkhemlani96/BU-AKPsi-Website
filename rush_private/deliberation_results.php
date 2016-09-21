@@ -1,6 +1,6 @@
 <?php
 
-include("/home/content/03/5577503/html/rush/password_protect_cookie.php");
+include("/home/content/03/5577503/html/rush/password_protect.php");
 ini_set('display_errors', 1);
 
 include("../manage_db/db_credentials.php");
