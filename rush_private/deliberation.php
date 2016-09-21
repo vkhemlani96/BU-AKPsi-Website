@@ -33,7 +33,7 @@
 	$con = new mysqli($hostname, $username, $password, $dbname);
 
 	$dir    = '/home/content/03/5577503/html/rush/rushPics/';
-//	$files1 = scandir($dir);
+	$files1 = scandir($dir);
 
 	// Check connection
 	if (mysqli_connect_errno())
@@ -46,13 +46,13 @@
 	//	var_dump($result);
 
 	while($row = mysqli_fetch_array($result)) {
-//		foreach ($files1 as $value) {
-//			if (strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($row[4]))) !== FALSE) {
-//				$row[4] = $value;
-//			}
-//			//			$img = strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($email))) >= 0 ? $value : $image;
-//			//			echo $img;
-//		}
+		foreach ($files1 as $value) {
+			if (strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($row[4]))) !== FALSE) {
+				$row[4] = $value;
+			}
+			//			$img = strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($email))) >= 0 ? $value : $image;
+			//			echo $img;
+		}
 		$resultArray[] = $row;
 	}
 
