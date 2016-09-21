@@ -26,7 +26,8 @@
 			textarea {
 				width: 80%;
 				margin: 10px 0;
-				height: 40%;
+				height: 40vh;
+				font-size: 20px;
 			}
 		</style>
 
