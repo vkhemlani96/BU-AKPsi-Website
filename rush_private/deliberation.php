@@ -62,6 +62,9 @@
 			<div>
 				<h1 class="name">Vinay Khemlani</h1>
 				<h2 class="details"></h2>
+				<img class="picture" style="max-height: 60vh;">
+					
+				</div>
 			</div>
 		</div>
 	</body>
@@ -71,7 +74,8 @@
 		var delibs = <? echo json_encode($resultArray); ?>;
 
 		$(".name").html(delibs[0][0] + " " + delibs[0][1]);
-		$(".details").html(delibs[0][2] + " - " + delibs[0][4]);
+		$(".details").html(delibs[0][2] + " - " + delibs[0][3]);
+		$(".details").attr("src", "http://buakpsi.com/rush/rushPics/" + delibs[4]);
 
 	</script>
 
