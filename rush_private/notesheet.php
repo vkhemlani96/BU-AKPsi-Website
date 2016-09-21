@@ -84,6 +84,7 @@
 				margin: .04in;
 				background-size: cover;
 				display: inline-block;
+				background-position: center;
 			}
 			.rushDecision {
 				position: absolute;
@@ -115,27 +116,6 @@
 
 	//	$result = mysqli_query($con,"SELECT Email, SUM(`InvitedToClosed`), SUM(`AppSubmitted`)" . $queryBody . " FROM $rushTable");
 	$result = mysqli_query($con,"SELECT FirstName, LastName, MajorSchools, Grade, Email, Interview_Wave FROM $rushTable WHERE InvitedToClosed = 1 ORDER BY Interview_Wave, LastName");
-
-
-	//	$x = 1;
-	//	while($row = mysqli_fetch_row($result))
-	//	{
-	//		echo "<tr>";
-	//		echo "<td>" . $x++ . "</td>";
-	//		for ($i = 0; $i < count($row); $i++) {
-	//
-	//			if (mysqli_fetch_field_direct($result, $i)->name == "AppSubmitted" && $row[$i]) {
-	//				echo "<td><a href=\"http://buakpsi.com/rush/view_app.php?email=" . $row[3] . "\">" . ($row[$i] ? "Yes" : "No") . "</a></td>";
-	//			} else if (mysqli_fetch_field_direct($result, $i)->type == 1) {
-	//				echo "<td>" . ($row[$i] ? "Yes" : "No") . "</td>";
-	//			} else {
-	//				echo "<td>" . $row[$i] . "</td>";
-	//			}
-	//
-	//		}
-	//		echo "</tr>";
-	//	}
-
 	?>
 
 	<body>
@@ -144,6 +124,9 @@
 			<? 	
 			$x = 0; 
 			$wave = "1";
+			$dir    = '/home/content/03/5577503/html/rush/rushPics/';
+			$files1 = scandir($dir);
+
 			while($row = mysqli_fetch_row($result)) { 
 				if ($x == 5 || $row[5] != $wave) {
 					$wave = $row[5];
@@ -151,48 +134,56 @@
 					echo '</table><table class="headTable">';
 				}
 				$x++;
-		?>
-		<tr class="rushRow">
-			<td>
-				<div class="rushDetails">
-					<div class="rushPic" style="background-image: url('http://buakpsi.com/rush/rushPics/<? echo str_replace("@bu.edu","",strtolower($row[4])); ?>')"></div>
-					<!--						<p>Nick Madson<br>COM, Junior</p>-->
-				</div>
-				<div class="rushComments">
-					<h2><b><? echo $row[0] . " " . $row[1] ?> </b> (<? echo $row[2] . ", " . $row[3] ?>)</p>
-					<table style="border-left:none; border-right:none">
-						<tr style="border-left:none; border-right:none">
-							<td style="border-left:none"></td>
-							<td width="100"><p>Needs Works</p></td>
-							<td width="100"><p>Meets</p></td>
-							<td width="100"><p>Exceeds</p></td>
-							<td width="186" style="border-right: none; border-bottom: none"><p style="text-align: left; font-weight: bold;">Feedback:</p></td>
-							<!--								<td><p>Feedback</p></td>-->
-						</tr><tr>
-						<td style="border-left:none"><p>Displays Leadership</p></td>
-						<td></td><td></td><td></td>
-						<td style="border:none"></td>
-						</tr><tr>
-						<td style="border-left:none"><p>Articulates Efficiently</p></td>
-						<td></td><td></td><td></td>
-						<td style="border:none"></td>
-						</tr><tr>
-						<td style="border-left:none"><p>Executive Presence</p></td>
-						<td></td><td></td><td></td>
-						<td style="border:none"></td>
-						</tr>
-					</table>
-					<p><b>Comments: </b></p>
-				</div>
-				<div class="rushDecision">
-					<p><b>Y</b></p><p><b>N</b></p><p>A</p>
-				</div>
-			</td>
-		</tr>
-		<?
+
+				foreach ($files1 as $value) {
+					if (strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($row[4]))) !== FALSE) {
+						echo $img = $value;
+					}
+					//			$img = strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($email))) >= 0 ? $value : $image;
+					//			echo $img;
+				}
+			?>
+			<tr class="rushRow">
+				<td>
+					<div class="rushDetails">
+						<div class="rushPic" style="background-image: url('http://buakpsi.com/rush/rushPics/<? echo $img; ?>')"></div>
+						<!--						<p>Nick Madson<br>COM, Junior</p>-->
+					</div>
+					<div class="rushComments">
+						<h2><b><? echo $row[0] . " " . $row[1] ?> </b> (<? echo $row[2] . ", " . $row[3] ?>)</p>
+						<table style="border-left:none; border-right:none">
+							<tr style="border-left:none; border-right:none">
+								<td style="border-left:none"></td>
+								<td width="100"><p>Needs Works</p></td>
+								<td width="100"><p>Meets</p></td>
+								<td width="100"><p>Exceeds</p></td>
+								<td width="186" style="border-right: none; border-bottom: none"><p style="text-align: left; font-weight: bold;">Feedback:</p></td>
+								<!--								<td><p>Feedback</p></td>-->
+							</tr><tr>
+							<td style="border-left:none"><p>Displays Leadership</p></td>
+							<td></td><td></td><td></td>
+							<td style="border:none"></td>
+							</tr><tr>
+							<td style="border-left:none"><p>Articulates Efficiently</p></td>
+							<td></td><td></td><td></td>
+							<td style="border:none"></td>
+							</tr><tr>
+							<td style="border-left:none"><p>Executive Presence</p></td>
+							<td></td><td></td><td></td>
+							<td style="border:none"></td>
+							</tr>
+						</table>
+						<p><b>Comments: </b></p>
+					</div>
+					<div class="rushDecision">
+						<p><b>Y</b></p><p><b>N</b></p><p>A</p>
+					</div>
+				</td>
+			</tr>
+			<?
 			}; // End while
-		?>
-		<!--
+			?>
+			<!--
 <tr class="rushRow">
 <td>
 <div>
