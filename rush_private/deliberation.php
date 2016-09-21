@@ -63,7 +63,7 @@
 				<h1 class="name">Vinay Khemlani</h1>
 				<h2 class="details"></h2>
 				<img class="picture" style="max-height: 60vh; margin-top: 20px;">
-
+				<h4 class="count" style="margin-top: 20px">3/23</h4>
 			</div>
 		</div>
 		</div>
@@ -77,6 +77,7 @@
 		$(".name").html(delibs[index][0] + " " + delibs[index][1]);
 		$(".details").html(delibs[index][2] + " - " + delibs[index][3]);
 		$(".picture").attr("src", "http://buakpsi.com/rush/rushPics/" + delibs[index][4]);
+		$(".count").html((delibIndex + 1) + "/" + delibs.length);
 	}
 	updatePage(0);
 
