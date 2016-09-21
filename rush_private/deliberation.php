@@ -17,9 +17,11 @@
 			td:first-child {
 				width: 60%;
 				height: 100%;
-				width: 100%;
 				vertical-align: middle;
 				text-align: center;
+			}
+			td {
+				width: 50%;
 			}
 			textarea {
 				width: 80%;
