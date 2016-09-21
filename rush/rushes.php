@@ -155,9 +155,8 @@ ini_set('display_errors', 1);
 	}
 	echo "</table>";
 
-
-	//$result = mysqli_query($con,"SELECT * FROM $rushTable ORDER BY `InvitedToClosed` DESC, `AppSubmitted` DESC, `LastName`");
-	$result = mysqli_query($con,"SELECT * FROM $rushTable ORDER BY `Sign Up Time`");
+	$query = "SELECT `Sign Up Time`, FirstName, LastName, Email, Phone, Majors, MajorSchools, Grade, Channel, AppSubmitted, InvitedToClosed, " . join(", ", $fields) . " FROM $rushTable ORDER BY `Sign Up Time`";
+	$result = mysqli_query($con,$query);
 	$fields = mysqli_num_fields($result);
 
 	echo "<table id='table' class='mdl-data-table mdl-js-data-table mdl-shadow--2dp' style='margin:10px'>
