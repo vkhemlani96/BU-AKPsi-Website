@@ -137,7 +137,7 @@
 
 				foreach ($files1 as $value) {
 					if (strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($row[4]))) !== FALSE) {
-						echo $img = $value;
+						$img = $value;
 					}
 					//			$img = strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($email))) >= 0 ? $value : $image;
 					//			echo $img;
