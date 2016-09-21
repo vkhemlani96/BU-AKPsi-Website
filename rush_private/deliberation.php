@@ -17,11 +17,11 @@
 			td:first-child {
 				width: 60%;
 				height: 100%;
-				vertical-align: middle;
 				text-align: center;
 			}
 			td {
 				width: 50%;
+				vertical-align: middle;
 			}
 			textarea {
 				width: 80%;
@@ -73,7 +73,9 @@
 					<img class="picture" style="max-height: 60vh; margin-top: 20px;">
 					<h4 class="count" style="margin-top: 20px"></h4>
 				</td><td>
+					<p><b>Pros:</b></p>
 					<textarea></textarea>
+					<p><b>Cons:</b></p>
 					<textarea></textarea>
 				</td>
 			</tr>
