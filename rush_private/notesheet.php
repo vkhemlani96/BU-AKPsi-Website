@@ -115,7 +115,7 @@
 		die("Failed to connect to MySQL: " . mysqli_connect_error());
 
 	//	$result = mysqli_query($con,"SELECT Email, SUM(`InvitedToClosed`), SUM(`AppSubmitted`)" . $queryBody . " FROM $rushTable");
-	$result = mysqli_query($con,"SELECT FirstName, LastName, MajorSchools, Grade, Email, Interview_Wave FROM $rushTable WHERE InvitedToClosed = 1 ORDER BY Interview_Wave, LastName");
+	$result = mysqli_query($con,"SELECT FirstName, LastName, MajorSchools, Grade, Email, Interview_Wave FROM $rushTable WHERE Interview_Wave >= 1 ORDER BY Interview_Wave, LastName");
 	?>
 
 	<body>
