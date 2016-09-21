@@ -33,7 +33,7 @@
 	$con = new mysqli($hostname, $username, $password, $dbname);
 
 	$dir    = '/home/content/03/5577503/html/rush/rushPics/';
-	$files1 = scandir($dir);
+//	$files1 = scandir($dir);
 
 	// Check connection
 	if (mysqli_connect_errno())
@@ -46,13 +46,13 @@
 	//	var_dump($result);
 
 	while($row = mysqli_fetch_array($result)) {
-		foreach ($files1 as $value) {
-			if (strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($row[4]))) !== FALSE) {
-				$row[4] = $value;
-			}
-			//			$img = strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($email))) >= 0 ? $value : $image;
-			//			echo $img;
-		}
+//		foreach ($files1 as $value) {
+//			if (strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($row[4]))) !== FALSE) {
+//				$row[4] = $value;
+//			}
+//			//			$img = strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($email))) >= 0 ? $value : $image;
+//			//			echo $img;
+//		}
 		$resultArray[] = $row;
 	}
 
@@ -64,20 +64,43 @@
 				<h1 class="name">Vinay Khemlani</h1>
 				<h2 class="details"></h2>
 				<img class="picture" style="max-height: 60vh; margin-top: 20px;">
-					
-				</div>
+
 			</div>
 		</div>
+		</div>
 	</body>
-	<script>
+<script>
 
-		var delibIndex = 0;
-		var delibs = <? echo json_encode($resultArray); ?>;
+	var delibIndex = 0;
+	var delibs = <? echo json_encode($resultArray); ?>;
+	
+	function updatePage(index) {
+		$(".name").html(delibs[index][0] + " " + delibs[index][1]);
+		$(".details").html(delibs[index][2] + " - " + delibs[index][3]);
+		$(".picture").attr("src", "http://buakpsi.com/rush/rushPics/" + delibs[index][4]);
+	}
+	updatePage(0);
 
-		$(".name").html(delibs[0][0] + " " + delibs[0][1]);
-		$(".details").html(delibs[0][2] + " - " + delibs[0][3]);
-		$(".picture").attr("src", "http://buakpsi.com/rush/rushPics/" + delibs[0][4]);
+	document.onkeydown = function(e) {
+		e = e || window.event;
+		console.log("keydown!");
 
-	</script>
+		if (e.keyCode == '37') {
+			// left arrow
+			if (delibIndex > 0) {
+				delibIndex--;
+				updatePage(delibIndex);
+			}
+		}
+		else if (e.keyCode == '39') {
+			// right arrow
+			if (delibIndex < delibs.length - 1) {
+				delibIndex++;
+				updatePage(delibIndex);
+			}
+		}
+	}
+
+</script>
 
 </html>
