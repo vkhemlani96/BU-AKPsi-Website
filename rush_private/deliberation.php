@@ -19,6 +19,7 @@
 				width: 100%;
 				display: table-cell;
 				vertical-align: middle;
+				text-align: center;
 			}
 		</style>
 
@@ -62,7 +63,7 @@
 			<div>
 				<h1 class="name">Vinay Khemlani</h1>
 				<h2 class="details"></h2>
-				<img class="picture" style="max-height: 60vh;">
+				<img class="picture" style="max-height: 60vh; margin-top: 20px;">
 					
 				</div>
 			</div>
