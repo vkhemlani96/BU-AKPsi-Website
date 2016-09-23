@@ -48,25 +48,48 @@
 		die("Failed to connect to MySQL: " . mysqli_connect_error());
 
 	//	$result = mysqli_query($con,"SELECT Email, SUM(`InvitedToClosed`), SUM(`AppSubmitted`)" . $queryBody . " FROM $rushTable");
-	$result = mysqli_query($con,"SET @rank=0;# MySQL returned an empty result set (i.e. zero rows).
+	$result = mysqli_multi_query($con,"SET @rank=0;
+SELECT * FROM ((SELECT FirstName, LastName, MajorSchools, Grade, Email, Interview_Deliberate, -1 FROM rushFall2016 WHERE Interview_Wave = 0) UNION (SELECT * FROM (SELECT FirstName, LastName, MajorSchools, Grade, Email, Interview_Deliberate, @rank:=@rank+1 as 'a' FROM rushFall2016 WHERE Interview_Wave > 0 ORDER BY Interview_Wave, LastName) as T1 WHERE Interview_Deliberate = 1)) AS a");
 
-SELECT * FROM ((SELECT '', FirstName, LastName, MajorSchools, Grade, Email, Interview_Deliberate FROM rushFall2016 WHERE Interview_Wave = 0) UNION (SELECT * FROM (SELECT @rank:=@rank+1 as I, FirstName, LastName, MajorSchools, Grade, Email, Interview_Deliberate FROM rushFall2016 WHERE Interview_Wave > 0 ORDER BY Interview_Wave, LastName) as T1 WHERE Interview_Deliberate = 1)) AS a");
 	$resultArray = array();
-
-		var_dump($result);
-
-	while($row = mysqli_fetch_array($result)) {
-		foreach ($files1 as $value) {
-			if (strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($row[4]))) !== FALSE) {
-				$row[4] = $value;
-				break;
+	do {
+		/* store first result set */
+		if ($result = mysqli_store_result($con)) {
+			while ($row = mysqli_fetch_row($result)) {
+//				foreach ($files1 as $value) {
+//					if (strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($row[4]))) !== FALSE) {
+//						$row[4] = $value;
+//						break;
+//					}
+//				}
+				$resultArray[] = $row;
 			}
+			mysqli_free_result($result);
 		}
-		$resultArray[] = $row;
-	}
-	
-	
-		mysqli_close($con);
+		if (!mysqli_more_results($con)) {
+			break;
+		}
+	} while (mysqli_next_result($con));
+
+	//	//		var_dump($result);
+	//	if (!$result) {
+	//		echo mysqli_error($con);
+	//	} else {
+	//		var_dump($result);
+	//	}
+
+//	while($row = mysqli_fetch_row($result)) {
+//		foreach ($files1 as $value) {
+//			if (strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($row[4]))) !== FALSE) {
+//				$row[4] = $value;
+//				break;
+//			}
+//		}
+//		$resultArray[] = $row;
+//		mysqli_free_result($result);
+//	}
+
+	mysqli_close($con);
 
 	?>
 
@@ -79,10 +102,10 @@ SELECT * FROM ((SELECT '', FirstName, LastName, MajorSchools, Grade, Email, Inte
 					<img class="picture" style="max-height: 60vh; margin-top: 20px;">
 					<h4 class="count" style="margin-top: 20px"></h4>
 				</td><td>
-					<p><b>Pros:</b></p>
-					<textarea></textarea>
-					<p><b>Cons:</b></p>
-					<textarea></textarea>
+				<p><b>Pros:</b></p>
+				<textarea></textarea>
+				<p><b>Cons:</b></p>
+				<textarea></textarea>
 				</td>
 			</tr>
 		</table>
@@ -96,8 +119,10 @@ SELECT * FROM ((SELECT '', FirstName, LastName, MajorSchools, Grade, Email, Inte
 			$("textarea").each(function() {
 				$(this).val("");
 			});
-			
-			$(".name").html(delibs[index][0] + " " + delibs[index][1]);
+
+			var extraText = delibs[index][6] > -1 ? " - #" + delibs[index][6] : '';
+			console.log(extraText);
+			$(".name").html(delibs[index][0] + " " + delibs[index][1] + extraText);
 			$(".details").html(delibs[index][2] + " - " + delibs[index][3]);
 			$(".picture").attr("src", "http://buakpsi.com/rush/rushPics/" + delibs[index][4]);
 			$(".count").html((delibIndex + 1) + "/" + delibs.length);
@@ -107,7 +132,7 @@ SELECT * FROM ((SELECT '', FirstName, LastName, MajorSchools, Grade, Email, Inte
 		document.onkeydown = function(e) {
 			e = e || window.event;
 			console.log("keydown!");
-			
+
 
 			if (e.keyCode == '37') {
 				// left arrow
