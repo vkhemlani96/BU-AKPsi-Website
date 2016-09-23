@@ -56,12 +56,12 @@ SELECT * FROM ((SELECT FirstName, LastName, MajorSchools, Grade, Email, Intervie
 		/* store first result set */
 		if ($result = mysqli_store_result($con)) {
 			while ($row = mysqli_fetch_row($result)) {
-//				foreach ($files1 as $value) {
-//					if (strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($row[4]))) !== FALSE) {
-//						$row[4] = $value;
-//						break;
-//					}
-//				}
+				foreach ($files1 as $value) {
+					if (strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($row[4]))) !== FALSE) {
+						$row[4] = $value;
+						break;
+					}
+				}
 				$resultArray[] = $row;
 			}
 			mysqli_free_result($result);
@@ -71,23 +71,6 @@ SELECT * FROM ((SELECT FirstName, LastName, MajorSchools, Grade, Email, Intervie
 		}
 	} while (mysqli_next_result($con));
 
-	//	//		var_dump($result);
-	//	if (!$result) {
-	//		echo mysqli_error($con);
-	//	} else {
-	//		var_dump($result);
-	//	}
-
-//	while($row = mysqli_fetch_row($result)) {
-//		foreach ($files1 as $value) {
-//			if (strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($row[4]))) !== FALSE) {
-//				$row[4] = $value;
-//				break;
-//			}
-//		}
-//		$resultArray[] = $row;
-//		mysqli_free_result($result);
-//	}
 
 	mysqli_close($con);
 
