@@ -94,6 +94,16 @@
 				bottom: 0;
 				text-align: center;
 			}
+			.rushNumber {
+				position: absolute;
+				width: .25in;
+				height: .3in;
+				right: .08in;
+				top: .05in;
+			}
+			.rushNumber p {
+				text-align: right;
+			}
 			.rushDecision p {
 				width: .5in;
 				text-align: center;
@@ -115,7 +125,8 @@
 		die("Failed to connect to MySQL: " . mysqli_connect_error());
 
 	//	$result = mysqli_query($con,"SELECT Email, SUM(`InvitedToClosed`), SUM(`AppSubmitted`)" . $queryBody . " FROM $rushTable");
-	$result = mysqli_query($con,"SELECT FirstName, LastName, MajorSchools, Grade, Email, Interview_Wave FROM $rushTable WHERE Interview_Wave >= 1 ORDER BY Interview_Wave, LastName");
+	$whereParam = $_GET["wave"] == "0" ? "= 0" : ">= 1";
+	$result = mysqli_query($con,"SELECT FirstName, LastName, MajorSchools, Grade, Email, Interview_Wave FROM $rushTable WHERE Interview_Wave $whereParam ORDER BY Interview_Wave, LastName");
 	?>
 
 	<body>
@@ -123,6 +134,7 @@
 		<table class="headTable">
 			<? 	
 			$x = 0; 
+			$y = 0;
 			$wave = "1";
 			$dir    = '/home/content/03/5577503/html/rush/rushPics/';
 			$files1 = scandir($dir);
@@ -134,10 +146,12 @@
 					echo '</table><table class="headTable">';
 				}
 				$x++;
+				$y++;
 
 				foreach ($files1 as $value) {
 					if (strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($row[4]))) !== FALSE) {
 						$img = $value;
+						break;
 					}
 					//			$img = strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($email))) >= 0 ? $value : $image;
 					//			echo $img;
@@ -178,10 +192,15 @@
 					<div class="rushDecision">
 						<p><b>Y</b></p><p><b>N</b></p><p>A</p>
 					</div>
+					<div class="rushNumber">
+						<p><b>#<? echo $y; ?></b></p>
+					</div>
 				</td>
 			</tr>
 			<?
 			}; // End while
+			
+		mysqli_close($con);
 			?>
 			<!--
 <tr class="rushRow">

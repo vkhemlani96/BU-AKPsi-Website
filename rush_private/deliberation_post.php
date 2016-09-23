@@ -1,5 +1,5 @@
 <?php
-	
+
 include("../manage_db/db_credentials.php");
 
 // Create connection
@@ -25,10 +25,12 @@ if (!$result) {
 	echo "-1";
 	return;
 } else {
-//	echo mysqli_query($con,"SELECT COUNT(*) FROM $rushTable");
+	//	echo mysqli_query($con,"SELECT COUNT(*) FROM $rushTable");
 	$result = mysqli_query($con,"SELECT SUM(Interview_Bid) FROM $rushTable");
 	$row = mysqli_fetch_array($result);
 	echo $row[0];
 }
+
+mysqli_close($con);
 
 ?>

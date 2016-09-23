@@ -54,6 +54,9 @@
 		$resultArray[] = $row;
 	}
 
+
+	mysqli_close($con);
+
 	?>
 
 	<body>
@@ -71,7 +74,7 @@
 
 	var delibIndex = 0;
 	var delibs = <? echo json_encode($resultArray); ?>;
-	
+
 	function updatePage(index) {
 		$(".name").html(delibs[index][0] + " " + delibs[index][1]);
 		$(".details").html(delibs[index][2] + " - " + delibs[index][3]);

@@ -48,10 +48,12 @@
 		die("Failed to connect to MySQL: " . mysqli_connect_error());
 
 	//	$result = mysqli_query($con,"SELECT Email, SUM(`InvitedToClosed`), SUM(`AppSubmitted`)" . $queryBody . " FROM $rushTable");
-	$result = mysqli_query($con,"SELECT FirstName, LastName, MajorSchools, Grade, Email FROM $rushTable WHERE Interview_Deliberate = 1 ORDER BY Interview_Wave, LastName");
+	$result = mysqli_query($con,"SET @rank=0;# MySQL returned an empty result set (i.e. zero rows).
+
+SELECT * FROM ((SELECT '', FirstName, LastName, MajorSchools, Grade, Email, Interview_Deliberate FROM rushFall2016 WHERE Interview_Wave = 0) UNION (SELECT * FROM (SELECT @rank:=@rank+1 as I, FirstName, LastName, MajorSchools, Grade, Email, Interview_Deliberate FROM rushFall2016 WHERE Interview_Wave > 0 ORDER BY Interview_Wave, LastName) as T1 WHERE Interview_Deliberate = 1)) AS a");
 	$resultArray = array();
 
-	//	var_dump($result);
+		var_dump($result);
 
 	while($row = mysqli_fetch_array($result)) {
 		foreach ($files1 as $value) {
@@ -62,6 +64,9 @@
 		}
 		$resultArray[] = $row;
 	}
+	
+	
+		mysqli_close($con);
 
 	?>
 
