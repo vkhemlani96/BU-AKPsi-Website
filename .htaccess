@@ -1,3 +1,5 @@
+Redirect 301 /vote http://google.com/
+
 Options +MultiViews
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
