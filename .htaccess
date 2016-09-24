@@ -1,4 +1,4 @@
-Redirect 301 /vote http://google.com/
+Redirect 301 /vote https://docs.google.com/a/bu.edu/forms/d/e/1FAIpQLScPjR6u1y3M6jj5ecxEHdxoU2XSpjg26u1Uchbri7V6t574lQ/viewform
 
 Options +MultiViews
 RewriteEngine On
