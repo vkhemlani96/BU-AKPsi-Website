@@ -14,7 +14,8 @@ $query = "SELECT *
     FROM $usertable
     JOIN $eyetable
     ON $usertable.email = $eyetable.email
-	ORDER BY $eyetable.order";
+	ORDER BY $eyetable.order
+	WHERE $eyetable.research = 0";
 
 
 $result = mysqli_query($link, $query);
