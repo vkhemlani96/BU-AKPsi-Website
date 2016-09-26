@@ -72,7 +72,7 @@ $active_classes = array("Mu", "Nu", "Xi", "Omicron", "Pi", "Rho", "Transfer");
 						$code .= "
 			<div class=\"eboard_img\">
 				<p class=\"position\">$position</p>
-				<div class=\"brother_img\"><img height=\"200\" width=\"200\" onerror=\"$(this).attr('src','http://buakpsi.com/images/brothers/nophoto.png');\"  src=\"../img/brothers/".strtolower($class)."s/$img_name"."_thumb.png\">
+				<div class=\"brother_img\"><img height=\"200\" width=\"200\" onerror=\"$(this).attr('src','http://buakpsi.com/img/brothers/nophoto.png');\"  src=\"../img/brothers/".strtolower($class)."s/$img_name"."_thumb.png\">
 					<div>
 						<p class=\"name\">$firstName $lastName</p>
 						<div class=\"gold_seperator\"></div>

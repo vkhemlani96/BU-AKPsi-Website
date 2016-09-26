@@ -58,7 +58,7 @@ $result = mysqli_query($link, $query);
 					<tr>
 						<td>
 						<div class="nccg_image">
-								<img src="../img/brothers/'.strtolower($class).'s/'.$img_name.'_thumb.png" onerror="$(this).attr(\'src\',\'http://buakpsi.com/images/brothers/nophoto.png\');" height="200">
+								<img src="../img/brothers/'.strtolower($class).'s/'.$img_name.'_thumb.png" onerror="$(this).attr(\'src\',\'http://buakpsi.com/img/brothers/nophoto.png\');" height="200">
 								<div class="nccg_hover_bio blue_background">
 									<p class=\"info\"><strong>Class:</strong> '.$class.'<br><strong>Year:</strong> '.$year.'<br><strong>Major:</strong> '.$major.'<br><strong>Minor:</strong> '.$minor.'</p>
 								</div>
