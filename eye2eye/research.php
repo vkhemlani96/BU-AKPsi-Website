@@ -13,9 +13,8 @@ $query = "SELECT *
     FROM $usertable
     JOIN $eyetable
     ON $usertable.email = $eyetable.email
-	WHERE $eyetable.position LIKE '%Research%' OR $eyetable.position LIKE '%Director%'
-	ORDER BY $eyetable.order";
-
+	WHERE $eyetable.position LIKE '%Research%'
+	ORDER BY FIELD($eyetable.position, 'Director of Research', 'Head Research Analyst', 'Research Associate'), LastName";
 
 $result = mysqli_query($link, $query);
 ?>
@@ -34,7 +33,7 @@ $result = mysqli_query($link, $query);
 	<?php include("../navbar.php"); getNavbar(true); ?>
 	
 	<div class="vertical_padding title_section">
-		<h1>Board of Directors</h1>
+		<h1>Research Team</h1>
 		<div class="seperator"></div>
 		<h2>Eye2Eye</h2>
 	</div>
