@@ -5,7 +5,7 @@
 
 // IF DATA HAS BEEN POSTED, ADD TO DB
 if (isset($_POST["rushFirstName"]) && isset($_POST["rushLastName"]) && isset($_POST['rushEmail'])  && isset($_POST['rushPhone'])  && isset($_POST['rushMajors'])  && isset($_POST['rushSchool']) && isset($_POST['rushGrade']) ) {
-	include("../manage_db/db_credentials.php");
+	include("../db/db_credentials.php");
 
 	// Create connection
 	$conn = new mysqli($hostname, $username, $password, $dbname);
@@ -188,7 +188,7 @@ if (array_key_exists($event, $eventList)) {
 		var Rushes = new Array();
 
 		<?php 
-		include("../manage_db/db_credentials.php");
+		include("../db/db_credentials.php");
 
 		// Create connection
 		$con = new mysqli($hostname, $username, $password, $dbname);

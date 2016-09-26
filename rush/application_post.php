@@ -48,7 +48,7 @@ $no_error = false;
 
 if (isValid($appQuestions, $feedbackQuestions)) {
 	
-	include("../manage_db/db_credentials.php");
+	include("../db/db_credentials.php");
 	
 	// Create connection
 	$conn = new mysqli($hostname, $username, $password, $dbname);
@@ -179,7 +179,7 @@ if (isValid($appQuestions, $feedbackQuestions)) {
 }
 
 if ($no_error && isset($_POST['rushEmail'])) {
-	include("../manage_db/db_credentials.php");
+	include("../db/db_credentials.php");
 
 	// Create connection
 	$conn = new mysqli($hostname, $username, $password, $dbname);

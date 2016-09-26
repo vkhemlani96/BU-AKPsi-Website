@@ -3,7 +3,7 @@
 
 include("/home/content/03/5577503/html/rush/password_protect.php");
 
-include("../manage_db/db_credentials.php");
+include("../db/db_credentials.php");
 
 $host = $hostname; // your db host (ip/dn)
 $user = $username; // your db's privileged user account

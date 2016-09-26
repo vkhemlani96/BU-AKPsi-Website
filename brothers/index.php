@@ -2,7 +2,7 @@
 
 //ini_set('display_errors', 1);
 
-include("../manage_db/db_credentials.php");
+include("../db/db_credentials.php");
 $usertable="brothers";
 $eboardTable="eboard";
 $yourfield = "LAST_NAME";
