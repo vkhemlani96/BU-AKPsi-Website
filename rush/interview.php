@@ -51,7 +51,7 @@ ini_set('display_errors', 1);
 
 	<?php
 
-	include("../db/db_credentials.php");
+	include("../db/credentials.php");
 
 	// Create connection
 	$con = new mysqli($hostname, $username, $password, $dbname);

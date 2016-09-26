@@ -36,7 +36,7 @@ $no_error = false;
 
 if (isset($_POST["Email"]) && isset($_POST['q1'])  && isset($_POST['q2'])  && isset($_POST['q3'])) {
 	
-	include("../db/db_credentials.php");
+	include("../db/credentials.php");
 	
 	// Create connection
 	$conn = new mysqli($hostname, $username, $password, $dbname);
@@ -152,7 +152,7 @@ if (isset($_POST["Email"]) && isset($_POST['q1'])  && isset($_POST['q2'])  && is
 }
 
 //if ($no_error && isset($_POST['rushEmail'])) {
-//	include("../db/db_credentials.php");
+//	include("../db/credentials.php");
 //
 //	// Create connection
 //	$conn = new mysqli($hostname, $username, $password, $dbname);

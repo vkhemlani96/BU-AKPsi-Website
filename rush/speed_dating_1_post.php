@@ -1,7 +1,7 @@
 <?
 	if (isset($_GET["rushEmail"])) {
 		$sql = "UPDATE `rushFall2015` SET `sd1` = 1 WHERE `Email` = '".$_GET["rushEmail"]."' and `InvitedToClosed` = '1'";
-		include("../db/db_credentials.php");
+		include("../db/credentials.php");
 
 		// Create connection
 		$conn = new mysqli($hostname, $username, $password, $dbname);
@@ -14,7 +14,7 @@
 		}
 	} else {
 		$sql = "SELECT  `sd1` , COUNT( * ) FROM  `rushFall2015` GROUP BY `sd1`";
-		include("../db/db_credentials.php");
+		include("../db/credentials.php");
 
 		// Create connection
 		$conn = new mysqli($hostname, $username, $password, $dbname);
