@@ -1,4 +1,4 @@
-/db/db_credentials.php
+/db/db.php
 /img/brothers/*/*
 !/img/brothers/*/*thumb.png
 /img/index_video_2.mov

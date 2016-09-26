@@ -2,7 +2,7 @@
 
 ini_set('display_errors', 1);
 
-include("../db/db_credentials.php");
+include("../db/db.php");
 $usertable="brothers";
 $eyetable="eye2eye";
 
