@@ -115,7 +115,7 @@
 
 	<?php
 
-	include("../db/db.php");
+	include("../db/db_credentials.php");
 
 	// Create connection
 	$con = new mysqli($hostname, $username, $password, $dbname);

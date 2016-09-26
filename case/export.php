@@ -1,7 +1,7 @@
 <?php
 // Author: Linmic, email: linmicya@gmail.com
 
-include("../db/db.php");
+include("../db/db_credentials.php");
 
 $host = $hostname; // your db host (ip/dn)
 $user = $username; // your db's privileged user account

@@ -3,7 +3,7 @@
 include("/home/content/03/5577503/html/rush/password_protect.php");
 ini_set('display_errors', 1);
 
-include("../db/db.php");
+include("../db/db_credentials.php");
 
 // Create connection
 $con = new mysqli($hostname, $username, $password, $dbname);

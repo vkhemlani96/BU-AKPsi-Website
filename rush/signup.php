@@ -6,7 +6,7 @@
 // echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
 
 if (isset($_POST["rushFirstName"]) && isset($_POST["rushLastName"]) && isset($_POST['rushEmail'])  && isset($_POST['rushPhone'])  && isset($_POST['rushMajors'])  && isset($_POST['rushSchool']) && isset($_POST['rushGrade']) ) {
-	include("../db/db.php");
+	include("../db/db_credentials.php");
 
 	// Create connection
 	$conn = new mysqli($hostname, $username, $password, $dbname);

@@ -2,7 +2,7 @@
 
 ini_set('display_errors', 1);
 
-include("../db/db.php");
+include("../db/db_credentials.php");
 $usertable="brothers";
 $nccgtable="nccg";
 $yourfield = "LAST_NAME";

@@ -1,7 +1,7 @@
 <?php
 	include("/home/content/03/5577503/html/rush/password_protect_cookie.php");
 
-	include("../db/db.php");
+	include("../db/db_credentials.php");
 	include("application_questions.php");
 
 	// Create connection

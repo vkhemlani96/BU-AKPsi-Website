@@ -1,7 +1,7 @@
 <?php
 	if (isset($_POST["email"])) {
 
-		include("../db/db.php");
+		include("../db/db_credentials.php");
 
 		// Create connection
 		$con = new mysqli($hostname, $username, $password, $dbname);
