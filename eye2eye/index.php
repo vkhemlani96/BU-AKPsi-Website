@@ -53,7 +53,7 @@
 			<div class="center">
 				<h3><strong>Mission Statement</strong></h3>
 				<div class="gold_seperator_small"></div>
-				<p class="quote">"To promote the issue, to combat the epidemic, and to educate the public of gender inequality in the professional community in order to create a better world."</p>
+				<p class="quote">"To promote the issue of, to foster research in, and to educate the public on gender inequality in the collegiate community and professional world."</p>
 			</div>
 		</div>
 
