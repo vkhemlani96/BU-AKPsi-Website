@@ -21,39 +21,40 @@ $result = mysqli_query($link, $query);
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<title>Eye2Eye Board | Alpha Kappa Psi Nu Chapter</title>
-	<link href="../css/styles.css" rel="stylesheet"/>
-	<link href="../css/navbar.css" rel="stylesheet" />
-	<script src="../js/jquery.js"></script>
-	<script src="../js/jquery.color.js"></script>
-</head>
+	<head>
+		<title>Eye2Eye Board | Alpha Kappa Psi Nu Chapter</title>
+		<link href="../css/styles.css" rel="stylesheet"/>
+		<link href="../css/navbar.css" rel="stylesheet" />
+		<link href="../css/eye2eye_override.css" rel="stylesheet"/>
+		<script src="../js/jquery.js"></script>
+		<script src="../js/jquery.color.js"></script>
+	</head>
 
-<body>
-	<?php include("../navbar.php"); getNavbar(true); ?>
-	
-	<div class="vertical_padding title_section">
-		<h1>Research Team</h1>
-		<div class="seperator"></div>
-		<h2>Eye2Eye</h2>
-	</div>
-	
-	<div class="vertical_padding">
-		<table class="nccg_table center">
-			<?php
-			while ($obj = mysqli_fetch_object($result)) {
-				$firstName = $obj->firstName;
-				$lastName = $obj->lastName;
-				$position = $obj->position;
-				$bio = $obj -> bio;
-				$class = $obj->class;
-				$linkedin = $obj->linkedInUrl;
-				$img_name = strtolower($lastName) . "_" . strtolower($firstName);
-				$img_name = str_replace(" ", "_", $img_name);
-				$year = $obj->year;
-				$major = $obj->major . " (" . $obj->majorSchool . ")";
-				$minor = $obj->minor . " (" . $obj->minorSchool . ")";
-				$code = '
+	<body>
+		<?php include("../navbar.php"); getNavbar(true); ?>
+
+		<div class="vertical_padding title_section">
+			<h1>Research Team</h1>
+			<div class="seperator"></div>
+			<h2>Eye2Eye</h2>
+		</div>
+
+		<div class="vertical_padding">
+			<table class="nccg_table center">
+				<?php
+				while ($obj = mysqli_fetch_object($result)) {
+					$firstName = $obj->firstName;
+					$lastName = $obj->lastName;
+					$position = $obj->position;
+					$bio = $obj -> bio;
+					$class = $obj->class;
+					$linkedin = $obj->linkedInUrl;
+					$img_name = strtolower($lastName) . "_" . strtolower($firstName);
+					$img_name = str_replace(" ", "_", $img_name);
+					$year = $obj->year;
+					$major = $obj->major . " (" . $obj->majorSchool . ")";
+					$minor = $obj->minor . " (" . $obj->minorSchool . ")";
+					$code = '
 					<tr>
 						<td>
 						<div class="nccg_image">
@@ -65,30 +66,30 @@ $result = mysqli_query($link, $query);
 						</td>
 						<td class="nccg_bio_cell">
 							<h2 class="nccg_name"><strong>'.$firstName.' '.$lastName.'</strong> '.$position.
-							'<a target="_blank" href="'.$linkedin.'"><img height="24" style="float:right; margin-top:2px" src="../img/nccg/linkedin.png"></a></h2>
+						'<a target="_blank" href="'.$linkedin.'"><img height="24" style="float:right; margin-top:2px" src="../img/nccg/linkedin.png"></a></h2>
 							<p>'.$bio.'</p>
 						</td>
 					</tr>
 				';
-				$code = str_replace("<br><strong>Minor:</strong>  ()", "", $code);
-				echo $code;
-			}
-			?>
-		</table>
-	</div>
-	
-	<?php getFooter(); ?>
-	
-</body>
+					$code = str_replace("<br><strong>Minor:</strong>  ()", "", $code);
+					echo $code;
+				}
+				?>
+			</table>
+		</div>
 
-<script>
-	$(".nccg_image > div").each(function(index) {
-		$(this).css({
-			top: "204px"
+		<?php getFooter(); ?>
+
+	</body>
+
+	<script>
+		$(".nccg_image > div").each(function(index) {
+			$(this).css({
+				top: "204px"
+			});
 		});
-	});
-	
-	$(".nccg_image").hover(function(event) {
+
+		$(".nccg_image").hover(function(event) {
 			$(this).children("div").animate({
 				top: 0
 			},300);
@@ -97,6 +98,6 @@ $result = mysqli_query($link, $query);
 				top: "204px"
 			},300);
 		});
-</script>
+	</script>
 
 </html>

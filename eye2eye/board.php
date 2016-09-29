@@ -13,7 +13,7 @@ $query = "SELECT *
     FROM $usertable
     JOIN $eyetable
     ON $usertable.email = $eyetable.email
-	WHERE $eyetable.position LIKE '%Research%' OR $eyetable.position LIKE '%Director%'
+	WHERE $eyetable.position OR $eyetable.position LIKE '%Director%'
 	ORDER BY $eyetable.order";
 
 
