@@ -60,7 +60,11 @@ $active_classes = array("Mu", "Nu", "Xi", "Omicron", "Pi", "Rho", "Transfer");
 					$major = $obj->major . " (" . $obj->majorSchool . ")";
 					$minor = $obj->minor . " (" . $obj->minorSchool . ")";
 					$linkedIn = $obj->linkedInUrl;
-					$linkedInText = $linkedIn !== null ? "<a target=\"_blank\" href=\"$linkedIn\" class=\"brotherLinkedIn\"><img src=\"../img/linked_in_blue.png\"></a>" : "";
+					$linkedInText = $linkedIn !== null ? "<a target=\"_blank\" href=\"$linkedIn\" class=\"brotherLinkedIn brotherIcon\"><img src=\"../img/linked_in_blue.png\"></a>" : "";
+
+					$eye2eyeText = $obj->eye2eye == 1 ? "<a target=\"_blank\" href=\"../eye2eye/index.php\" class=\"brotherEye2Eye brotherIcon\"><img src=\"../img/eye2eye_color.png\"></a>" : "";
+
+					$nccgText = $obj->nccg == 1 ? "<a target=\"_blank\" href=\"../nccg/index.php\" class=\"brotherEye2Eye brotherIcon\"><img ". ($obj->eye2eye == 1 ? "style=\"left: 45px\"" : "") . " src=\"../img/nccg_color.png\"></a>" : "";
 
 					//	echo $firstName . " " . $position;
 
@@ -76,7 +80,7 @@ $active_classes = array("Mu", "Nu", "Xi", "Omicron", "Pi", "Rho", "Transfer");
 					<div>
 						<p class=\"name\">$firstName $lastName</p>
 						<div class=\"gold_seperator\"></div>
-						<p class=\"info\"><strong>Class:</strong> $class<br><strong>Year:</strong> $year<br><strong>Major:</strong> $major<br><strong>Minor:</strong> $minor</p>".$linkedInText."
+						<p class=\"info\"><strong>Class:</strong> $class<br><strong>Year:</strong> $year<br><strong>Major:</strong> $major<br><strong>Minor:</strong> $minor</p>".$linkedInText.$eye2eyeText."
 					</div>
 				</div>
 			</div>";
@@ -114,11 +118,17 @@ $active_classes = array("Mu", "Nu", "Xi", "Omicron", "Pi", "Rho", "Transfer");
 						$minor = $obj->minor . " (" . $obj->minorSchool . ")";
 						$linkedIn = $obj->linkedInUrl;
 						$linkedInText = $linkedIn !== null ? "<a target=\"_blank\" href=\"$linkedIn\" class=\"brotherLinkedIn\"><img src=\"../img/linked_in_white.png\"></a>" : "";
+
+						$eye2eyeText = $obj->eye2eye == 1 ? "<a target=\"_blank\" href=\"../eye2eye/index.php\" class=\"brotherEye2Eye brotherIcon\"><img src=\"../img/eye2eye_white.png\"></a>" : "";
+
+						$nccgText = $obj->nccg == 1 ? "<a target=\"_blank\" href=\"../nccg/index.php\" class=\"brotherEye2Eye brotherIcon\"><img ". ($obj->eye2eye == 1 ? "style=\"left: 45px\"" : "") . " src=\"../img/nccg_white.png\"></a>" : "";
+
+
 						$code = "<div class=\"brother_img\"><img height=\"200\" width=\"200\" onerror=\"$(this).attr('src','http://buakpsi.com/images/brothers/nophoto.png');\"  class=\"lazy\" data-original=\"../img/brothers/$class"."s/$img_name"."_thumb.png\">
 							<div>
 								<p class=\"name\">$firstName $lastName</p>
 								<div class=\"gold_seperator\"></div>
-								<p class=\"info\"><strong>Year:</strong> $year<br><strong>Major:</strong> $major<br><strong>Minor:</strong> $minor</p>" . $linkedInText ."
+								<p class=\"info\"><strong>Year:</strong> $year<br><strong>Major:</strong> $major<br><strong>Minor:</strong> $minor</p>" . $linkedInText . $eye2eyeText . $nccgText ."
 							</div>
 						</div>";
 						$code = str_replace("<br><strong>Minor:</strong>  ()", "", $code);
@@ -134,16 +144,21 @@ $active_classes = array("Mu", "Nu", "Xi", "Omicron", "Pi", "Rho", "Transfer");
 		?>
 
 		<style>
-			.brotherLinkedIn {
-				opacity: .5;	
+			.brotherIcon {
+				opacity: 1;	
 			}
-			.brotherLinkedIn:hover {
+			.brotherIcon:hover {
 				opacity: 1;	
 			}
 			.brotherLinkedIn img {
 				position:absolute;
 				bottom: 12px;
 				right: 12px;
+			}
+			.brotherEye2Eye img {
+				position:absolute;
+				bottom: 12px;
+				left: 12px;
 			}
 		</style>
 
