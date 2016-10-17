@@ -58,7 +58,7 @@ if ($conn->query($sql) === TRUE) {
 	<?
 		echo "<p class='center'>";
 	
-		echo $sql -> "<br>";
+		echo $sql . "<br>";
 		
 		echo $conn->error . "<br>";
 	
