@@ -29,6 +29,11 @@ ini_set('display_errors', 1);
 
 $no_error = false;
 	
+foreach ($_POST as $key => $value)
+ echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
+echo $_POST["rushEmail"];
+echo count($_POST);
+	
 include("../db/credentials.php");
 	
 
