@@ -57,8 +57,11 @@ if ($conn->query($sql) === TRUE) {
 	
 	<?
 		echo "<p class='center'>";
+	
+		echo $sql -> "<br>";
 		
 		echo $conn->error . "<br>";
+	
 		
 		foreach($_POST as $stuff ) {
 			if( is_array( $stuff ) ) {
