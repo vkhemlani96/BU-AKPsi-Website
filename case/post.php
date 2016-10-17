@@ -45,7 +45,8 @@ $caseTable = "caseFall2016";
 //
 //
 //	$sql = "INSERT INTO "
-$sql = "INSERT INTO $caseTable (firstNameMain, lastNameMain, email, school, year, firstName1, lastName1, school1, year1, firstName2, lastName2, school2, year2, f irstName3, lastName3, school3, year3) VALUES ('" . $_POST["firstNameMain"] . "', '" . $_POST["lastNameMain"] . "', '" . $_POST["email"] . "', '" . $_POST["school"] . "', '" . $_POST["firstName1"] . "', '" . $_POST["lastName1"] . "', '" . $_POST["school1"] . "', '" . $_POST["year1"] . "', '" $_POST["firstName2"] . "', '" . $_POST["lastName2"] . "', '" . $_POST["school2"] . "', '" . $_POST["year2"] . "', '" $_POST["firstName3"] . "', '" . $_POST["lastName3"] . "', '" . $_POST["school3"] . "', '" . $_POST["year3"] . "')";
+$sql = "INSERT INTO $caseTable (firstNameMain, lastNameMain, email, school, year, firstName1, lastName1, school1, year1, firstName2, lastName2, school2, year2, f irstName3, lastName3, school3, year3) VALUES ('";
+//	. $_POST["firstNameMain"] . "', '" . $_POST["lastNameMain"] . "', '" . $_POST["email"] . "', '" . $_POST["school"] . "', '" . $_POST["firstName1"] . "', '" . $_POST["lastName1"] . "', '" . $_POST["school1"] . "', '" . $_POST["year1"] . "', '" $_POST["firstName2"] . "', '" . $_POST["lastName2"] . "', '" . $_POST["school2"] . "', '" . $_POST["year2"] . "', '" $_POST["firstName3"] . "', '" . $_POST["lastName3"] . "', '" . $_POST["school3"] . "', '" . $_POST["year3"] . "')";
 
 if ($conn->query($sql) === TRUE) {
 	$no_error = true;
