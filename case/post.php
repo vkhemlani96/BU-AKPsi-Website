@@ -31,7 +31,6 @@ $no_error = false;
 	
 foreach ($_POST as $key => $value)
  echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
-echo $_POST["rushEmail"];
 echo count($_POST);
 	
 include("../db/credentials.php");
@@ -43,15 +42,9 @@ $conn = new mysqli($hostname, $username, $password, $dbname);
 if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
 } 
-//
-$caseTable = "caseFall2016";
-//$sql = "INSERT INTO $caseTable (firstNameMain, lastNameMain, email, school, year, firstName1, lastName1, school1, year1, firstName2, lastName2, school2, year2, firstName3, lastName3, school3, year3, Phone, q1, q2, q3)";
-////	VALUES ('" . $_POST["FirstName"] . "', '" . $_POST["LastName"] . "', '" . $_POST["Email"] . "', '" . $_POST["Grade"] . "', '" . $_POST["School"] . "', '" . $_POST["Phone"] . "', '" . $_POST["q1"] . "', '" . $_POST["q2"] . "', '" . $_POST["q3"] . "')";
-//
-//
-//	$sql = "INSERT INTO "
-$sql = "INSERT INTO $caseTable (firstNameMain, lastNameMain, email, school, year, firstName1, lastName1, school1, year1, firstName2, lastName2, school2, year2, f irstName3, lastName3, school3, year3) VALUES ('" . $_POST["firstNameMain"] . "', '" . $_POST["lastNameMain"] . "', '" . $_POST["email"] . "', '" . $_POST["school"] . "', '" . $_POST["firstName1"] . "', '" . $_POST["lastName1"] . "', '" . $_POST["school1"] . "', '" . $_POST["year1"] . "', '" $_POST["firstName2"] . "', '" . $_POST["lastName2"] . "', '" . $_POST["school2"] . "', '" . $_POST["year2"] . "', '" $_POST["firstName3"] . "', '" . $_POST["lastName3"] . "', '" . $_POST["school3"];
-//	. "', '" . $_POST["year3"] . "')";
+
+	$caseTable = "caseFall2016";
+	$sql = "INSERT INTO $caseTable (firstNameMain, lastNameMain, email, school, year, firstName1, lastName1, school1, year1, firstName2, lastName2, school2, year2, f irstName3, lastName3, school3, year3) VALUES ('" . $_POST["firstNameMain"] . "', '" . $_POST["lastNameMain"] . "', '" . $_POST["email"] . "', '" . $_POST["school"] . "', '" . $_POST["firstName1"] . "', '" . $_POST["lastName1"] . "', '" . $_POST["school1"] . "', '" . $_POST["year1"] . "', '" . $_POST["firstName2"] . "', '" . $_POST["lastName2"] . "', '" . $_POST["school2"] . "', '" . $_POST["year2"] . "', '" . $_POST["firstName3"] . "', '" . $_POST["lastName3"] . "', '" . $_POST["school3"]	. "', '" . $_POST["year3"] . "')";
 
 if ($conn->query($sql) === TRUE) {
 	$no_error = true;
