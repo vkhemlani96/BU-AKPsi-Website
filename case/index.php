@@ -18,17 +18,20 @@
 	<?php include("../navbar.php"); getNavbar(true); ?>
 	
 	<div class="center vertical_padding title_section">
-		<h1>Trans-Atlantic Case Competition</h1>
+		<h1>4th Annual Case Competition</h1>
 		<div class="seperator"></div>
 		<h2></h2>
 	</div>
 	
 	<div class="center">
 		<style>
-			#Form div div.mdl-textfield {
+			#Form div.mdl-textfield {
 				display:inline-block;
-				width:33%;
+				width:24%;
 				text-align:center;
+			}
+			#Form .main div.mdl-textfield {
+				width:33% !important;
 			}
 			#Form div div.mdl-textfield * {
 				width: 95%;
@@ -47,7 +50,7 @@
 				font-size: 16px;
 				padding: 4px 0;
 				background: 16px;
-    			color: rgba(0,0,0,.26);
+    			color: rgba(0,0,0,1);
 			}
 			#Form div div.pic * {
 				width: auto;
@@ -66,46 +69,109 @@
 		</style>
 		<form style="margin: 0 auto;" action="post.php" id="Form" method="post" enctype="multipart/form-data">
 			<div class="vertical_padding">
+			
+				<div class="main">
+			
+				<p><b>Main Team Contact</b></p>
+				
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+						<input class="mdl-textfield__input" type="text" id="FirstName" name="firstNameMain" />
+						<label class="mdl-textfield__label" for="sample1">First Name</label>
+					</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+						<input class="mdl-textfield__input" type="text" id="LastName" name="lastNameMain" />
+						<label class="mdl-textfield__label" for="sample1">Last Name</label>
+					</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+						<input class="mdl-textfield__input" type="text" id="Email" name="email"/>
+						<label class="mdl-textfield__label" for="sample1">E-Mail (MUST USE @bu.edu)</label>
+					</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+						<input class="mdl-textfield__input" type="text" id="Grade" name="year"/>
+						<label class="mdl-textfield__label" for="sample1">Graduation Year</label>
+					</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+						<input class="mdl-textfield__input" type="text" id="School" name="school"/>
+						<label class="mdl-textfield__label" for="sample1">School within BU</label>
+					</div>
+				
+				</div>
+			
+				<p><b>Team Member #2</b></p>
 				
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
-					<input class="mdl-textfield__input" type="text" id="FirstName" name="FirstName" />
+					<input class="mdl-textfield__input" type="text" id="FirstName" name="firstName1" />
 					<label class="mdl-textfield__label" for="sample1">First Name</label>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
-					<input class="mdl-textfield__input" type="text" id="LastName" name="LastName" />
+					<input class="mdl-textfield__input" type="text" id="LastName" name="lastName1" />
 					<label class="mdl-textfield__label" for="sample1">Last Name</label>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
-					<input class="mdl-textfield__input" type="text" id="Email" name="Email"/>
-					<label class="mdl-textfield__label" for="sample1">E-Mail (MUST USE @bu.edu)</label>
+					<input class="mdl-textfield__input" type="text" id="Grade" name="year1"/>
+					<label class="mdl-textfield__label" for="sample1">Graduation Year</label>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
-					<input class="mdl-textfield__input" type="text" id="Grade" name="Grade"/>
-					<label class="mdl-textfield__label" for="sample1">Expected Graduation Year</label>
+					<input class="mdl-textfield__input" type="text" id="School" name="school1"/>
+					<label class="mdl-textfield__label" for="sample1">School within BU</label>
+				</div>
+			
+				<p><b>Team Member #3</b></p>
+				
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+					<input class="mdl-textfield__input" type="text" id="FirstName" name="firstName2" />
+					<label class="mdl-textfield__label" for="sample1">First Name</label>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
-					<input class="mdl-textfield__input" type="text" id="School" name="School"/>
-					<label class="mdl-textfield__label" for="sample1">School within BU (ex: Questrom, CAS, SHA)</label>
+					<input class="mdl-textfield__input" type="text" id="LastName" name="lastName2" />
+					<label class="mdl-textfield__label" for="sample1">Last Name</label>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
-					<input class="mdl-textfield__input" type="text" id="Phone" name="Phone"/>
-					<label class="mdl-textfield__label" for="sample1">Phone Number</label>
+					<input class="mdl-textfield__input" type="text" id="Grade" name="year2"/>
+					<label class="mdl-textfield__label" for="sample1">Graduation Year</label>
+				</div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+					<input class="mdl-textfield__input" type="text" id="School" name="school2"/>
+					<label class="mdl-textfield__label" for="sample1">School within BU</label>
+				</div>
+			
+				<p><b>Team Member #4</b></p>
+				
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+					<input class="mdl-textfield__input" type="text" id="FirstName" name="firstName3" />
+					<label class="mdl-textfield__label" for="sample1">First Name</label>
+				</div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+					<input class="mdl-textfield__input" type="text" id="LastName" name="lastName3" />
+					<label class="mdl-textfield__label" for="sample1">Last Name</label>
+				</div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+					<input class="mdl-textfield__input" type="text" id="Grade" name="year3"/>
+					<label class="mdl-textfield__label" for="sample1">Graduation Year</label>
+				</div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+					<input class="mdl-textfield__input" type="text" id="School" name="school3"/>
+					<label class="mdl-textfield__label" for="sample1">School within BU</label>
 				</div>
 			</div>
 			
-			<div class="table_seperator" style="width: 66%"></div>
+<!--			<div class="table_seperator" style="width: 66%"></div>-->
 			
+<!--
 			<div class="vertical_padding">
 				<p><strong>Why have you applied for the competition? (Max 650 Characters)</strong></p>
 				<textarea name="q1" maxlength="650"></textarea>
+-->
 <!--
 				<p><strong>Give 3 reasons why global consulting firm YSC is requesting help from students from Boston University & Newcastle University (Max 2,200 Characters)</strong></p>
 				<textarea name="q2" maxlength="2200"></textarea>
 -->
+<!--
 				<p><strong>How would winning this competition help you? (Max 700 Characters)</strong></p>
 				<textarea name="q2" maxlength="700"></textarea>
 				<p><strong>Have you ever worked in a culturally diverse team? If yes, did you work effectively? If not, why would you like to work in a culturally diverse team? (Max 1,000 Characters)</strong></p>
 				<textarea name="q3" maxlength="1000"></textarea>
+-->
 <!--
 				<p><strong>What is your most notable work experience?</strong></p>
 				<textarea name="q5_work"></textarea>
@@ -118,13 +184,20 @@
 				<p><strong><i>If this is not your first time applying</i>, what have you done to strengthen your candidacy?</strong></p>
 				<textarea name="q9_second" class="notRequired"></textarea>
 -->
+<!--
 			</div>
 			<div class="pic">
 				<p class="">Please attach your resume: </p>
 				<input type="file" id="Resume" name="Resume" style="display:inline-block; width: 66%"/>
 			</div>
-			
-			<div style="text-align:center; margin-bottom: 35px;">
+-->
+	
+			<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-2">
+  				<input type="checkbox" id="checkbox-2" class="mdl-checkbox__input">
+				<span class="mdl-checkbox__label">Click to acknowledge: Only teams that hand in a cash or check for the $50 team deposit will be properly registered for the competition. This deposit is to ensure each registered team's participation. Deposits will be maintained by Alpha Kappa Psi professional fraternity and will be returned upon successful completion of the competition day</span>
+			</label>
+		
+			<div style="text-align:center; margin: 80px 0;">
 				<button class="button" type="button" id="formSubmit" name="formSubmit">SUBMIT</button>
 			</div>
 			
@@ -135,6 +208,9 @@
 	<?php getFooter(); ?>
 	
 	<script>
+		
+		console.log($("#checkbox-2").checked);
+		
 		
 		function checkform() {
 			// get all the inputs within the submitted form
@@ -158,30 +234,45 @@
 		}
 		
 		$("#formSubmit").click(function() {
-			if (checkform()) {
-
-				if ($("#Email").val().trim().indexOf("@bu.edu", this.length - "@bu.edu".length) == -1 || $("#Email").val().length > 15) {
-					alert("Please use your BU email");
-					return;
-				}
-
-				$("#Form").submit();
+			if (!checkform()) {
+				alert("Please fill out all fields.");
+				return;
 			} else {
-				if( document.getElementById("Resume").files.length == 0 ){
-					alert("Please include a copy of your resume with your application.");
+				if (!$("#checkbox-2").is(':checked')) {
+					alert("Please acknowledge the agreement above");
 					return;
+				} else {
+					$("#Form").submit();
 				}
-				alert("Please fill all required fields.");
 			}
 		});
 		
+//		
+//		$("#formSubmit").click(function() {
+//			if (checkform()) {
+//
+//				if ($("#Email").val().trim().indexOf("@bu.edu", this.length - "@bu.edu".length) == -1 || $("#Email").val().length > 15) {
+//					alert("Please use your BU email");
+//					return;
+//				}
+//
+//				$("#Form").submit();
+//			} else {
+//				if( document.getElementById("Resume").files.length == 0 ){
+//					alert("Please include a copy of your resume with your application.");
+//					return;
+//				}
+//				alert("Please fill all required fields.");
+//			}
+//		});
 		
-		$("textarea").click(function() {
-			$( this ).prev().css( "color", "#000033" );
-		});
-		$("#Resume").click(function() {
-			$( this ).prev().css( "color", "#000033" );
-		});
+//		
+//		$("textarea").click(function() {
+//			$( this ).prev().css( "color", "#000033" );
+//		});
+//		$("#Resume").click(function() {
+//			$( this ).prev().css( "color", "#000033" );
+//		});
 		
 	</script>
 	
