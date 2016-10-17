@@ -18,7 +18,7 @@
 	<?php include("../navbar.php"); getNavbar(true); ?>
 	
 	<div class="center vertical_padding title_section">
-		<h1>Trans-Atlantic Case Competition</h1>
+		<h1>4th Annual Case Competition</h1>
 		<div class="seperator"></div>
 		<h2></h2>
 	</div>
@@ -53,7 +53,7 @@ if ($conn->query($sql) === TRUE) {
 
 ?>
 	
-	<h2 style="margin: 50px 0;"><strong>An error has occured.</strong><br>Please copy paste the following and email it to <a href="mailto:warriera@bu.edu">warriera@bu.edu</a>.</h2>
+	<h2 style="margin: 50px 0;"><strong>An error has occured.</strong><br>Please copy paste the following and email it to <a href="mailto:jskim@bu.edu">jskim@bu.edu</a>.</h2>
 	
 	<?
 		echo "<p class='center'>";
