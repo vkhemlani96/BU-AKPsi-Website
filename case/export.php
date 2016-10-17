@@ -23,7 +23,7 @@ for ($i = 0; $i < $fields; $i++) {
 	$col_title .= '<Cell ss:StyleID="2"><Data ss:Type="String">'.mysql_field_name($export, $i).'</Data></Cell>';
 }
 
-$col_title .= '<Cell ss:StyleID="2"><Data ss:Type="String">Link to Resume</Data></Cell>';
+//$col_title .= '<Cell ss:StyleID="2"><Data ss:Type="String">Link to Resume</Data></Cell>';
 $col_title = '<Row>'.$col_title.'</Row>';
 
 while($row = mysql_fetch_row($export)) {
@@ -43,7 +43,7 @@ while($row = mysql_fetch_row($export)) {
 		break;
 	}
 //	$resume_link = 'http://www.buakpsi.com/case/resumes/' . $row[1] . "_" . $row[0] . '.pdf';
-	$line .= '<Cell ss:StyleID="s65" ss:HRef="'.$resume_link.'"><Data ss:Type="String">'.$resume_link.'</Data></Cell>\t';
+//	$line .= '<Cell ss:StyleID="s65" ss:HRef="'.$resume_link.'"><Data ss:Type="String">'.$resume_link.'</Data></Cell>\t';
 	$data .= trim("<Row>".$line."</Row>")."\n";
 }
 
