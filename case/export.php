@@ -7,7 +7,7 @@ $host = $hostname; // your db host (ip/dn)
 $user = $username; // your db's privileged user account
 $password = $password; // and it's password
 $db_name = $dbname; // db name
-$tbl_name = $caseTable; // table name of the selected db
+$tbl_name = "caseFall2016"; // table name of the selected db
 
 $link = mysql_connect ($host, $user, $password) or die('Could not connect: ' . mysql_error());
 mysql_select_db($db_name) or die('Could not select database');
