@@ -19,6 +19,15 @@
 
 	<body>
 		<?php include("../navbar.php"); getNavbar(true); ?>
+		
+		<div class="eye2eyeSplash">
+			<div class="eye2eyeLogo">
+				<img src="../img/eye2eye/logo_splash.png" height="500">
+			</div>
+			<div class="eye2eyeHeader">
+				<?php getEye2EyeNavbar(); ?>
+			</div>
+		</div>
 
 		<div class="center vertical_padding title_section">
 			<h1>E<span>ye</span>2E<span>ye</span></h1>
