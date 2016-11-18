@@ -1,3 +1,5 @@
+Redirect /eye2eye/donate /eye2eye/donate.php
+
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^.*buakpsi\.com[\\\/][^\.]*$ $1.php [NC,L]
