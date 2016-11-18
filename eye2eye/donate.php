@@ -21,8 +21,6 @@ function full_url_encode($params) {
 	return $result;
 }
 
-die();
-
 $filename = getcwd() . "/stats.txt";
 
 $statsFile = fopen($filename, "r");
