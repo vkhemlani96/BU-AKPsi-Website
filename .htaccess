@@ -1,4 +1,6 @@
 Redirect 301 /db https://p3nlmysqladm002.secureserver.net/grid55/223/index.php
+Redirect 301 /eye2eye/donate https://crowdfunding.bu.edu/project/3305
+
 
 Options +MultiViews
 RewriteEngine On
