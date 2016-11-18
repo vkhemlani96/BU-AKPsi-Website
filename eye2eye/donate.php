@@ -40,5 +40,5 @@ $statsFile = fopen($filename, "w");
 fwrite($statsFile, full_url_encode($parsed));
 fclose($statsFile);
 
-header("Location: https://crowdfunding.bu.edu/project/3305") ;
+header("Location: https://crowdfunding.bu.edu/eye2eye") ;
 ?>
