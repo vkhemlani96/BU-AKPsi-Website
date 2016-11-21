@@ -1,4 +1,4 @@
-#navbar, #navbar_small {
+#navbar, #navbar_small, #navbar_eye2eye {
 	width: 100%;
 	background-color: #000033;
 /*    box-shadow: 0 5px 10px #888888;*/
@@ -14,25 +14,25 @@
 	padding: 20px 0 0 0;
 	font-weight: normal !important;
 }
-#navbar a {
+#navbar a, #navbar_eye2eye a {
 	text-decoration: none;
 	color: white;
 	font-weight: normal !important;
 }
-#navbar > ul {
+#navbar > ul, #navbar_eye2eye ul {
 	width: 980px;
 	margin: 0 auto;
 	text-align: center;
 	padding-top: 10px;
 }
-#navbar > ul > li {
+#navbar > ul > li, #navbar_eye2eye > ul > li {
 	display: inline-block;
 /*	border-bottom: solid 4px #000033;*/
 }
-#navbar > ul > li:hover {
+#navbar > ul > li:hover, #navbar_eye2eye > ul > li:hover {
 	border-bottom: solid 4px #bda75d;
 }
-#navbar p a {
+#navbar p a, #navbar_eye2eye p a {
 	color: white;
 	font-family: "Bebas Neue";
 	font-size: 20px;
@@ -94,7 +94,7 @@
 #navbar_small > ul > li > p {
 	padding: 25px 0 18px 0;
 }
-#navbar li:hover, #navbar_small li:hover {
+#navbar li:hover, #navbar_small li:hover, #navbar_eye2eye li:hover {
 	background-color: #33335c;
 	cursor: pointer;
 }

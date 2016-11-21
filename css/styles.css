@@ -2,6 +2,8 @@
 Navy - 000033 (0,0,51)
 Gold - bda75d
 Red - a60033
+E2E Pink - e4007f
+E2E Purple - 131557
 */
 
 @import url(material_modify.css);
@@ -182,6 +184,7 @@ input[type="submit"].button {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
 }
+sup {font-size:xx-small; vertical-align:super;}
 
 /* CLASSES */
 
@@ -831,4 +834,140 @@ input[type="submit"].button {
 	display: inline-block;
 	vertical-align: middle;
 	padding: 15px;
+}
+
+.eye2eyeSplash {
+	height: 400px;
+	width: 100vw;
+	background-color: #131557
+}
+
+.eye2eyeNavbar {
+	margin-top: -57px;
+}
+.eye2eyeNavbar #navbar_eye2eye {
+	background-color: transparent
+}
+
+.eye2eyeCategoryTable {
+	width: 95%;
+	margin: 0 auto;
+}
+
+.eye2eyeCategoryTable .box_purple, .eye2eyeCategoryTable .box_pink {
+	width: 24%;
+	text-align: center;
+	height: 75px;
+	padding: 3px 10px 0;
+	display: table-cell;
+	border: white 2px solid;
+	vertical-align: middle;
+}
+
+.box_purple {
+	background-color: #131557;
+}
+
+.box_pink {
+	background-color: #e4007f
+}
+
+.eye2eyeCategoryTable .spacer {
+	width: 1%;
+	display: inline-block;
+}
+
+.eye2eyeCategoryTable h2 {
+	font-size: 26px;
+	text-align: center;
+	font-weight: bold;
+	color: white;
+	margin: 0 10px;
+}
+
+.eye2eyeGoalsTable {
+	width: 92%;
+	margin: 30px auto;
+}
+
+.eye2eyeGoalsTable td {
+	width: 50%;
+	
+}
+
+.eye2eyeGoalsTable td:first-child h2, .eye2eyeGoalsTable td:first-child p {
+	text-align: left;
+}
+
+.eye2eyeGoalsTable h2, .eye2eyeGoalsTable p {
+	padding: 0 10px;
+	text-align: right;
+	justify-content: center;
+	color: #131557;
+	font-weight: bold;
+}
+
+.blog_table {
+	width: 850px;
+	margin: 0 auto;
+}
+.blog_table h2, .blog_table p {
+	text-align: left;
+	margin: 0 10px;
+}
+.blog_table a {
+	font-weight: normal;
+	text-decoration: none;
+}
+.blog_table div {
+	margin-top: 20px;
+}
+.blog_table div:hover * {
+	text-decoration: underline;
+	cursor: pointer;
+}
+.blog_table h2 {
+	margin-top: 10px;
+	font-size: 30px;
+}
+
+.blog_header {
+	width: 800px;
+}
+
+.blog_header * {
+	text-align: left;
+}
+.blog_header h4 {
+	margin: 5px 0px 10px;
+}
+.blog_header .table_seperator {
+	margin-top: 10px;
+}
+
+.blog_body {
+	width: 800px;
+	text-align: center;
+}
+.blog_body img {
+	margin: 10px;
+}
+.blog_body p {
+	line-height: 25px;
+	text-align: left
+}
+.blog_body li {
+	display: list-item;
+	list-style: circle;
+	margin-left: 50px;
+}
+
+.blog_footer {
+	width: 800px;
+	padding-top: 0;
+}
+.blog_footer p {
+	font-size: 12px;
+	line-height: 17px;
+	color: rgba(0,0,0,.5)
 }

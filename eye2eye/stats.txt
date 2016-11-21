@@ -1,1 +1,1 @@
-default=0&qr=0
+default=2&qr=0

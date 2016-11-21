@@ -21,13 +21,17 @@ h1, h2, a[href] {
 
 .button,
 .brother_img img,
-.nccg_image img
+.nccg_image img,
 {
-	border-color: #131557;
+	border-color: #002486;
 }
 
-#navbar_small  {
+#navbar_small, #eye2eye_navbar, .button_gold  {
 	border-color: #e4007f;
+}
+
+.button_gold:hover {
+	background-color: #e4007f;
 }
 
 .dropdown ul {
@@ -38,8 +42,14 @@ h1, h2, a[href] {
 	border-bottom:5px solid #e4007f;
 }
 
+
 #navbar_small > ul > li > p > a[href*="rush"],
 #navbar_small a[style*="color"],
 .footer a[style*="color"]{
-	color: #e4007f !important;
+	color: white !important;
+}
+
+#navbar_eye2eye > ul > li:hover {
+	background-color: #002486;
+	border-bottom: solid 4px #e4007f;
 }
