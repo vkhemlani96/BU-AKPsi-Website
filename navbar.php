@@ -50,6 +50,7 @@ function getNavbar($small) {
 						<div class=\"dropdown\" style=\"left:$left[2]\">
 							<div class=\"arrow-up\"></div>
 							<ul>
+								<li><p><a href=\"$prefix/eye2eye/\">About</a></p></li>
 								<li><p><a href=\"$prefix/eye2eye/board.php\">Board of Directors</a></p></li>
 								<li><p><a href=\"$prefix/eye2eye/research.php\">Research Team</a></p></li>
 							</ul>
@@ -70,8 +71,6 @@ function getEye2EyeNavbar() {
 		<div id=\"navbar_eye2eye\">
 				<ul>
 					<li>
-						<p><a href=\"$prefix/eye2eye/\">About</a></p>
-					</li><li>
 						<p><a href=\"$prefix/eye2eye/board.php\">Board of Directors</a></p>
 					</li><li>
 						<p><a href=\"$prefix/eye2eye/research.php\">Research Team</a></p>
