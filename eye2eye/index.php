@@ -89,7 +89,7 @@ function getDonationCount() {
 				<p>Eye2Eye wants to see a fairer, more equal and just workforce, where hard work, talent, and determination are the main measures of success. In order to achieve our milestones, we need your help. With your support, we can develop a platform that fosters change and raises the awareness that has been mute in many communities. Please help us spread our mission by sharing our website and name. Additionally, please consider donating to our fund to help us create a meaningful and impactful conference; every dollar helps tremendously. Click on the button below to see our rewards categories and make your tax-deductible donation! We thank you for your support!</p>
 				<br><br>
 				<h1><? echo getDonationCount(); ?> Donated So Far</h1>
-				<p style="text-align:center; margin-top: 20px"><a href="https://crowdfunding.bu.edu/project/3305" class="button_gold">Give Now</a></p>
+				<p style="text-align:center; margin-top: 20px"><a href="https://crowdfunding.bu.edu/project/3305" target="_blank" class="button_gold">Give Now</a></p>
 			</div>
 		</div>
 		
