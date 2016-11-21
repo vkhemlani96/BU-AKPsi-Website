@@ -4,7 +4,7 @@
 	<head>
 
 		<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.indigo-pink.min.css">
-		<title>Looking Through the Glass: A Modern Prespective on the Glass Ceiling | Alpha Kappa Psi Nu Chapter</title>
+		<title>Looking Through the Glass: A Modern Perspective on the Glass Ceiling | Alpha Kappa Psi Nu Chapter</title>
 
 		<script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -21,7 +21,7 @@
 		<?php include("../../navbar.php"); getNavbar(true); ?>
 		
 		<div class="vertical_padding center title_section blog_header">
-			<h1>Looking Through the Glass: A Modern Prespective on the Glass Ceiling</h1>
+			<h1>Looking Through the Glass: A Modern Perspective on the Glass Ceiling</h1>
 			<h4>Ashley Daniel | November 15, 2016</h4>
 			<div class="table_seperator"></div>
 		</div>

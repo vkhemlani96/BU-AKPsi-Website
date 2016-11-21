@@ -106,13 +106,13 @@ function getDonationCount() {
 				<a href="blog/female_quality_and_quantity.php">
 					<div>
 						<h2><strong>Female quality and quantity stagnant at universities</strong></h2>
-						<p>There have been numerous studies done on gender equality across industries and countries; however, there aren't many that focus on education, especially among universities. One study that stands out in this category is "The Glass Door Remains Closed: Another Look at Gender Inequality in Undergraduate Business Schools" by Laura Marini Davis and Victoria Geyfman. The authors looked at female representation in undergraduate business schools by analyzing accredited U.S. business programs in the Association to Advance Collegiate Schools of Business (AACSB) from 2003 to 2011.</p>
+						<p>There have been numerous studies done on gender equality across industries and countries; however, there aren't many that focus on education, especially among universities. There is one that stands out in this category - "The Glass Door Remains Closed: Another Look at Gender Inequality in Undergraduate Business Schools" by Laura Marini Davis and Victoria Geyfman. The authors examined female representation in undergraduate business schools by analyzing accredited U.S. business programs in the Association to Advance Collegiate Schools of Business (AACSB) from 2003 to 2011.</p>
 					</div>
 				</a>
 				<div class="table_seperator"></div>
 				<a href="blog/looking_through_the_glass.php">
 					<div>
-						<h2><strong>Looking Through the Glass: A Modern Prespective on the Glass Ceiling</strong></h2>
+						<h2><strong>Looking Through the Glass: A Modern Perspective on the Glass Ceiling</strong></h2>
 						<p>We are fortunate enough to live in a time where "You can be anything you want to be!" is a prominent statement in nearly every child's life. However, an overwhelming number of statistics accompanied by a series of public events this year have us all questioning that statement more than ever. Can I be anything I want to be? Are there limits to my success? After consulting a number of articles, I have decided to dive deeper into this idea of <i>The Glass Ceiling</i>.</p>
 					</div>
 				</a>
