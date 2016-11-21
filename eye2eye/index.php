@@ -106,14 +106,13 @@ function getDonationCount() {
 				<a href="blog/female_quality_and_quantity.php">
 					<div>
 						<h2><strong>Female quality and quantity stagnant at universities</strong></h2>
-						<p>We are fortunate enough to live in a time where “You can be anything you want to be!” is a prominent statement in nearly every child’s life. However, an overwhelming number of statistics accompanied by a series of public events this year have us all questioning that statement more than ever. Can I be anything I want to be? Are there limits to my success? After consulting a number of articles, I have decided to dive deeper into this idea of <i>The Glass Ceiling</i>.</p>
+						<p>We are fortunate enough to live in a time where "You can be anything you want to be!" is a prominent statement in nearly every child’s life. However, an overwhelming number of statistics accompanied by a series of public events this year have us all questioning that statement more than ever. Can I be anything I want to be? Are there limits to my success? After consulting a number of articles, I have decided to dive deeper into this idea of <i>The Glass Ceiling</i>.</p>
 					</div>
 				</a>
 				<div class="table_seperator"></div>
 				<a href="blog/looking_through_the_glass.php">
 					<div>
-						<h2><strong>Looking Through the Glass: A Modern Prespective on the Glass Ceiling</strong></h2>
-						<p>We are fortunate enough to live in a time where “You can be anything you want to be!” is a prominent statement in nearly every child’s life. However, an overwhelming number of statistics accompanied by a series of public events this year have us all questioning that statement more than ever. Can I be anything I want to be? Are there limits to my success? After consulting a number of articles, I have decided to dive deeper into this idea of <i>The Glass Ceiling</i>.</p>
+						<h2><strong>Looking Through the Glass: A Modern Prespective on the Glass Ceiling</strong></h2><p>We are fortunate enough to live in a time where "You can be anything you want to be!" is a prominent statement in nearly every child’s life. However, an overwhelming number of statistics accompanied by a series of public events this year have us all questioning that statement more than ever. Can I be anything I want to be? Are there limits to my success? After consulting a number of articles, I have decided to dive deeper into this idea of <i>The Glass Ceiling</i>.</p>
 					</div>
 				</a>
 			</div>
