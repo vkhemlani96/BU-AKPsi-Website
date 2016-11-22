@@ -22,7 +22,7 @@
 		
 		<div class="vertical_padding center title_section blog_header">
 			<h1>Looking Through the Glass: A Modern Perspective on the Glass Ceiling</h1>
-			<h4>Ashley Daniel | November 15, 2016</h4>
+			<h4><a href="../research.php#daniel">Ashley Daniel</a> | November 15, 2016</h4>
 			<div class="table_seperator"></div>
 		</div>
 		<div class="vertical_padding center blog_body">

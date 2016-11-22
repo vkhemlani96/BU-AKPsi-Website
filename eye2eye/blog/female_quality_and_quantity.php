@@ -22,7 +22,7 @@
 		
 		<div class="vertical_padding center title_section blog_header">
 			<h1>Female Quality and Quantity<br>Stagnant at Universities</h1>
-			<h4>Nelly Nguyen | November 17, 2016</h4>
+			<h4><a href="../research.php#nguyen">Nelly Nguyen</a> | November 17, 2016</h4>
 			<div class="table_seperator"></div>
 		</div>
 		<div class="vertical_padding center blog_body">

@@ -22,7 +22,7 @@ $result = mysqli_query($link, $query);
 <html lang="en">
 
 	<head>
-		<title>Eye2Eye Board | Alpha Kappa Psi Nu Chapter</title>
+		<title>Eye2Eye Research Team | Alpha Kappa Psi Nu Chapter</title>
 		<link href="../css/styles.css" rel="stylesheet"/>
 		<link href="../css/navbar.css" rel="stylesheet" />
 		<link href="../css/eye2eye_override.css" rel="stylesheet"/>
@@ -55,7 +55,7 @@ $result = mysqli_query($link, $query);
 					$major = $obj->major . " (" . $obj->majorSchool . ")";
 					$minor = $obj->minor . " (" . $obj->minorSchool . ")";
 					$code = '
-					<tr>
+					<tr id="'.strtolower($lastName).'">
 						<td>
 						<div class="nccg_image">
 								<img src="../img/brothers/'.strtolower($class).'s/'.$img_name.'_thumb.png" onerror="$(this).attr(\'src\',\'http://buakpsi.com/img/brothers/nophoto.png\');" height="200">

@@ -53,6 +53,7 @@ function getNavbar($small) {
 								<li><p><a href=\"$prefix/eye2eye/\">About</a></p></li>
 								<li><p><a href=\"$prefix/eye2eye/board.php\">Board of Directors</a></p></li>
 								<li><p><a href=\"$prefix/eye2eye/research.php\">Research Team</a></p></li>
+								<li><p><a href=\"$prefix/eye2eye/blog/\">Research Blog</a></p></li>
 							</ul>
 						</div>
 						<p><a href=\"$prefix/eye2eye/\">Eye2Eye</a></p>
@@ -75,7 +76,7 @@ function getEye2EyeNavbar() {
 					</li><li>
 						<p><a href=\"$prefix/eye2eye/research.php\">Research Team</a></p>
 					</li><li>
-						<p><a href=\"$prefix/eye2eye/research.php\">Blog</a></p>
+						<p><a href=\"$prefix/eye2eye/blog/\">Blog</a></p>
 					</li><li>
 						<p><a href=\"$prefix/eye2eye/donate.php\">Donate</a></p>
 					</li>
