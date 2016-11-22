@@ -10,7 +10,7 @@ $yourfield = "LAST_NAME";
 $link = mysqli_connect($hostname,$username, $password) or die ("<html><script language='JavaScript'>alert('Unable to connect to database! Please try again later.')</script></html>");
 mysqli_select_db($link, $dbname);
 
-$active_classes = array("Mu", "Nu", "Xi", "Omicron", "Pi", "Rho", "Transfer");
+$active_classes = array("Mu", "Nu", "Xi", "Omicron", "Pi", "Rho", "Sigma", "Transfer");
 ?>
 
 <!DOCTYPE html>
