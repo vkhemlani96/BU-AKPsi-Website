@@ -117,7 +117,7 @@ $result = mysqli_query($link, $sql);
 				$first = true;
 				while ($article = mysqli_fetch_object($result)) {
 					$preview = trim(preg_replace('/<sup>\d+<\/sup>/', '', $article->body));	// Remove footnotes
-//					$preview = preg_split("/<p>&nbsp;<\/p>/", $preview)[0];
+					$preview = preg_split("/<p>&nbsp;<\/p>/", $preview);
 				?>
 				<a href="blog/<? echo $article->slug; ?>">
 					<div>
