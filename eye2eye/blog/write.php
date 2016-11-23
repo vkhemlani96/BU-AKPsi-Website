@@ -121,6 +121,7 @@ $result = mysqli_query($link, $query);
 			<ul>
 				<li><p>Please make sure you select the correct author for the article. If you are not listed, submit your article as someone else and text Vinay.</p></li>
 				<li><p><strong>Footnote superscripts will not copy over from Google Docs.</strong> Please go through your articles and add the numbers to where your footnotes should go <strong>and use the superscript button (next to bold/italic) to raise them</strong>.</p></li>
+				<li><p><strong>Inserting images:</strong> Click on <i>Insert > Upload image</i> within the textfield to upload an image. Please try to resize the image so that the width is &lt;= 800px (pretty much should fit in the box).</p></li>
 				<li><p><strong>Do not just paste your footnotes at the bottom of the article.</strong> Use the field below the article field to mention how many footnotes you have and then paste in one footnote in each field that appears.</p></li>
 				<li><p>Let Vinay know if something doesn't work or if you have any feedback!</p></li>
 			</ul>
