@@ -953,11 +953,17 @@ sup {font-size:xx-small; vertical-align:super;}
 	text-align: center;
 }
 .blog_body img {
-	margin: 10px;
+	margin: 10px auto;
+	max-width: 700px;
+	display: block;
 }
-.blog_body p {
+.blog_body img::before { 
+    content: "<a>HAYYYY</a>";
+}
+.blog_body p, .blog_body span, .blog_body li {
 	line-height: 25px;
-	text-align: left
+	text-align: left;
+	font-size: 15px;
 }
 .blog_body li {
 	display: list-item;
@@ -972,7 +978,8 @@ sup {font-size:xx-small; vertical-align:super;}
 .blog_footer p {
 	font-size: 12px;
 	line-height: 17px;
-	color: rgba(0,0,0,.5)
+	color: rgba(0,0,0,.5);
+	text-align: left;
 }
 .blog_preview {
 	width: 900px;
