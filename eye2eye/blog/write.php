@@ -3,6 +3,7 @@
 ini_set('display_errors', 1);
 
 include("../../db/credentials.php");
+include("password_protect.php");
 $usertable="brothers";
 $eyetable="eye2eye";
 
