@@ -114,23 +114,21 @@ $result = mysqli_query($link, $sql);
 
 			<div class="blog_table">
 				<? 
-//				$first = true;
-//				while ($article = mysqli_fetch_object($result)) {
-//					$preview = trim(preg_replace('/<sup>\d+<\/sup>/', '', $article->body));	// Remove footnotes
+				$first = true;
+				while ($article = mysqli_fetch_object($result)) {
+					$preview = trim(preg_replace('/<sup>\d+<\/sup>/', '', $article->body));	// Remove footnotes
 //					$preview = preg_split("/<p>&nbsp;<\/p>/", $preview)[0];
 				?>
-<!--
 				<a href="blog/<? echo $article->slug; ?>">
 					<div>
 						<h2><strong><? echo $article->title; ?></strong></h2>
 						<? echo $preview; ?>
 					</div>
 				</a>
--->
 				<? 	
-//					echo $first ? '<div class="table_seperator"></div>' : '';
-//					$first = false;
-//				} 
+					echo $first ? '<div class="table_seperator"></div>' : '';
+					$first = false;
+				} 
 				?>
 
 			</div>
