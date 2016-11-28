@@ -24,7 +24,7 @@ if ($conn->connect_error) {
 
 if ($conn->query($sql) === TRUE) {
 	$no_error = true;
-	header('Location: http://localhost:8888/eye2eye/blog/'.$slug);
+	header('Location: http://www.buakpsi.com/eye2eye/blog/'.$slug);
 
 } else {
 
