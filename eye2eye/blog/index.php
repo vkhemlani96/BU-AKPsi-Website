@@ -43,9 +43,9 @@ $result = mysqli_query($link, $sql);
 				$article->writeDate = date("F j, Y", strtotime($article->writeDate));
 				$preview = trim(preg_replace('/\s\s+/', '', $article->body));	// Remove new lines
 				$preview = trim(preg_replace('/<sup>\d+<\/sup>/', '', $article->body));	// Remove footnotes
-				$preview = preg_split("/<p>&nbsp;<\/p>/", $preview);
-				$preview = $preview[0] . "<p>&nbsp;</p>" . $preview[1];
-
+				$previewPrefix = substr($preview, 0, 1000);
+				preg_match('/.+<\/p>/', $preview, $previewSuffix, 0, 1000);
+				$preview = $previewPrefix . $previewSuffix[0];
 				
 				$sql = "SELECT concat(firstName, \" \", lastName) as name FROM brothers WHERE email = \"" . $article->email ."\"";
 				$authorResult = mysqli_query($link, $sql);
