@@ -13,7 +13,7 @@ $sql = "SELECT * FROM $articleTable WHERE slug = '$slug'";
 $result = mysqli_query($link, $sql);
 $article = mysqli_fetch_object($result);
 $article->writeDate = date("F j, Y", strtotime($article->writeDate));
-$article->footnotes = json_decode($article->footnotes);
+$article->footnotes = json_decode(stripslashes($article->footnotes));
 
 $sql = "SELECT firstName, lastName FROM brothers WHERE email = '$article->email'";
 $result = mysqli_query($link, $sql);
@@ -51,7 +51,7 @@ $author = mysqli_fetch_object($result);
 		</div>
 		<div class="vertical_padding center blog_body">
 
-			<? echo $article->body ?>
+			<? echo stripslashes($article->body) ?>
 
 		</div>
 		<div class="blog_footer vertical_padding center">
@@ -59,7 +59,7 @@ $author = mysqli_fetch_object($result);
 
 			<? 
 	for($i = 1; $i <= count($article->footnotes); $i++) {
-		$footnote = $article->footnotes[$i-1];
+		$footnote = stripslashes($article->footnotes[$i-1]);
 		echo "<p><sup>$i</sup> $footnote </p>";
 	}	
 			?>
