@@ -18,7 +18,6 @@ $article->footnotes = json_decode(stripslashes($article->footnotes));
 $sql = "SELECT firstName, lastName FROM brothers WHERE email = '$article->email'";
 $result = mysqli_query($link, $sql);
 $author = mysqli_fetch_object($result);
-var_dump($article->footnotes);
 ?>
 
 
