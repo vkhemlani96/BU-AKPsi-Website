@@ -13,9 +13,8 @@ mysqli_select_db($link, $dbname);
 $query = "SELECT *
     FROM $usertable
     JOIN $nccgtable
-    ON $usertable.firstName = $nccgtable.firstName AND $usertable.lastName = $nccgtable.lastName
-	ORDER BY field($nccgtable.position, 'Executive Director', 'Associate Director', 'Corporate Relations Manager', 'Program Manager', 'Engagement Manager', 'Associate'), $nccgtable.lastName";
-
+    ON $usertable.email = $nccgtable.email
+	ORDER BY field($nccgtable.position, 'Executive Director', 'Associate Director', 'Corporate Relations Manager', 'Program Manager', 'Engagement Manager', 'Associate'), lastName";
 
 $result = mysqli_query($link, $query);
 ?>
