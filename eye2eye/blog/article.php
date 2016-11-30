@@ -58,12 +58,12 @@ $author = mysqli_fetch_object($result);
 			<div class="table_seperator"></div>
 
 			<? 
-	for($i = 1; $i <= count($article->footnotes); $i++) {
-		$footnote = $article->footnotes[$i-1];
-		echo "<p><sup>$i</sup> $footnote </p>";
-	}	
+			for($i = 1; $i <= count($article->footnotes); $i++) {
+				$footnote = $article->footnotes[$i-1];
+				var_dump($footnote);
+				echo "<p><sup>$i</sup> $footnote </p>";
+			}	
 			?>
-			<!--			<p><sup>1</sup> Davis, Laura Marini, and Victoria Geyfman. "The Glass Door Remains Closed: Another Look at Gender Inequality in Undergraduate Business Schools." Journal of Education for Business 90, no. 2 (2014): 81-88. doi:10.1080/08832323.2014.980715.</p>-->
 		</div>
 	</body>
 
