@@ -59,7 +59,7 @@ $author = mysqli_fetch_object($result);
 
 			<? 
 	for($i = 1; $i <= count($article->footnotes); $i++) {
-		$footnote = stripslashes($article->footnotes[$i-1]);
+		$footnote = $article->footnotes[$i-1];
 		echo "<p><sup>$i</sup> $footnote </p>";
 	}	
 			?>
