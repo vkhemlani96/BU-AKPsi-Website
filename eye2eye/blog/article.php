@@ -58,6 +58,8 @@ $preview = addslashes(strip_tags($preview));	// Remove footnotes
 	<body>
 
 		<div id="fb-root"></div>
+		
+		<img style="display:none" src="../../img/eye2eye_og_image.png" />
 
 		<?php include("../../navbar.php"); getNavbar(true); ?>
 
