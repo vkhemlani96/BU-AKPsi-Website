@@ -68,7 +68,7 @@ $preview = addslashes(strip_tags($preview));	// Remove footnotes
 			</a>
 			<br>
 			<a class="share_button"
-			   href="http://www.twitter.com/intent/tweet?url=<? echo $url ?>&text=<? echo $article->title ?>" 
+			   href="http://www.twitter.com/intent/tweet?url=http://<? echo $url ?>&text=<? echo $article->title ?>" 
 			   onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
 				<img src="../../img/social_media/twitter_white.png" height="20">
 			</a>
