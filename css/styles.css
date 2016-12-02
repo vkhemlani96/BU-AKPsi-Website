@@ -1019,3 +1019,27 @@ sup {font-size:xx-small; vertical-align:super;}
 .eye2eyeLogo {
 	text-align: center
 }
+
+.share_button {
+	background-color: #e4007f;
+	opacity: .8;
+	display: table-cell;
+	margin: 20px;
+	height: 40px;
+	width: 40px;
+	vertical-align: middle;
+	text-align: center;
+	border-radius: 50%;
+}
+
+.share_button:hover {
+	opacity: 1;
+	cursor: pointer;
+}
+
+.share_button_container {
+	position: fixed;
+	top: 300px;
+	left: 50%;
+	margin-left: -450px;
+}

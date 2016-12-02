@@ -2,6 +2,10 @@
 $url = "$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $slug = end(explode("/", $url));
 
+if ($slug == "article.php") {
+	$slug = "female_quality_and_quantity";
+}
+
 include("../../db/credentials.php");
 
 // Create connection
@@ -18,9 +22,12 @@ $article->footnotes = json_decode(stripslashes($article->footnotes));
 $sql = "SELECT firstName, lastName FROM brothers WHERE email = '$article->email'";
 $result = mysqli_query($link, $sql);
 $author = mysqli_fetch_object($result);
+
+$article->body = stripslashes($article->body);
+$preview = trim(preg_replace('/\s\s+/', '', $article->body));	// Remove new lines
+$preview = substr($preview, 0, 1000);
+$preview = addslashes(strip_tags($preview));	// Remove footnotes
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,10 +46,46 @@ $author = mysqli_fetch_object($result);
 		<script src="../../js/jquery.js"></script>
 		<script src="../../js/jquery.color.js"></script>
 
+		<!--		<meta property="og:url" content="<? echo $url; ?>">-->
+		<meta property="og:url" content="http://www.buakpsi.com">
+		<meta property="og:title" content="<? echo $article->title; ?>">
+		<meta property="og:image" content="../../img/eye2eye_logo.php">
+		<meta property="og:site_name" content="Eye2Eye | Alpha Kappa Psi Nu Chapter">
+		<meta property="og:description" content="<? echo $preview; ?>">
+
 	</head>
 
 	<body>
+
+		<div id="fb-root"></div>
+
 		<?php include("../../navbar.php"); getNavbar(true); ?>
+
+		<div class="share_button_container">
+			<a class="share_button"
+			   href="https://www.facebook.com/sharer/sharer.php?sdk=joey&u=<? echo $url ?>&display=popup&ref=plugin&src=share_button" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+				<img src="../../img/social_media/facebook_white.png" height="20">
+			</a>
+			<br>
+			<a class="share_button"
+			   href="http://www.twitter.com/intent/tweet?url=<? echo $url ?>&text=<? echo $article->title ?>" 
+			   onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+				<img src="../../img/social_media/twitter_white.png" height="20">
+			</a>
+			<br>
+			<a class="share_button"
+			   href="http://www.linkedin.com/shareArticle?mini=true&url=<? echo $url; ?>&title=<? echo $article->title ?>&source=buakpsi.com"
+			   onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+				<img src="../../img/social_media/linkedin_white.png" height="20">
+			</a>
+			<br>
+			<a class="share_button"
+			   href="mailto:?subject=Check out Eye2Eye's Blog Post: <? echo $article->title ?>&body=<? echo $article->title . ' by ' . $author->firstName . ' ' . $author->lastName . ': ' . $url;?>">
+				<img src="../../img/social_media/email_white.png" height="20">
+			</a>
+
+		</div>
+
 
 		<div class="vertical_padding center title_section blog_header">
 			<h1><? echo $article->title; ?></h1>
@@ -51,7 +94,7 @@ $author = mysqli_fetch_object($result);
 		</div>
 		<div class="vertical_padding center blog_body">
 
-			<? echo stripslashes($article->body) ?>
+			<? echo $article->body;?>
 
 		</div>
 		<div class="blog_footer vertical_padding center">
@@ -64,6 +107,10 @@ $author = mysqli_fetch_object($result);
 			}	
 			?>
 		</div>
+
+		<script>
+			$(".share_button_container").css("top", ($(".blog_body").offset().top + 40) + "px");
+		</script>
 	</body>
 
 </html>

@@ -21,6 +21,8 @@ $result = mysqli_query($link, $sql);
 		<link href="../../css/styles.css" rel="stylesheet"/>
 		<link href="../../css/navbar.css" rel="stylesheet" />
 		<link href="../../css/eye2eye_override.css" rel="stylesheet"/>
+		
+		
 	</head>
 
 	<body>
