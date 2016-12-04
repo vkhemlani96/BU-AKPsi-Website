@@ -1,1 +1,2 @@
+Redirect 200 /eye2eye/blog/article.php
 ErrorDocument 404 /eye2eye/blog/article.php
