@@ -50,6 +50,9 @@ $preview = addslashes(strip_tags($preview));	// Remove footnotes
 		<meta property="og:url" content="http://www.buakpsi.com">
 		<meta property="og:title" content="<? echo $article->title; ?>">
 		<meta property="og:image" content="http://buakpsi.com/img/eye2eye_og_image.png">
+		<meta property="og:image:type" content="image/png" />
+		<meta property="og:image:width" content="300" />
+		<meta property="og:image:height" content="170" />
 		<meta property="og:site_name" content="Eye2Eye | Alpha Kappa Psi Nu Chapter">
 		<meta property="og:description" content="<? echo $preview; ?>">
 
@@ -58,7 +61,7 @@ $preview = addslashes(strip_tags($preview));	// Remove footnotes
 	<body>
 
 		<div id="fb-root"></div>
-		
+
 		<img style="display:none" src="../../img/eye2eye_og_image.png" />
 
 		<?php include("../../navbar.php"); getNavbar(true); ?>
