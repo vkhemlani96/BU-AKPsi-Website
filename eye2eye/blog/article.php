@@ -46,8 +46,7 @@ $preview = addslashes(strip_tags($preview));	// Remove footnotes
 		<script src="../../js/jquery.js"></script>
 		<script src="../../js/jquery.color.js"></script>
 
-		<!--		<meta property="og:url" content="<? echo $url; ?>">-->
-		<meta property="og:url" content="http://www.buakpsi.com">
+		<meta property="og:url" content="<? echo $url; ?>">
 		<meta property="og:title" content="<? echo $article->title; ?>">
 		<meta property="og:image" content="http://buakpsi.com/img/eye2eye_og_image.png">
 		<meta property="og:image:type" content="image/png" />
