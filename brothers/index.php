@@ -43,10 +43,11 @@ $active_classes = array("Mu", "Nu", "Xi", "Omicron", "Pi", "Rho", "Sigma", "Tran
 				$code = "";
 				$officers = array();
 				$query = "SELECT *
-    FROM $usertable
-    JOIN $eboardTable
-    ON $usertable.firstName = $eboardTable.firstName AND $usertable.lastName = $eboardTable.lastName and $usertable.status = 'Active'
-	ORDER BY $eboardTable.order";
+    FROM brothers
+    JOIN eboard
+    ON brothers.email = eboard.email
+	WHERE eboard.order > 0
+	ORDER BY eboard.order";
 				$result = mysqli_query($link, $query);
 				while ($obj = mysqli_fetch_object($result)) {
 
