@@ -62,7 +62,7 @@ $result = mysqli_query($link, $sql);
 					<td>
 						<h2><strong>Hold a National Conference</strong></h2><p>to bring together professionals from various industries to discuss gender inequality and the best ways to fight it.</p>
 					</td><td>
-					<h2><strong>Conduct Propreitary Research</strong></h2><p>at BU to share at our national conference and begin to expand to other universities, becoming the nation's leading collegiate gender inequality research platform.</p>
+					<h2><strong>Conduct Proprietary Research</strong></h2><p>at BU to share at our national conference and begin to expand to other universities, becoming the nation's leading collegiate gender inequality research platform.</p>
 					</td>
 				</tr>
 			</table>
@@ -73,11 +73,11 @@ $result = mysqli_query($link, $sql);
 			<table class="eye2eyeCategoryTable">
 				<tr>
 					<td class="box_purple">
-						<h2>Sexual Harrasment + Toxic Culture</h2>
+						<h2>Sexual Harassment + Toxic Culture</h2>
 					</td><td class="spacer"></td><td class="box_pink">
 					<h2>Pay Inequality</h2>
 					</td><td class="spacer"></td><td class="box_purple">
-					<h2>Lack of Opportunity/Visibility</h2>
+					<h2>Lack of Opportunity &amp; Visibility</h2>
 					</td><td class="spacer"></td><td class="box_pink">
 					<h2>The Motherhood Penalty</h2>
 					</td>
