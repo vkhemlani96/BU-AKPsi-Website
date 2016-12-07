@@ -11,9 +11,29 @@ $yourfield = "LAST_NAME";
 $link = mysqli_connect($hostname,$username, $password) or die ("<html><script language='JavaScript'>alert('Unable to connect to database! Please try again later.')</script></html>");
 mysqli_select_db($link, $dbname);
 
-$firstGraduatingClass = 2008;
-$lastGraduatingClass = 2017;
 $graduateClasses = array();
+$firstGraduatingClass = 3000;
+$lastGraduatingClass = 0;
+
+$query = "SELECT firstName, lastName, year FROM $usertable WHERE status = 'Alumni' ORDER BY lastName";
+$result = mysqli_query($link, $query);
+$totalAlumni = mysqli_num_rows($result);
+while ($obj = mysqli_fetch_object($result)) {
+	$year = $obj->year;
+	if (!array_key_exists("$year", $graduateClasses)) {
+		$graduateClasses["$year"] = array();
+	}
+	$graduateClasses["$year"][] = "$obj->firstName $obj->lastName";
+	
+	if ($year < $firstGraduatingClass) {
+		$firstGraduatingClass = $year;
+	}
+	if ($year > $lastGraduatingClass) {
+		$lastGraduatingClass = $year;
+	}
+}
+mysqli_free_result($result);
+
 ?>
 
 <!DOCTYPE html>
@@ -91,19 +111,6 @@ $graduateClasses = array();
 					echo "</td></tr>
 					<tr class=\"blue_background\">
 						<td style=\"position:relative; height: 310px; background-color:#000033 \">";
-
-
-					$query = "SELECT firstName, lastName, year FROM $usertable WHERE status = 'Alumni' ORDER BY lastName";
-					$result = mysqli_query($link, $query);
-					$totalAlumni = mysqli_num_rows($result);
-					while ($obj = mysqli_fetch_object($result)) {
-						if (!array_key_exists("$obj->year", $graduateClasses)) {
-							$graduateClasses["$obj->year"] = array();
-						}
-						$graduateClasses["$obj->year"][] = "$obj->firstName $obj->lastName";
-					}
-					mysqli_free_result($result);
-
 
 					for ($x = $firstGraduatingClass; $x <= $lastGraduatingClass; $x++) {
 						$left = $x == $lastGraduatingClass ? "0" : "-100%";
