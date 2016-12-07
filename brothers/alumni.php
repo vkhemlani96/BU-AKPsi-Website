@@ -12,7 +12,7 @@ $link = mysqli_connect($hostname,$username, $password) or die ("<html><script la
 mysqli_select_db($link, $dbname);
 
 $firstGraduatingClass = 2008;
-$lastGraduatingClass = 2016;
+$lastGraduatingClass = 2017;
 $graduateClasses = array();
 ?>
 
@@ -64,7 +64,7 @@ $graduateClasses = array();
 				</td>
 			</tr>
 			<tr>
-				<td style="height: 94px; position: relative; overflow-x: scroll;">
+				<td style="height: 94px; position: relative; overflow-x: hidden;">
 					<div style="overflow-x: hidden;width: 200vw;position: absolute; top: 0; margin-left: -50vw;">
 
 						<?php
