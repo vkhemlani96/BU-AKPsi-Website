@@ -124,7 +124,7 @@ Padding required below in order to make sure it doesn't fall on blue-white borde
 			}
 		</style>
 
-		<!--
+		
 <div id="banner">
 <div style="position: absolute; z-index: 1; top: 190px; left: 0; right: 0;">
 <h5 class="banner_text">The International Co-Ed Professional Business Fraternity</h5>
@@ -135,7 +135,8 @@ Padding required below in order to make sure it doesn't fall on blue-white borde
 <div id="overlay"></div>
 <video autoplay="autoplay" loop="loop" src="img/index_video_2.mov" style="width: 100vw" muted></video>
 </div>
--->
+
+<!--
 		<div id="banner">
 			<div id="rush_theme">
 				<h2><a>Omega&emsp;</a><a class="stand_out">Alpha</a><a>&emsp;Beta&emsp;Gamma&emsp;Delta&emsp;Epsilon&emsp;Zeta&emsp;Eta&emsp;Theta&emsp;Iota&emsp;</a><a class="stand_out">Kappa</a><a>&emsp;Lambda&emsp;Mu&emsp;Nu&emsp;Xi&emsp;Omicron&emsp;Pi&emsp;Rho&emsp;Sigma&emsp;Tau&emsp;Upsilon&emsp;Phi&emsp;Chi&emsp;</a><a class="stand_out">Psi</a><a>&emsp;Omega&emsp;Alpha&emsp;Beta&emsp;Gamma&emsp;Delta&emsp;Epsilon&emsp;Zeta&emsp;Eta&emsp;Theta&emsp;Iota</a></h2>
@@ -148,6 +149,7 @@ Padding required below in order to make sure it doesn't fall on blue-white borde
 				</div>
 			</div>
 		</div>
+-->
 		<!--END RETURN-->
 
 		<div id="about" class="center">
