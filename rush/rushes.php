@@ -58,12 +58,11 @@ ini_set('display_errors', 1);
 		"Info1",
 		"Info2",
 		"Professional",
-		"Coffeehouse",
 		"Fashion",
-		"Interview",
-		"Mocktail"
+		"CommunityService",
+//		"Interview",
+//		"Mocktail"
 	);
-
 
 	$queryBody = "";
 

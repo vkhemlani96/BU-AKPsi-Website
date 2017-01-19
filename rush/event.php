@@ -34,9 +34,9 @@ $title = "";
 $eventList = array(
 	"Info1" => "Infosession 1",
 	"Info2" => "Infosession 2",
-	"Coffeehouse" => "Coffeehouse",
 	"Professional" => "Professional Night",
 	"Fashion" => "Fashion Night",
+	"CommunityService" => "Community Service",
 	"Interview" => "Interview Workshops",
 	"Mocktail" => "Mocktail Night",
 );
