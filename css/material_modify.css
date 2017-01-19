@@ -35,3 +35,16 @@
 .blue_background .mdl-textfield__input {
 	border-bottom-color: rgba(255,255,255,.5);
 }
+
+.mdl-radio {
+	line-height: 20px;
+}
+.mdl-radio.is-checked .mdl-radio__outer-circle {
+	border-color: #000033;
+}
+.mdl-radio.is-checked .mdl-radio__inner-circle {
+	background-color: #000033;
+}
+.mdl-radio__ripple-container .mdl-ripple {
+	background-color: #000033;
+}
