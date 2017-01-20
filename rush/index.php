@@ -34,17 +34,18 @@
 		var info1Marker;
 		var info2Marker;
 		var event1Marker;
-//		var event2Marker;
+		var event2Marker;
 		
 		var infosession1 = new google.maps.LatLng(42.349626, -71.099547);
 		var infosession2 = new google.maps.LatLng(42.35151, -71.114632);
 		var event1 = new google.maps.LatLng(42.348839, -71.102315);
-//		var event2 = new google.maps.LatLng(42.3498181,-71.1078257);
+		var event2 = new google.maps.LatLng(42.350961, -71.108859);
 		
 		var bounds = new google.maps.LatLngBounds();
 		bounds.extend(infosession1);
 		bounds.extend(infosession2);
 		bounds.extend(event1);
+		bounds.extend(event2);
 		
 		var info1Window = new google.maps.InfoWindow({
 			content: "<div class='text-center'><strong>Info Session I</strong><br>HAR 105 (Questrom Auditorium)</div>"
@@ -55,43 +56,42 @@
 		var event1Window = new google.maps.InfoWindow({
 			content: "<div class='text-center'><strong>Fashion Night</strong><br>COM 101</div>"
 		});
-//		var event2Window = new google.maps.InfoWindow({
-//			content: "<div class='text-center'><strong>Professional Workshops</strong><br>PHO 206</div>"
-//		});
+		var event2Window = new google.maps.InfoWindow({
+			content: "<div class='text-center'><strong>Community Service Event</strong><br>GSU Backcourt</div>"
+		});
 
 		function init() {
 			map = new google.maps.Map(document.getElementById('map-canvas'), {
 				zoom: 17,
 				center: new google.maps.LatLng(42.350608545230195, -71.10411333544312),
-//				center: new google.maps.LatLng(42.35023656896355, -71.10206474999995),
     			scrollwheel: false,
 			  });
 
 			info1Marker = new google.maps.Marker({
 				position: infosession1,
 				map: map,
-				title: 'Info Session I, Professional Night (CGS)'
+				title: 'Info Session I (HAR)'
 			});
 			info2Marker = new google.maps.Marker({
 				position: infosession2,
 				map: map,
-				title: 'Info Session II (STO)'
+				title: 'Info Session II, Professional Night (CGS)'
 			});
 			event1Marker = new google.maps.Marker({
 				position: event1,
 				map: map,
-				title: 'Coffeehouse (GSU Backcourt)'
+				title: 'Fashion Night (COM)'
 			});
-//			event2Marker = new google.maps.Marker({
-//				position: event2,
-//				map: map,
-//				title: 'Professional Night (PHO)'
-//			});
+			event2Marker = new google.maps.Marker({
+				position: event2,
+				map: map,
+				title: 'Community Service Event (GSU)'
+			});
 			
 			info1Window.open(map,info1Marker);
 			info2Window.open(map,info2Marker);
 			event1Window.open(map,event1Marker);
-//			event2Window.open(map,event2Marker);
+			event2Window.open(map,event2Marker);
 			
 			map.fitBounds(bounds);
 
@@ -223,8 +223,8 @@
 				<div class="col-md-5 col-md-offset-3" style="margin-left: 29.1666667%; padding-top: 35px;">
 					<h2><strong>Community Service Event</strong> Monday, Feb. 6</h2>
 <!--					<h4 style="padding-bottom: 6px;"><strong>Presented By Luvo</strong></h4>-->
-					<h4>Location TBA | 6-8 PM</h4>
-					<p style="margin-top:20px;">Come network with our brothers and give back to the community. At this event, you will have the opportunity to write a short get-well card for a child at the Boston Children's Hospital. Each table will sponsor a patient, and you will be able to rotate around 10 tables and meet brothers at each table. No dress requirement is needed for this event.</p>
+					<h4>GSU Backcourt | 6-8 PM</h4>
+					<p style="margin-top:20px;">Come network with our brothers and give back to the community. At this event, you will have the opportunity to write a short get-well card for a child at the Boston Children's Hospital. Each table will sponsor a patient, and you will be able to rotate around 10 tables and meet brothers at each table. <i>No dress requirement is needed for this event.></i></p>
 				</div>
 			</div>
 			
