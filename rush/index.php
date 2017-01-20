@@ -36,9 +36,9 @@
 		var event1Marker;
 //		var event2Marker;
 		
-		var infosession1 = new google.maps.LatLng(42.349626, -71.1017353);
-		var infosession2 = new google.maps.LatLng(42.351352, -71.114652);
-		var event1 = new google.maps.LatLng(42.3488388, -71.1045035);
+		var infosession1 = new google.maps.LatLng(42.349626, -71.099547);
+		var infosession2 = new google.maps.LatLng(42.35151, -71.114632);
+		var event1 = new google.maps.LatLng(42.348839, -71.102315);
 //		var event2 = new google.maps.LatLng(42.3498181,-71.1078257);
 		
 		var bounds = new google.maps.LatLngBounds();
