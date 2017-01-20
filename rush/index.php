@@ -224,7 +224,7 @@
 					<h2><strong>Community Service Event</strong> Monday, Feb. 6</h2>
 <!--					<h4 style="padding-bottom: 6px;"><strong>Presented By Luvo</strong></h4>-->
 					<h4>GSU Backcourt | 6-8 PM</h4>
-					<p style="margin-top:20px;">Come network with our brothers and give back to the community. At this event, you will have the opportunity to write a short get-well card for a child at the Boston Children's Hospital. Each table will sponsor a patient, and you will be able to rotate around 10 tables and meet brothers at each table. <i>No dress requirement is needed for this event.></i></p>
+					<p style="margin-top:20px;">Come network with our brothers and give back to the community. At this event, you will have the opportunity to write a short get-well card for a child at the Boston Children's Hospital. Each table will sponsor a patient, and you will be able to rotate around 10 tables and meet brothers at each table. <i>No dress requirement is needed for this event.</i></p>
 				</div>
 			</div>
 			
