@@ -30,33 +30,30 @@
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     <script>
 		var map;
+		
 		var info1Marker;
 		var info2Marker;
 		var event1Marker;
 //		var event2Marker;
-		var infosession1 = new google.maps.LatLng(42.351352, -71.114652);
-		var infosession2 = new google.maps.LatLng(42.350146, -71.103902);
-		var event1 = new google.maps.LatLng(42.350960, -71.108859);
+		
+		var infosession1 = new google.maps.LatLng(42.349626, -71.1017353);
+		var infosession2 = new google.maps.LatLng(42.351352, -71.114652);
+		var event1 = new google.maps.LatLng(42.3488388, -71.1045035);
 //		var event2 = new google.maps.LatLng(42.3498181,-71.1078257);
-//		var LatLngList = new Array(infosession1, infosession2, profNight, social);
+		
 		var bounds = new google.maps.LatLngBounds();
 		bounds.extend(infosession1);
 		bounds.extend(infosession2);
 		bounds.extend(event1);
-//		//  Go through each...
-//		for (var i = 0, LtLgLen = LatLngList.length; i < LtLgLen; i++) {
-//		  //  And increase the bounds to take this point
-//		  bounds.extend (LatLngList[i]);
-//		}
 		
 		var info1Window = new google.maps.InfoWindow({
-			content: "<div class='text-center'><strong>Info Session I, Professional Night</strong><br>CGS 129</div>"
+			content: "<div class='text-center'><strong>Info Session I</strong><br>HAR 105 (Questrom Auditorium)</div>"
 		});
 		var info2Window = new google.maps.InfoWindow({
-			content: "<div class='text-center'><strong>Info Session II</strong><br>STO B50</div>",
+			content: "<div class='text-center'><strong>Info Session II, Professional Night</strong><br>CGS 129 (Jacob Sleeper Auditorium)</div>",
 		});
 		var event1Window = new google.maps.InfoWindow({
-			content: "<div class='text-center'><strong>Coffeehouse</strong><br>GSU Backcourt</div>"
+			content: "<div class='text-center'><strong>Fashion Night</strong><br>COM 101</div>"
 		});
 //		var event2Window = new google.maps.InfoWindow({
 //			content: "<div class='text-center'><strong>Professional Workshops</strong><br>PHO 206</div>"
@@ -121,13 +118,13 @@
 			<div class="title_section vertical_padding col-md-12">
 				<h1>Rush Alpha Kappa Psi</h1>
 				<div class="seperator"></div>
-				<h2>Dare <a style="font-size: 20px; color: #000033">x</a> Do</h2>
+				<h2>Dream <a style="font-size: 20px; color: #000033">x</a> Do</h2>
 			</div>
 		</div>
 		
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2" style="padding-top: 35px">
-				<p>Recruitment (also known as Rush) is a process held at the beginning of each semester, during which the Fraternity holds infosessions and other events to welcome potential members. The purpose of recruitment is to allow potential members to learn about the Fraternity, network with current Brothers and determine if Alpha Kappa Psi is a good fit for them. In order to be considered for admission to the Fraternity, recruits must attend at least one infosession, one other open recruitment event and submit the Recruitment Application (which will be posted at a future time). For more information about the recruitment process, visit our <a href="faq.php">FAQ page</a>.
+				<p>Recruitment (also known as Rush) is a process held at the beginning of each semester, during which the Fraternity holds info sessions and other events to welcome potential members. The purpose of recruitment is to allow potential members to learn about the Fraternity, network with current Brothers and determine if Alpha Kappa Psi is a good fit for them. In order to be considered for admission to the Fraternity, recruits must attend at least one info session, one other open recruitment event and submit the Recruitment Application (which will be posted at a future time). For more information about the recruitment process, visit our <a href="faq.php">FAQ page</a>.
 			</div>
 		</div>
 		
@@ -190,18 +187,18 @@
 			<div class="vertical_padding">
 				<div class="row">
 					<div class="col-md-5 col-md-offset-1">
-						<h2><strong>Infosession I</strong> Monday, Jan. 30</h2>
+						<h2><strong>Info Session I</strong> Monday, Jan. 30</h2>
 <!--						<h4 style="padding-bottom: 5px;"><strong>Presented by Pinch</strong></h4>-->
 						<h4>HAR 105 (Questrom Auditorium) | 6-8 PM</h4>
 					</div>
 					<div class="col-md-5">
-						<h2><strong>Infosession II</strong> Tuesday, Jan. 31</h2>
+						<h2><strong>Info Session II</strong> Tuesday, Jan. 31</h2>
 <!--						<h4 style="padding-bottom: 5px;"><strong>Presented by Fundraise.com</strong></h4>-->
 						<h4>CGS 129 (Jacob Sleeper Auditorium) | 6-8 PM</h4>
 					</div>
 				</div>
 				<div class="row" style="margin-top:20px;">
-					<p class="col-md-10 col-md-offset-1">Our infosessions are your first chance to learn what Alpha Kappa Psi and Nu Chapter are all about. Come out to learn more about the chapter's history and operations, as well as all the opportunities you can benefit from as a member of the Fraternity! The event also includes a networking session for you to meet and get to know many of the chapter's brothers. <i>One infosession is required to be considered for admission.</i></p>
+					<p class="col-md-10 col-md-offset-1">Our info sessions are your first chance to learn what Alpha Kappa Psi and Nu Chapter are all about. Come out to learn more about the chapter's history and operation, as well as all the opportunities you can benefit from as a member of the Fraternity! The event also includes a networking session for you to meet and get to know many of the chapter's brothers. <i>Attendance at One info session is required to be considered for admission.</i></p>
 				</div>
 			</div>
 			<div class="row">
@@ -215,19 +212,19 @@
 					<h2><strong>Professional Night</strong> Thursday, Feb. 2</h2>
 <!--					<h4 style="padding-bottom: 6px"><strong>Presented by Ann Taylor and Ministry of Supply</strong></h4>-->
 					<h4>CGS 129 (Jacob Sleeper Auditorium) | 6-8 PM</h4>
-					<p style="margin-top: 20px;">Learn about career paths and professional life through our panel of senior brothers. The panel will be open to answer questions about their professional careers and Alpha Kappa Psi, and share their experiences. At the end of the event, you will have an opportunity to network with the brothers in attendance. <i>Business casual attire is required.</i></p>
+					<p style="margin-top: 20px;">Learn about career paths and professional life through our panel of senior brothers. The panel will be open to answer questions and share their experiences about their professional careers and Alpha Kappa Psi. At the end of the event, you will have an opportunity to network with the brothers in attendance. <i>Business casual attire is required.</i></p>
 				</div>
 				<div class="col-md-5">
 					<h2><strong>Fashion Night</strong> Friday, Feb. 3</h2>
 <!--					<h4 style="padding-bottom: 6px;"><strong>Presented By Luvo</strong></h4>-->
 					<h4>CGS 129 | 6-8 PM</h4>
-					<p style="margin-top:20px;">Learn how to dress for success— our brothers will show you how to dress for any occasion, from casual networking to a cocktail party. At the end of the event, you will have an opportunity to network with the brothers in attendance. <i>Business casual is recommended but not required.</i></p>
+					<p style="margin-top:20px;">Learn how to dress for success &mdash; our brothers will show you how to dress for any occasion, from casual networking to a cocktail party. At the end of the event, you will have an opportunity to network with the brothers in attendance. <i>Business casual is recommended but not required.</i></p>
 				</div>
 				<div class="col-md-5 col-md-offset-3" style="margin-left: 29.1666667%; padding-top: 35px;">
-					<h2><strong>Community Service Event</strong> Monday, Sept. 6</h2>
+					<h2><strong>Community Service Event</strong> Monday, Feb. 6</h2>
 <!--					<h4 style="padding-bottom: 6px;"><strong>Presented By Luvo</strong></h4>-->
 					<h4>Location TBA | 6-8 PM</h4>
-					<p style="margin-top:20px;">Come network with our brothers and give back to the community. At this event, you will have the opportunity to write a short get-well card for a child at the Boston Children’s Hospital. Each table will sponsor a patient, and you will be able to rotate around 10 tables and meet brothers at each table. No dress requirement is needed for this event.</p>
+					<p style="margin-top:20px;">Come network with our brothers and give back to the community. At this event, you will have the opportunity to write a short get-well card for a child at the Boston Children's Hospital. Each table will sponsor a patient, and you will be able to rotate around 10 tables and meet brothers at each table. No dress requirement is needed for this event.</p>
 				</div>
 			</div>
 			
