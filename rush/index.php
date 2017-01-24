@@ -30,7 +30,6 @@
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     <script>
 		
-		console.log("<?php echo $_SERVER['HTTP_REFERER']; ?>");
 		var map;
 		
 		var info1Marker;
@@ -132,7 +131,7 @@
 		
 		<div class="row vertical_padding">
 			<div class="col-md-4 col-md-offset-4">
-				<a href="signup.php?source=web" style="text-decoration: none"><p class="button text-center">Sign up for Recruitment!</p></a>
+				<a href="signup.php?source=<?php if (strpos($_SERVER['HTTP_REFERER'], 'facebook') !== false) {echo 'fb';} else {echo 'web';} ?>" style="text-decoration: none"><p class="button text-center">Sign up for Recruitment!</p></a>
 			</div>
 <!--
 			<div class="col-md-4 col-md-offset-4">
