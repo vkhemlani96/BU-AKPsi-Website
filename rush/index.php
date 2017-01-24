@@ -29,6 +29,8 @@
 	
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     <script>
+		
+		console.log("<?php echo $_SERVER['HTTP_REFERER']; ?>");
 		var map;
 		
 		var info1Marker;
