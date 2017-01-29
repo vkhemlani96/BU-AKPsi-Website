@@ -37,7 +37,7 @@ $eventList = array(
 	"Professional" => "Professional Night",
 	"Fashion" => "Fashion Night",
 	"CommunityService" => "Community Service",
-	"Interview" => "Interview Workshops",
+	"Speaker" => "Speaker Series",
 	"Mocktail" => "Mocktail Night",
 );
 
