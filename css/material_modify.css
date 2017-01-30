@@ -23,6 +23,14 @@
 	background-color: #000033;
 }
 
+.mdl-checkbox.is-checked .mdl-checkbox__box-outline {
+	border-color: #000033;
+}
+
+.mdl-checkbox.is-checked .mdl-checkbox__tick-outline, .mdl-checkbox__ripple-container .mdl-ripple {
+	background: #000033;
+}
+
 .blue_background .mdl-textfield--floating-label.is-focused .mdl-textfield__label, .blue_background .mdl-textfield--floating-label.is-dirty .mdl-textfield__label {
 	color: #FFFFFF;
 	font-weight: 700;

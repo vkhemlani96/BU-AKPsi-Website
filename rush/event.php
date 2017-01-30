@@ -69,6 +69,7 @@ if (array_key_exists($event, $eventList)) {
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 		<link href="../css/styles.css" rel="stylesheet"/>
+		<link href="../css/material_modify.css" rel="stylesheet"/>
 		<link href="../css/navbar.css" rel="stylesheet" />
 		<script src="../js/jquery.js"></script>
 		<script src="../js/jquery.color.js"></script>
@@ -83,10 +84,14 @@ if (array_key_exists($event, $eventList)) {
 			<h2><?php echo $title ?></h2>
 		</div>
 
-		<div class="vertical_padding center">
-			<form style="text-align:center; width: 60%; margin: 0 auto;" action="signup.php?source=<?php echo $src; ?>" id="rushForm" method="post">
+		<div class="vertical_padding center rushForm">
+			<form style="text-align:center; width: 60%; margin: 0 auto;" action="event.php?event=<?php echo $event; ?>" id="rushForm" method="post">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo" style="display:none">
 					<input class="mdl-textfield__input" type="text" id="rushChannel" name="rushChannel" hidden="hidden" value="<?php echo $title; ?>" />
+				</div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+					<input class="mdl-textfield__input" type="text" id="rushEmail" name="rushEmail"/>
+					<label class="mdl-textfield__label" for="sample1">E-Mail (@bu.edu)</label>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
 					<input class="mdl-textfield__input" type="text" id="rushFirstName" name="rushFirstName" />
@@ -95,10 +100,6 @@ if (array_key_exists($event, $eventList)) {
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
 					<input class="mdl-textfield__input" type="text" id="rushLastName" name="rushLastName" />
 					<label class="mdl-textfield__label" for="sample1">Last Name</label>
-				</div>
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
-					<input class="mdl-textfield__input" type="text" id="rushEmail" name="rushEmail"/>
-					<label class="mdl-textfield__label" for="sample1">E-Mail (@bu.edu)</label>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
 					<input class="mdl-textfield__input" type="text" id="rushPhone" name="rushPhone"/>
@@ -226,7 +227,7 @@ if (array_key_exists($event, $eventList)) {
 	</body>
 
 	<script>
-
+		
 		function checkform() {
 			// get all the inputs within the submitted form
 			var inputs = document.getElementById("rushForm").getElementsByTagName('input');
@@ -264,6 +265,7 @@ if (array_key_exists($event, $eventList)) {
 		});
 
 		var Rushes = new Array();
+		var RushInfo;
 
 		<?php 
 		include("../db/credentials.php");
@@ -281,29 +283,37 @@ if (array_key_exists($event, $eventList)) {
 
 		while($row = mysqli_fetch_array($result)) {
 
-			echo "var RushInfo = new Array();"
-				. "RushInfo['FirstName'] = '" . str_replace("'","",$row['FirstName']) . "';\n"
-				. "RushInfo['LastName'] = '" . str_replace("'","",$row['LastName']) . "';\n"
-				. "RushInfo['Email'] = '" . str_replace("'","",$row['Email']) . "';\n"
-				. "RushInfo['Phone'] = '" . str_replace("'","",$row['Phone']) . "';\n"
-				. "RushInfo['Majors'] = '" . str_replace("'","",$row['Majors']) . "';\n"
-				. "RushInfo['MajorSchools'] = '" . str_replace("'","",$row['MajorSchools']) . "';\n"
-				. "RushInfo['Grade'] = '" . str_replace("'","",$row['Grade']) . "';\n"
-				. "Rushes['" . str_replace("'","",$row['Email']) . "'] = RushInfo;\n";
+			echo "RushInfo = new Array();"
+				. "RushInfo['FirstName'] = '" . trim(str_replace("'","",$row['FirstName'])) . "';\n"
+				. "RushInfo['LastName'] = '" . trim(str_replace("'","",$row['LastName'])) . "';\n"
+				. "RushInfo['Email'] = '" . trim(str_replace("'","",$row['Email'])) . "';\n"
+				. "RushInfo['Phone'] = '" . trim(str_replace("'","",$row['Phone'])) . "';\n"
+				. "RushInfo['Majors'] = '" . trim(str_replace("'","",$row['Majors'])) . "';\n"
+				. "RushInfo['MajorSchools'] = '" . trim(str_replace("'","",$row['MajorSchools'])) . "';\n"
+				. "RushInfo['Grade'] = '" . trim(str_replace("'","",$row['Grade'])) . "';\n"
+				. "Rushes['" . trim(str_replace("'","",$row['Email'])) . "'] = RushInfo;\n";
 		}
 		?>
 
 		$('input#rushEmail').on('keyup', function(e) {
-			//		alert($.inArray(Rushes, $(this).val() + "bu.edu"))
+//			alert($.inArray(Rushes, $(this).val() + "bu.edu"))
 			if ( $(this).val().indexOf("@") == $(this).val().length-1 && $.inArray(Rushes, $(this).val() + "bu.edu")) {
 				var rushesInfo = Rushes[$(this).val() + "bu.edu"];
+				console.log(rushesInfo);
 				$(this).val($(this).val() + "bu.edu");
 				$("input#rushFirstName").val(rushesInfo['FirstName']).parent().addClass("is-dirty");
 				$("input#rushLastName").val(rushesInfo['LastName']).parent().addClass("is-dirty");
 				$("input#rushPhone").val(rushesInfo['Phone']).parent().addClass("is-dirty");
 				$("input#rushMajors").val(rushesInfo['Majors']).parent().addClass("is-dirty");
-				$("input#rushSchool").val(rushesInfo['MajorSchools']).parent().addClass("is-dirty");
 				$("input#rushGrade").val(rushesInfo['Grade']).parent().addClass("is-dirty");
+				
+				$(".rush_grade .mdl-js-radio input[value='" + rushesInfo['Grade'] + "']").parent()[0].MaterialRadio.check();
+				
+				var schools = rushesInfo['MajorSchools'].split(", ");
+				for (var i = 0; i < schools.length; i++) {
+					console.log($(".rush_schools input[value='" + schools[i] + "']"));
+					$(".rush_schools .mdl-js-checkbox input[value='" + schools[i] + "']").parent()[0].MaterialCheckbox.check();
+				}
 			}
 			if ($(this).val().indexOf("@bu.edu") > 0) {
 				console.log($(this).val().indexOf("@bu.edu"));

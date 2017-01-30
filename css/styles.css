@@ -64,15 +64,15 @@ E2E Purple - 131557
 
 /*
 @font-face {
-    font-family: 'si';
-    src: url('./img/social_media/socicon_gold.eot');
-    src: url('./img/social_media/socicon_gold.eot?#iefix') format('embedded-opentype'),
-         url('./img/social_media/socicon_gold.woff') format('woff'),
-         url('./img/social_media/socicon_gold.ttf') format('truetype'),
-         url('./img/social_media/socicon_gold.svg#icomoonregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
- 
+font-family: 'si';
+src: url('./img/social_media/socicon_gold.eot');
+src: url('./img/social_media/socicon_gold.eot?#iefix') format('embedded-opentype'),
+url('./img/social_media/socicon_gold.woff') format('woff'),
+url('./img/social_media/socicon_gold.ttf') format('truetype'),
+url('./img/social_media/socicon_gold.svg#icomoonregular') format('svg');
+font-weight: normal;
+font-style: normal;
+
 }
 */
 
@@ -203,18 +203,18 @@ sup {font-size:xx-small; vertical-align:super;}
 	height: 1px;
 	width: 100%;
 	background-color: rgba(0,0,51,.1);
-/*	opacity: .1;*/
+	/*	opacity: .1;*/
 	max-width: 1000px;
 	margin: 0 auto;
 }
 .blue_background .table_seperator {
-/*	background-color: #bda75d;*/
+	/*	background-color: #bda75d;*/
 	background-color: white;
 	opacity:1
 }
 .table_vertical_seperator {
 	position: relative;
-/*	width: 41px;*/
+	/*	width: 41px;*/
 	padding: 0px 20.5px;
 }
 .table_vertical_seperator > div {
@@ -306,16 +306,16 @@ sup {font-size:xx-small; vertical-align:super;}
 
 #banner {
 	width: 100%;
-/*			background-image: url(img/index_banner.jpg);*/
-/*	background-position: center;*/
-/*	background-color: #000033;*/
-	
+	/*			background-image: url(img/index_banner.jpg);*/
+	/*	background-position: center;*/
+	/*	background-color: #000033;*/
+
 	background-color: #000033;
-/*	background-color:rgba(0,0,51,.6);*/
+	/*	background-color:rgba(0,0,51,.6);*/
 }
 #banner > div {
-/*	text-align: center;*/
-/*	height:572px;*/
+	/*	text-align: center;*/
+	/*	height:572px;*/
 }
 #banner .banner_text {
 	font-family: "Lato";
@@ -341,17 +341,17 @@ sup {font-size:xx-small; vertical-align:super;}
 }
 /*
 #about p::after {
-    content: 'fsdklml';
-    display: block;
-    margin: auto;
-    height: 3px;
-    width: 0px;
-    background: transparent;
-    transition: width .5s ease, background-color .5s ease;
+content: 'fsdklml';
+display: block;
+margin: auto;
+height: 3px;
+width: 0px;
+background: transparent;
+transition: width .5s ease, background-color .5s ease;
 }
 #about p:hover::after {
-    width: 100%;
-    background: blue;
+width: 100%;
+background: blue;
 }
 */
 
@@ -385,17 +385,17 @@ sup {font-size:xx-small; vertical-align:super;}
 	overflow: hidden;
 }
 #social_media span::after, #social_media span:after {
-    content: '';
-    display: block;
-    margin: auto;
-    height: 4px;
-    width: 0px;
-    background: transparent;
-    transition: width .2s ease, background-color .2s ease;
+	content: '';
+	display: block;
+	margin: auto;
+	height: 4px;
+	width: 0px;
+	background: transparent;
+	transition: width .2s ease, background-color .2s ease;
 }
 #social_media td:hover span::after {
-    width: 100%;
-    background: #bda75d;
+	width: 100%;
+	background: #bda75d;
 }
 
 #comps table {
@@ -427,6 +427,30 @@ sup {font-size:xx-small; vertical-align:super;}
 #values td p.small {
 	color: white;
 	padding: 0 20px;
+}
+
+/*	 Rush				*/
+
+.rushForm table {
+	width: 100%;
+	margin-bottom: 20px;
+}
+.rushForm table.rush_grade td:first-child {
+	width: 20%;
+}
+.rushForm table.rush_grade td:last-child {
+	width: 80%;
+	text-align: center;
+}
+.rushForm  table.rush_grade td:last-child > * {
+	padding-left: 24px;
+	padding-right: 24px;
+}
+
+.rushForm table.rush_schools {
+}
+.rushForm table.rush_schools label {
+	text-align: left;
 }
 
 /*   Active Brothers   */
@@ -527,7 +551,7 @@ sup {font-size:xx-small; vertical-align:super;}
 	color:#000033;
 }
 .eboard_group .brother_img p.name {
-/*	color:black;*/
+	/*	color:black;*/
 }
 .eboard_group .eboard_img {
 	width:226px;
@@ -755,16 +779,16 @@ sup {font-size:xx-small; vertical-align:super;}
 /*  CONTACT   */
 
 .contact_table {
-/*	width: 100%;*/
+	/*	width: 100%;*/
 	text-align: center;
 }
 /*
 .contact_table tbody {
-	display: table;
+display: table;
 }
 */
 .contact_table > tbody > tr > td {
-/*	width: 50%;*/
+	/*	width: 50%;*/
 	vertical-align: top;
 }
 .contact_table > td > *:first-child {
@@ -897,7 +921,7 @@ sup {font-size:xx-small; vertical-align:super;}
 
 .eye2eyeGoalsTable td {
 	width: 50%;
-	
+
 }
 
 .eye2eyeGoalsTable td:first-child h2, .eye2eyeGoalsTable td:first-child p {

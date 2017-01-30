@@ -90,27 +90,7 @@ switch ($src) {
 		<script src="../js/jquery.js"></script>
 		<script src="../js/jquery.color.js"></script>
 		<style>
-			table {
-				width: 100%;
-				margin-bottom: 20px;
-			}
-			table.rush_grade td:first-child {
-				width: 20%;
-			}
-			table.rush_grade td:last-child {
-				width: 80%;
-				text-align: center;
-			}
-			table.rush_grade td:last-child > * {
-				padding-left: 24px;
-				padding-right: 24px;
-			}
-
-			table.rush_schools {
-			}
-			table.rush_schools label {
-				text-align: left;
-			}
+			
 		</style>
 	</head>
 
@@ -123,7 +103,7 @@ switch ($src) {
 			<h2><?php echo $title ?></h2>
 		</div>
 
-		<div class="vertical_padding center">
+		<div class="vertical_padding center rushForm">
 			<form style="text-align:center; width: 60%; margin: 0 auto;" action="signup.php?source=<?php echo $src; ?>" id="rushForm" method="post">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo" style="display:none">
 					<input class="mdl-textfield__input" type="text" id="rushChannel" name="rushChannel" hidden="hidden" value="<?php echo $title; ?>" />
