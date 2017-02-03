@@ -291,8 +291,7 @@ if (array_key_exists($event, $eventList)) {
 				. "RushInfo['Majors'] = '" . trim(str_replace("'","",$row['Majors'])) . "';\n"
 				. "RushInfo['MajorSchools'] = '" . trim(str_replace("'","",$row['MajorSchools'])) . "';\n"
 				. "RushInfo['Grade'] = '" . trim(str_replace("'","",$row['Grade'])) . "';\n"
-				. "Rushes['" . trim(str_replace("'","",$row['Email'])) . "'] = RushInfo;"
-				. "console.log(\"" . trim(str_replace("'","",$row['Email'])) ."\");\n\n";
+				. "Rushes['" . trim(str_replace("'","",$row['Email'])) . "'] = RushInfo;";
 		}
 		?>
 

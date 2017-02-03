@@ -1,47 +1,22 @@
 <?php
 $appQuestions = array(
-//	array(
-//		"Why should Alpha Kappa Psi select you?"
-//	),
-//	array(
-//		"What are your two biggest strengths?"
-//	),
-//	array(
-//		"What are your academic interests?"
-//	),
-//	array(
-//		"What are you passionate about outside of academics?"
-//	),
-//	array(
-//		"What organizations are you involved with or planning on involving yourself with on campus?"
-//	),
-//	array(
-//		"If you've had any past work experience, please describe below:"
-//	),
-//	array(
-//		"What are your professional goals and how do you hope to reach them?"
-//	),
-//	array(
-//		"Define what brotherhood means to you:"
-//	),
-//	array(
-//		"Please list two notable interactions you had with brothers throughout the recruitment process:"
-//	),
-//	array(
-//		"<i>If this is not your first time applying</i>, what have you done to strengthen your candidacy? Otherwise, write N/A.",
-//		"isRequired" => false
-//	),
 	array(
-		"What is one of your strongest passions?"
+		"What are you most passionate about? How have you taken steps to follow your passion?"
+	),
+	array(
+		"List three words that describe you."
+	),
+	array(
+		"List organizations are you involved with or planning on involving yourself with on campus."
 	),
 	array(
 		"What aspects of Alpha Kappa Psi interest you?"
 	),
 	array(
-		"What are you looking to get out of Alpha Kappa Psi?"
+		"How do you believe you can benefit from being a part of Alpha Kappa Psi?"
 	),
 	array(
-		"Please describe a notable interaction that you have had with a brother."
+		"Please describe one notable interaction you have had with a brother."
 	),
 	array(
 		"<i>If this is not your first time applying</i>, what have you done to strengthen your candidacy?",
@@ -51,6 +26,7 @@ $appQuestions = array(
 
 $feedbackQuestions = array (
 	"How did you hear about Alpha Kappa Psi's recruitment process?",
-	"What did you think of the recruitment events you attended? How do you think they could be improved?"
+	"What did you think of the recruitment events you attended? How do you think they could be improved?",
+	"Other comments/questions:"
 )
 ?>
