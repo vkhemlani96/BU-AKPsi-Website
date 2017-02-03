@@ -218,7 +218,7 @@
 				<div class="col-md-5">
 					<h2><strong>Fashion Night</strong> Friday, Feb. 3</h2>
 <!--					<h4 style="padding-bottom: 6px;"><strong>Presented By Luvo</strong></h4>-->
-					<h4>CGS 129 | 6-8 PM</h4>
+					<h4>COM 101 | 6-8 PM</h4>
 					<p style="margin-top:20px;">Learn how to dress for success &mdash; our brothers will show you how to dress for any occasion, from casual networking to a cocktail party. At the end of the event, you will have an opportunity to network with the brothers in attendance. <i>Business casual is recommended but not required.</i></p>
 				</div>
 				<div class="col-md-5 col-md-offset-3" style="margin-left: 29.1666667%; padding-top: 35px;">
