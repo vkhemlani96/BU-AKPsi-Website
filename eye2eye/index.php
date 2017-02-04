@@ -1,8 +1,8 @@
 <?php
 function getDonationCount() {
 	$fullSource = file_get_contents("https://crowdfunding.bu.edu/project/3305");
-	preg_match('/<div class=\"single-project-top-dollar\">\s*\$\d+/', $fullSource, $matches);
-	preg_match('/\$\d+/', $matches[0], $matches);
+	preg_match('/<div class=\"single-project-top-dollar\">\s*\$\d+\,\d+/', $fullSource, $matches);
+	preg_match('/\$\d\,\d+/', $matches[0], $matches);
 	return $matches[0];
 }
 
