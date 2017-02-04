@@ -7,9 +7,6 @@ $appQuestions = array(
 		"List three words that describe you."
 	),
 	array(
-		"List organizations are you involved with or planning on involving yourself with on campus."
-	),
-	array(
 		"What aspects of Alpha Kappa Psi interest you?"
 	),
 	array(

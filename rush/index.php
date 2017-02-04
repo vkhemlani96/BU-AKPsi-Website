@@ -130,14 +130,12 @@
 		</div>
 		
 		<div class="row vertical_padding">
-			<div class="col-md-4 col-md-offset-4">
+			<div class="col-md-4 col-md-offset-2">
 				<a href="signup.php?source=<?php if (strpos($_SERVER['HTTP_REFERER'], 'facebook') !== false) {echo 'fb';} else {echo 'web';} ?>" style="text-decoration: none"><p class="button text-center">Sign up for Recruitment!</p></a>
 			</div>
-<!--
-			<div class="col-md-4 col-md-offset-4">
+			<div class="col-md-4">
 				<a href="application.php" style="text-decoration: none"><p class="button text-center">Fill out our Application!</p></a>
 			</div>
--->
 		</div>
 		
 <!--
