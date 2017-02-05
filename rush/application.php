@@ -101,7 +101,7 @@ include("application_questions.php");
 					</div>
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
 						<input class="mdl-textfield__input" type="text" id="rushAddress" name="rushAddress"/>
-						<label class="mdl-textfield__label" for="sample1">On/Off-Campus Address</label>
+						<label class="mdl-textfield__label" for="sample1">Address (Building &amp; Room)</label>
 					</div>
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
 						<input class="mdl-textfield__input" pattern="\d+(\.\d*)?" id="rushGPA" name="rushGPA"/>

@@ -28,8 +28,10 @@
 	$info1 = $row["Info1"] ? "Yes" : "No";
 	$info2 = $row["Info2"] ? "Yes" : "No";
 	$event1 = $row["Professional"] ? "Yes" : "No";
-	$event2 = $row["Coffeehouse"] ? "Yes" : "No";
+	$event2 = $row["Fashion"] ? "Yes" : "No";
+	$event3 = $row["CommunityService"] ? "Yes" : "No";
 	$gpa = $row["gpa"];
+	$address = $row["address"];
 
 	$time = $row["timestamp"];
 	$time = strtotime($time) + (3600 * 3);
@@ -100,12 +102,14 @@
 					<p><strong>Email: </strong><? echo $email;?></p>
 					<p><strong>Phone: </strong><? echo $phone;?></p>
 					<p><strong>GPA: </strong><? echo $gpa;?></p>
+					<p><strong>Address: </strong><? echo $address;?></p>
 				</td><td>
 					<p><strong>Channel: </strong><? echo $channel;?></p>
 					<p><strong>Info1: </strong><? echo $info1;?></p>
 					<p><strong>Info2: </strong><? echo $info2;?></p>
 					<p><strong>Professional Workshops: </strong><? echo $event1;?></p>
-					<p><strong>Coffeehouse: </strong><? echo $event2;?></p>
+					<p><strong>Fashion Night: </strong><? echo $event2;?></p>
+					<p><strong>Community Service: </strong><? echo $event3;?></p>
 					<p><strong>Submitted At: </strong><? echo $time;?></p>
 				</td>
 			</tr>
