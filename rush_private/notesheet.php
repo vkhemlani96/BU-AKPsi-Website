@@ -174,15 +174,20 @@
 								<td width="186" style="border-right: none; border-bottom: none"><p style="text-align: left; font-weight: bold;">Feedback:</p></td>
 								<!--								<td><p>Feedback</p></td>-->
 							</tr><tr>
-							<td style="border-left:none"><p>Displays Leadership</p></td>
-							<td></td><td></td><td></td>
-							<td style="border:none"></td>
-							</tr><tr>
-							<td style="border-left:none"><p>Articulates Efficiently</p></td>
-							<td></td><td></td><td></td>
-							<td style="border:none"></td>
-							</tr><tr>
 							<td style="border-left:none"><p>Executive Presence</p></td>
+							<td></td><td></td><td></td>
+							<td style="border:none"></td>
+							</tr><tr>
+							<td style="border-left:none"><p>Problem Solving</p></td>
+							<td></td><td></td><td></td>
+							<td style="border:none"></td>
+							</tr><tr>
+							<td style="border-left:none"><p>Passion</p></td>
+							<td></td><td></td><td></td>
+							<td style="border:none"></td>
+							</tr>
+							<tr>
+							<td style="border-left:none"><p>Leadership</p></td>
 							<td></td><td></td><td></td>
 							<td style="border:none"></td>
 							</tr>
