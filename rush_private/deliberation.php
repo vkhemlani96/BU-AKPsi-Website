@@ -49,7 +49,7 @@
 
 	//	$result = mysqli_query($con,"SELECT Email, SUM(`InvitedToClosed`), SUM(`AppSubmitted`)" . $queryBody . " FROM $rushTable");
 	$result = mysqli_multi_query($con,"SET @rank=0;
-SELECT * FROM ((SELECT FirstName, LastName, MajorSchools, Grade, Email, Interview_Deliberate, -1 FROM rushFall2016 WHERE Interview_Wave = 0) UNION (SELECT * FROM (SELECT FirstName, LastName, MajorSchools, Grade, Email, Interview_Deliberate, @rank:=@rank+1 as 'a' FROM rushFall2016 WHERE Interview_Wave > 0 ORDER BY Interview_Wave, LastName) as T1 WHERE Interview_Deliberate = 1)) AS a");
+SELECT * FROM ((SELECT FirstName, LastName, MajorSchools, Grade, Email, Interview_Deliberate, -1 FROM $rushTable WHERE Interview_Wave = 0) UNION (SELECT * FROM (SELECT FirstName, LastName, MajorSchools, Grade, Email, Interview_Deliberate, @rank:=@rank+1 as 'a' FROM rushFall2016 WHERE Interview_Wave > 0 ORDER BY Interview_Wave, LastName) as T1 WHERE Interview_Deliberate = 1)) AS a");
 
 	$resultArray = array();
 	do {
