@@ -1,4 +1,5 @@
 Redirect /eye2eye/donate /eye2eye/donate.php
+Redirect /vote /vote.php
 
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
