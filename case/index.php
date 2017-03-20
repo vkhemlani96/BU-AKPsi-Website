@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Trans-Atlantic Case Competition | Alpha Kappa Psi Nu Chapter</title>
+	<title>AKPSI Case Competition Registration Form | Alpha Kappa Psi Nu Chapter</title>
 	
 	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.indigo-pink.min.css">
 	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
@@ -75,16 +75,16 @@
 				<p><b>Main Team Contact</b></p>
 				
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
-						<input class="mdl-textfield__input" type="text" id="FirstName" name="firstNameMain" />
-						<label class="mdl-textfield__label" for="sample1">First Name</label>
+						<input class="mdl-textfield__input" type="text" id="TeamName" name="teamName" />
+						<label class="mdl-textfield__label" for="sample1">Team Name</label>
 					</div>
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
-						<input class="mdl-textfield__input" type="text" id="LastName" name="lastNameMain" />
-						<label class="mdl-textfield__label" for="sample1">Last Name</label>
+						<input class="mdl-textfield__input" type="text" id="Name" name="name" />
+						<label class="mdl-textfield__label" for="sample1">Name</label>
 					</div>
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
 						<input class="mdl-textfield__input" type="text" id="Email" name="email"/>
-						<label class="mdl-textfield__label" for="sample1">E-Mail (MUST USE @bu.edu)</label>
+						<label class="mdl-textfield__label" for="sample1">E-Mail</label>
 					</div>
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
 						<input class="mdl-textfield__input" type="text" id="Grade" name="year"/>
@@ -92,7 +92,11 @@
 					</div>
 					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
 						<input class="mdl-textfield__input" type="text" id="School" name="school"/>
-						<label class="mdl-textfield__label" for="sample1">School within BU</label>
+						<label class="mdl-textfield__label" for="sample1">School within BU/University</label>
+					</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+						<input class="mdl-textfield__input" type="text" id="Major" name="major"/>
+						<label class="mdl-textfield__label" for="sample1">Major</label>
 					</div>
 				
 				</div>
@@ -100,12 +104,8 @@
 				<p><b>Team Member #2</b></p>
 				
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
-					<input class="mdl-textfield__input" type="text" id="FirstName" name="firstName1" />
-					<label class="mdl-textfield__label" for="sample1">First Name</label>
-				</div>
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
-					<input class="mdl-textfield__input" type="text" id="LastName" name="lastName1" />
-					<label class="mdl-textfield__label" for="sample1">Last Name</label>
+					<input class="mdl-textfield__input" type="text" id="Name" name="name1" />
+					<label class="mdl-textfield__label" for="sample1">Name</label>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
 					<input class="mdl-textfield__input" type="text" id="Grade" name="year1"/>
@@ -113,18 +113,18 @@
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
 					<input class="mdl-textfield__input" type="text" id="School" name="school1"/>
-					<label class="mdl-textfield__label" for="sample1">School within BU</label>
+					<label class="mdl-textfield__label" for="sample1">School within BU/University</label>
+				</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+					<input class="mdl-textfield__input" type="text" id="Major" name="major1"/>
+					<label class="mdl-textfield__label" for="sample1">Major</label>
 				</div>
 			
 				<p><b>Team Member #3</b></p>
 				
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
-					<input class="mdl-textfield__input" type="text" id="FirstName" name="firstName2" />
-					<label class="mdl-textfield__label" for="sample1">First Name</label>
-				</div>
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
-					<input class="mdl-textfield__input" type="text" id="LastName" name="lastName2" />
-					<label class="mdl-textfield__label" for="sample1">Last Name</label>
+					<input class="mdl-textfield__input" type="text" id="Name" name="name2" />
+					<label class="mdl-textfield__label" for="sample1">Name</label>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
 					<input class="mdl-textfield__input" type="text" id="Grade" name="year2"/>
@@ -132,18 +132,18 @@
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
 					<input class="mdl-textfield__input" type="text" id="School" name="school2"/>
-					<label class="mdl-textfield__label" for="sample1">School within BU</label>
+					<label class="mdl-textfield__label" for="sample1">School within BU/University</label>
+				</div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+					<input class="mdl-textfield__input" type="text" id="Major" name="major2"/>
+					<label class="mdl-textfield__label" for="sample1">Major</label>
 				</div>
 			
 				<p><b>Team Member #4</b></p>
 				
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
-					<input class="mdl-textfield__input" type="text" id="FirstName" name="firstName3" />
-					<label class="mdl-textfield__label" for="sample1">First Name</label>
-				</div>
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
-					<input class="mdl-textfield__input" type="text" id="LastName" name="lastName3" />
-					<label class="mdl-textfield__label" for="sample1">Last Name</label>
+					<input class="mdl-textfield__input" type="text" id="Name" name="name3" />
+					<label class="mdl-textfield__label" for="sample1">Name</label>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
 					<input class="mdl-textfield__input" type="text" id="Grade" name="year3"/>
@@ -151,7 +151,11 @@
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
 					<input class="mdl-textfield__input" type="text" id="School" name="school3"/>
-					<label class="mdl-textfield__label" for="sample1">School within BU</label>
+					<label class="mdl-textfield__label" for="sample1">School within BU/University</label>
+				</div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+					<input class="mdl-textfield__input" type="text" id="Major" name="major3"/>
+					<label class="mdl-textfield__label" for="sample1">Major</label>
 				</div>
 			</div>
 			
@@ -194,7 +198,7 @@
 	
 			<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-2">
   				<input type="checkbox" id="checkbox-2" class="mdl-checkbox__input">
-				<span class="mdl-checkbox__label">Click to acknowledge: Only teams that hand in a cash or check for the $50 team deposit will be properly registered for the competition. This deposit is to ensure each registered team's participation. Deposits will be maintained by Alpha Kappa Psi professional fraternity and will be returned upon successful completion of the competition day</span>
+				<span class="mdl-checkbox__label">Click to acknowledge: Only teams that hand in a cash or check for the $50 team deposit will be properly registered for the competition. This deposit is to ensure each registered team's participation. Deposits will be maintained by Alpha Kappa Psi professional fraternity and will be returned upon successful completion of the competition day.</span>
 			</label>
 		
 			<div style="text-align:center; margin: 80px 0;">
@@ -209,23 +213,13 @@
 	
 	<script>
 		
-		console.log($("#checkbox-2").checked);
-		
-		
 		function checkform() {
 			// get all the inputs within the submitted form
 			var inputs = document.getElementById("Form").getElementsByTagName('input');
-			for (var i = 0; i < inputs.length; i++) {
+			for (var i = 0; i < 14; i++) {
 				// only validate the inputs that have the required attribute
 				if(inputs[i].value == ""){
-					// found an empty field that is required
-					return false;
-				}
-			}
-			inputs = document.getElementById("Form").getElementsByTagName('textarea');
-			for (var i = 0; i < inputs.length; i++) {
-				// only validate the inputs that have the required attribute
-				if(inputs[i].value == ""){
+					alert(inputs[i].id);
 					// found an empty field that is required
 					return false;
 				}
@@ -239,7 +233,7 @@
 				return;
 			} else {
 				if (!$("#checkbox-2").is(':checked')) {
-					alert("Please acknowledge the agreement above");
+					alert("Please acknowledge the agreement stated above.");
 					return;
 				} else {
 					$("#Form").submit();

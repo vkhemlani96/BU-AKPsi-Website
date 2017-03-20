@@ -38,14 +38,14 @@ if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
 } 
 
-	$caseTable = "caseFall2016";
-	$sql = "INSERT INTO $caseTable (firstNameMain, lastNameMain, email, school, year, firstName1, lastName1, school1, year1, firstName2, lastName2, school2, year2, firstName3, lastName3, school3, year3) VALUES ('" . $_POST["firstNameMain"] . "', '" . $_POST["lastNameMain"] . "', '" . $_POST["email"] . "', '" . $_POST["school"] . "', '" . $_POST["year"] . "', '" . $_POST["firstName1"] . "', '" . $_POST["lastName1"] . "', '" . $_POST["school1"] . "', '" . $_POST["year1"] . "', '" . $_POST["firstName2"] . "', '" . $_POST["lastName2"] . "', '" . $_POST["school2"] . "', '" . $_POST["year2"] . "', '" . $_POST["firstName3"] . "', '" . $_POST["lastName3"] . "', '" . $_POST["school3"]	. "', '" . $_POST["year3"] . "')";
+	$caseTable = "caseSpring2017";
+	$sql = "INSERT INTO $caseTable (teamName, name, email, school, year, major, name1, school1, year1, major1, name2, school2, year2, major2, name3, school3, year3, major3) VALUES ('" . $_POST["teamName"] . "', '" . $_POST["name"] . "', '" . $_POST["email"] . "', '" . $_POST["school"] . "', '" . $_POST["year"] . "', '" . $_POST["major"] . "', '" . $_POST["name1"] . "', '" . $_POST["school1"] . "', '" . $_POST["year1"] . "', '" . $_POST["major1"] . "', '" . $_POST["name2"] . "', '" . $_POST["school2"] . "', '" . $_POST["year2"] . "', '" . $_POST["major2"] . "', '" . $_POST["name3"] . "', '" . $_POST["school3"]	. "', '" . $_POST["year3"]	. "', '" . $_POST["major3"] . "')";
 
 if ($conn->query($sql) === TRUE) {
 	$no_error = true;
 
 ?>
-	<h2 style="margin: 200px 0;"><strong>Thank you for your submission!</strong><br>We will review your submission and contact you with further details.</h2>
+	<h2 style="margin: 200px 0;"><strong>Thank you for signing up!</strong><br>To complete your submission, please send copies of each team member's resumes to <a href="mailto:njohari@bu.edu">njohari@bu.edu</a>!</h2>
 
 <?
 
@@ -53,7 +53,7 @@ if ($conn->query($sql) === TRUE) {
 
 ?>
 	
-	<h2 style="margin: 50px 0;"><strong>An error has occured.</strong><br>Please copy paste the following and email it to <a href="mailto:jskim@bu.edu">jskim@bu.edu</a>.</h2>
+	<h2 style="margin: 50px 0;"><strong>An error has occured.</strong><br>Please copy paste the following and email it to <a href="mailto:jskim@bu.edu">njohari@bu.edu</a>.</h2>
 	
 	<?
 		echo "<p class='center'>";
