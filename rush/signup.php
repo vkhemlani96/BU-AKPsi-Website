@@ -17,8 +17,8 @@ if (isset($_POST["rushFirstName"]) && isset($_POST["rushLastName"]) && isset($_P
 		die("Connection failed: " . $conn->connect_error);
 	}
 
-	$sql = "INSERT INTO $rushTable (FirstName, LastName, Email, Phone, Majors, MajorSchools, Grade, Channel)
-	VALUES ('" . $_POST["rushFirstName"] . "', '" . $_POST["rushLastName"] . "', '" . $_POST["rushEmail"] . "', '" . $_POST["rushPhone"] . "', '" . $_POST["rushMajors"] . "', '" . $_POST["rushSchool"] . "', '" . $_POST["rushGrade"] . "', '" . $_POST["rushChannel"] . "')";
+	$sql = "INSERT INTO $rushTable (FirstName, LastName, Email, Phone, Majors, Minors, MajorSchools, Grade, Channel)
+	VALUES ('" . $_POST["rushFirstName"] . "', '" . $_POST["rushLastName"] . "', '" . $_POST["rushEmail"] . "', '" . $_POST["rushPhone"] . "', '" . $_POST["rushMajors"] . "', '" . $_POST["rushMinors"] . "', '" . $_POST["rushSchool"] . "', '" . $_POST["rushGrade"] . "', '" . $_POST["rushChannel"] . "')";
 
 	if ($conn->query($sql) === TRUE) {
 		echo "New record created successfully";
@@ -231,6 +231,10 @@ switch ($src) {
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
 					<input class="mdl-textfield__input" type="text" id="rushMajors" name="rushMajors"/>
 					<label class="mdl-textfield__label" for="sample1">Major(s) / Concentration(s)</label>
+				</div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+					<input class="mdl-textfield__input" type="text" id="rushMinors" name="rushMinors"/>
+					<label class="mdl-textfield__label" for="sample1">Minors(s) (Optional)</label>
 				</div>
 				<br>
 				<button class="button" type="button" id="formSubmit" name="formSubmit">SUBMIT</button>
