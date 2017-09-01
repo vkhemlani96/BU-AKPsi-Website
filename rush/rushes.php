@@ -59,7 +59,7 @@ ini_set('display_errors', 1);
 		"Info2",
 		"Professional",
 		"Fashion",
-		"CommunityService",
+//		"CommunityService",
 //		"Interview",
 //		"Mocktail"
 	);
@@ -154,7 +154,7 @@ ini_set('display_errors', 1);
 	}
 	echo "</table>";
 
-	$query = "SELECT `Sign Up Time`, FirstName, LastName, Email, Phone, Majors, MajorSchools, Grade, Channel, AppSubmitted, InvitedToClosed, " . join(", ", $fields) . " FROM $rushTable ORDER BY `Sign Up Time`";
+	$query = "SELECT `Sign Up Time`, FirstName, LastName, Email, Phone, MajorSchools, Majors, Minors, Grade, Channel, AppSubmitted, InvitedToClosed, " . join(", ", $fields) . " FROM $rushTable ORDER BY `Sign Up Time`";
 	$result = mysqli_query($con,$query);
 	$fields = mysqli_num_fields($result);
 
