@@ -256,7 +256,8 @@ switch ($src) {
 			var inputs = document.getElementById("rushForm").getElementsByTagName('input');
 			for (var i = 0; i < inputs.length; i++) {
 				// only validate the inputs that have the required attribute
-				if(inputs[i].value == ""){
+				console.log(inputs[i])
+				if(inputs[i].value == "" && inputs[i].name != 'rushMinors'){
 					// found an empty field that is required
 					return false;
 				}
