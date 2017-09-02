@@ -197,7 +197,7 @@
 					</div>
 				</div>
 				<div class="row" style="margin-top:20px;">
-					<p class="col-md-10 col-md-offset-1">Our information sessions are your first chance to learn what Alpha Kappa Psi and Nu Chapter are all about. Come out to learn more about the chapter's history and operation, as well as all the opportunities you can benefit from as a member of the Fraternity! The event also includes a networking session for you to meet and get to know many of the chapter's brothers. </i></p>
+					<p class="col-md-10 col-md-offset-1">Our information sessions are your first chance to learn what Alpha Kappa Psi and Nu Chapter are all about. Come out to learn more about the chapter's history and operation, as well as all the opportunities you can benefit from as a member of the Fraternity! The event also includes a networking session for you to meet and get to know many of the chapter's brothers.</i></p>
 				</div>
 			</div>
 			<div class="row">
@@ -211,14 +211,14 @@
 					<h2><strong>Professional Night</strong> Wednesday, Sept. 20</h2>
 <!--					<h4 style="padding-bottom: 6px"><strong>Presented by Ann Taylor and Ministry of Supply</strong></h4>-->
 					<h4>PHO 206 (Photonics Center Auditorium) | 6:30-8:30 PM</h4>
-					<p style="margin-top: 20px;">Learn about career paths and professional life through our panel of senior brothers. The panel will be open to answer questions and share their experiences about their professional careers and Alpha Kappa Psi. At the end of the event, you will have an opportunity to network with the brothers in attendance. Business casual attire is required. 
+					<p style="margin-top: 20px;">Learn about career paths and professional life through our panel of senior brothers. The panel will be open to answer questions and share their experiences about their professional careers and Alpha Kappa Psi. At the end of the event, you will have an opportunity to network with the brothers in attendance. Business casual attire is required. 
 </i></p>
 				</div>
 				<div class="col-md-5">
 					<h2><strong>Fashion Night</strong> Thursday, Sept. 21</h2>
 <!--					<h4 style="padding-bottom: 6px;"><strong>Presented By Luvo</strong></h4>-->
 					<h4>PHO 906 (Photonics Center Colloquium Room) | 6-8 PM</h4>
-					<p style="margin-top:20px;">Learn how to dress for success — our brothers will show you how to dress for any occasion, from casual networking to a cocktail party. At the end of the event, you will have an opportunity to network with the brothers in attendance. <i>Business casual is recommended but not required.</i></p>
+					<p style="margin-top:20px;">Learn how to dress for success &mdash; our brothers will show you how to dress for any occasion, from casual networking to a cocktail party. At the end of the event, you will have an opportunity to network with the brothers in attendance. <i>Business casual is recommended but not required.</i></p>
 				</div>
 			</div>
 			
