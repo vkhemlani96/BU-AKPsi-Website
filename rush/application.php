@@ -1,4 +1,5 @@
 <?php
+ini_set('display_errors', 1);
 include("application_questions.php");
 ?>
 
@@ -16,6 +17,89 @@ include("application_questions.php");
 		<link href="../css/navbar.css" rel="stylesheet" />
 		<script src="../js/jquery.js"></script>
 		<script src="../js/jquery.color.js"></script>
+		
+		<style>
+			#rushForm div div.mdl-textfield {
+				display:inline-block;
+				width:33%;
+				text-align:center;
+			}
+			#rushForm div div.mdl-textfield * {
+				width: 95%;
+			}
+			#rushForm div div.pic {
+				display: block;
+				width: 100%;
+				text-align: left;
+			}
+			#rushForm div div.pic p {
+				width: 33%; 
+				text-transform: uppercase;
+			}
+			#rushForm p {
+				font-family: "Open Sans", sans-serif;
+				font-size: 16px;
+				padding: 4px 0;
+				background: 16px;
+				color: rgba(0,0,0,.26);
+			}
+			#rushForm p.description {
+				font-family: "Open Sans", sans-serif;
+				font-size: 16px;
+				color: rgba(0,0,0,1);
+			}
+			#rushForm div div.pic * {
+				width: auto;
+				display: inline-block;
+			}
+			#rushForm textarea {
+				width: 100%;
+				height: 100px;
+				border-color: rgba(0,0,0,.26);
+				font-size: 16px;
+				margin-bottom: 20px;
+			}
+			#rushForm .is-invalid label:after {
+				background-color:#000033;
+			}
+			#rushForm > div.hidden {
+				display: none
+			}
+			#rushForm #application_logic label {
+				margin: 0 0 20px 20px;
+			}
+			#rushForm #application_logic label:first-child {
+				margin-top:20px;
+			}
+			#rushForm #application_logic .table_seperator {
+				margin-top: 20px;
+				margin-bottom: 20px;
+			}
+			#rushForm #application_logic input {
+				margin-top: 20px;
+				width: 100%;
+				font-family: "Open Sans", sans-serif;
+			}
+			#rushForm #application_logic .table_seperator {
+				opacity: .7;
+			}
+			#countdownClock {
+				position: fixed;
+				width: 200px;
+				height: 50px;
+				background-color: #000033;
+				border: 1px solid white;
+				bottom: 20px;
+				left: 50%;
+				margin-left: -100px;
+			}
+			#countdownClock p {
+				color: white;
+				line-height: 50px;
+				text-align: center;
+				padding: 0;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -28,124 +112,165 @@ include("application_questions.php");
 		</div>
 
 		<div class="center">
-			<style>
-				#rushForm div div.mdl-textfield {
-					display:inline-block;
-					width:33%;
-					text-align:center;
-				}
-				#rushForm div div.mdl-textfield * {
-					width: 95%;
-				}
-				#rushForm div div.pic {
-					display: block;
-					width: 100%;
-					text-align: left;
-				}
-				#rushForm div div.pic p {
-					width: 33%; 
-					text-transform: uppercase;
-				}
-				#rushForm p {
-					font-family: "Open Sans", sans-serif;
-					font-size: 16px;
-					padding: 4px 0;
-					background: 16px;
-					color: rgba(0,0,0,.26);
-				}
-				#rushForm div div.pic * {
-					width: auto;
-					display: inline-block;
-				}
-				#rushForm textarea {
-					width: 100%;
-					height: 100px;
-					border-color: rgba(0,0,0,.26);
-					font-size: 16px;
-					margin-bottom: 20px;
-				}
-				#rushForm .is-invalid label:after {
-					background-color:#000033;
-				}
-			</style>
-			<form style="margin: 0 auto;" action="application_post.php" id="rushForm" method="post"  enctype="multipart/form-data">
-				<div class="vertical_padding">
-
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
-						<input class="mdl-textfield__input" type="text" id="rushEmail" name="rushEmail"/>
-						<label class="mdl-textfield__label" for="sample1">E-Mail (MUST USE @bu.edu)</label>
-					</div>
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
-						<input class="mdl-textfield__input" type="text" id="rushFirstName" name="rushFirstName" />
-						<label class="mdl-textfield__label" for="sample1">First Name</label>
-					</div>
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
-						<input class="mdl-textfield__input" type="text" id="rushLastName" name="rushLastName" />
-						<label class="mdl-textfield__label" for="sample1">Last Name</label>
-					</div>
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
-						<input class="mdl-textfield__input" type="text" id="rushGrade" name="rushGrade"/>
-						<label class="mdl-textfield__label" for="sample1">Grade (eg. Freshman, Sophomore)</label>
-					</div>
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
-						<input class="mdl-textfield__input" type="text" id="rushSchool" name="rushSchool"/>
-						<label class="mdl-textfield__label" for="sample1">School(s) (eg. QUESTROM, ENG)</label>
-					</div>
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
-						<input class="mdl-textfield__input" type="text" id="rushMajors" name="rushMajors"/>
-						<label class="mdl-textfield__label" for="sample1">Major(s) / Concentration(s)</label>
-					</div>
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
-						<input class="mdl-textfield__input" type="text" id="rushPhone" name="rushPhone"/>
-						<label class="mdl-textfield__label" for="sample1">Phone Number</label>
-					</div>
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
-						<input class="mdl-textfield__input" type="text" id="rushAddress" name="rushAddress"/>
-						<label class="mdl-textfield__label" for="sample1">Address (Building &amp; Room)</label>
-					</div>
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
-						<input class="mdl-textfield__input" pattern="\d+(\.\d*)?" id="rushGPA" name="rushGPA"/>
-						<label class="mdl-textfield__label" for="sample1"style="overflow:initial">Cummulative College GPA (HS GPA for freshman)</label>
-					</div>
-					<div class="pic">
-						<p class="">Please attach a photo of yourself: </p>
-						<input type="file" id="rushPic" name="rushPic" style="display:inline-block; width: 66%"/>
-					</div>
-				</div>
+			
+			<div id="description">
+				<p class="vertical_padding center description" style="text-align: center">
+					Thank you for considering applying to join Alpha Kappa Psi Nu Chapter! This year, our application process consists of both, a written portion and a logical examination. Please be as specific as possible and complete the examination in one sitting with <i>absolute integrity</i>. The entire application should take no longer than 30 minutes.<br><br> <i>Note: The written portion is untimed. However, the logic examination has a 10-minute time limit and can only be completed once.</i>
+				</p>
 
 				<div class="table_seperator" style="width: 66%"></div>
+			</div>
+			
+			
+			<form style="margin: 0 auto;" action="application_post.php" id="rushForm" method="post" enctype="multipart/form-data">
+			
+				<div id="application_start">
+				
+					<div class="vertical_padding">
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+							<input class="mdl-textfield__input" type="text" id="rushEmail" name="rushEmail"/>
+							<label class="mdl-textfield__label" for="sample1">E-Mail (MUST USE @bu.edu)</label>
+						</div>
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+							<input class="mdl-textfield__input" type="text" id="rushFirstName" name="rushFirstName" />
+							<label class="mdl-textfield__label" for="sample1">First Name</label>
+						</div>
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+							<input class="mdl-textfield__input" type="text" id="rushLastName" name="rushLastName" />
+							<label class="mdl-textfield__label" for="sample1">Last Name</label>
+						</div>
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+							<input class="mdl-textfield__input" type="text" id="rushGrade" name="rushGrade"/>
+							<label class="mdl-textfield__label" for="sample1">Grade (eg. Freshman, Sophomore)</label>
+						</div>
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+							<input class="mdl-textfield__input" type="text" id="rushSchool" name="rushSchool"/>
+							<label class="mdl-textfield__label" for="sample1">School(s) (eg. QUESTROM, ENG)</label>
+						</div>
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+							<input class="mdl-textfield__input" type="text" id="rushMajors" name="rushMajors"/>
+							<label class="mdl-textfield__label" for="sample1">Major(s) / Concentration(s)</label>
+						</div>
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+							<input class="mdl-textfield__input" type="text" id="rushMinors" name="rushMinors"/>
+							<label class="mdl-textfield__label" for="sample1">Minors(s)</label>
+						</div>
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+							<input class="mdl-textfield__input" type="text" id="rushPhone" name="rushPhone"/>
+							<label class="mdl-textfield__label" for="sample1">Phone Number</label>
+						</div>
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+							<input class="mdl-textfield__input" type="text" id="rushAddress" name="rushAddress"/>
+							<label class="mdl-textfield__label" for="sample1">Address (Building &amp; Room)</label>
+						</div>
+						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+							<input class="mdl-textfield__input" pattern="\d+(\.\d*)?" id="rushGPA" name="rushGPA"/>
+							<label class="mdl-textfield__label" for="sample1"style="overflow:initial">Cummulative College GPA (HS GPA for freshman)</label>
+						</div>
+						<div class="pic">
+							<p class="">Please attach a photo of yourself: </p>
+							<input type="file" id="rushPic" name="rushPic" style="display:inline-block; width: 66%"/>
+						</div>
+					</div>
 
-				<div class="vertical_padding">
-					<?
-					foreach($appQuestions as $count => $question) {
-					?>
-					<p><strong><? echo $question[0] ?></strong></p>
-					<textarea name="q<? echo $count; ?>" <? if (isset($question["isRequired"]) && !$question["isRequired"]) {echo 'class="notRequired"';}?>></textarea>
-					<?
-					}
-					?>
+					<div style="text-align:center; margin-bottom: 35px;">
+						<button class="button" type="button" onclick="moveToNextPart()">Begin Written Application</button>
+					</div>
+					
+				</div>
+				
+				<div id="application_written" class="hidden">
+					
+					<div class="table_seperator" style="width: 66%"></div>
+
+					<div class="vertical_padding">
+						<?
+						foreach($appQuestions as $count => $question) {
+						?>
+						<p><strong><? echo $question[0] ?></strong></p>
+						<textarea name="q<? echo $count; ?>" <? if (isset($question["isRequired"]) && !$question["isRequired"]) {echo 'class="notRequired"';}?>></textarea>
+						<?
+						}
+						?>
+					</div>
+
+					<div class="table_seperator" style="width: 66%"></div>
+
+					<div class="vertical_padding">
+						<p style="color: black; text-align:center"><i><strong>The following questions are optional and will have no affect on your candidacy.</strong></i></p>
+						<br><br>
+
+						<?
+						foreach($feedbackQuestions as $count => $question) {
+						?>
+						<p><strong><? echo $question?></strong></p>
+						<textarea name="fb<? echo $count; ?>" class="notRequired"></textarea>
+						<?
+						}
+						?>
+					</div>
+
+					<div style="text-align:center; margin-bottom: 35px;">
+						<button class="button" type="button" onclick="moveToNextPart()">Begin Logic Exam</button>
+					</div>
+
+					
+				</div>
+				
+				<div id="application_logic" class="hidden">
+				
+					<div id="countdownClock">
+						<p>Time Left: 10:00</p>
+					</div>
+					
+					<div class="vertical_padding">
+						<?
+						foreach($logicQuestions as $count => $logic) {
+							if (isset($logic['image'])) {
+						?>
+							<img src="<? echo $logic['image'] ?>" />
+						<?
+						}
+						?>
+							<p style="color:black"><strong><? echo $logic['question'] ?></strong></p>
+							<div>
+						<?
+						if (isset($logic['options'])) {
+							shuffle($logic['options']);
+							foreach($logic['options'] as $option) {	
+						?>
+							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-<? echo $option ?>">
+								<input type="radio" id="option-<? echo $option ?>" class="mdl-radio__button" name="l<? echo $count ?>" value="<? echo $option ?>">
+								<span class="mdl-radio__label"><? echo $option ?></span>
+							</label>
+							</br>
+						<?
+							}
+						} else if (isset($logic['inputType'])) {
+						?>
+							<input type="<? echo $logic['inputType'] ?>" id="l<? echo $count ?>" name="l<? echo $count ?>"/>
+						<?
+						}
+						?>
+							</div>
+							<div class="table_seperator" style="width: 66%"></div>
+						<?
+						}
+						?>
+					</div>
+
+					<div style="text-align:center; margin-bottom: 35px;">
+						<button class="button" type="button" onclick="moveToNextPart()">Submit Exam</button>
+					</div>
+
+					
 				</div>
 
-				<div class="table_seperator" style="width: 66%"></div>
-
-				<div class="vertical_padding">
-					<p style="color: black; text-align:center"><i><strong>The following questions are optional and will have no affect on your candidacy.</strong></i></p>
-					<br><br>
-
-					<?
-					foreach($feedbackQuestions as $count => $question) {
-					?>
-					<p><strong><? echo $question?></strong></p>
-					<textarea name="fb<? echo $count; ?>" class="notRequired"></textarea>
-					<?
-					}
-					?>
-				</div>
-
-				<div style="text-align:center; margin-bottom: 35px;">
-					<button class="button" type="button" id="formSubmit" name="formSubmit">SUBMIT</button>
-				</div>
-
+			
+<!--			
+					<div style="text-align:center; margin-bottom: 35px;">
+						<button class="button" type="button" id="formSubmit" name="formSubmit">Begin Written Application</button>
+					</div>-->
 
 			</form>
 
@@ -154,6 +279,48 @@ include("application_questions.php");
 		<?php getFooter(); ?>
 
 		<script>
+			
+			var appIndex = 0;
+			var interval = null;
+			function moveToNextPart() {
+				if (appIndex == 0) {
+					
+					if (true || checkform()) {
+
+						if (false && $("#rushEmail").val().trim().indexOf("@bu.edu", this.length - "@bu.edu".length) == -1 || $("#rushEmail").val().length > 15) {
+							alert("Please use your BU email");
+							return;
+						}
+						
+						appIndex = 1;
+						$("#description").addClass("hidden")
+						$("#application_start").addClass("hidden")
+						$("#application_written").removeClass("hidden")
+
+//						$("#rushForm").submit();
+					} else {
+						if( document.getElementById("rushPic").files.length == 0 ){
+							alert("Please include a picture of yourself with your application.");
+							return;
+						}
+						alert("Please fill all required fields.");
+					}
+					
+				} else if (appIndex == 1) {
+					
+					if (confirm("The following portion of the application has a 10 minute time limit and must be completed in one sitting. Press 'OK' to begin.")) {
+						appIndex = 2;
+						interval = setInterval(countdownTime, 1000)
+						$("#application_written").addClass("hidden")
+						$("#application_logic").removeClass("hidden")
+					}
+					
+				} else if (appIndex == 2) {
+					
+					if (confirm("Are you sure you want to submit your application?"))
+						$("#rushForm").submit();
+				}
+			}
 
 			function checkform() {
 				// get all the inputs within the submitted form
@@ -176,25 +343,15 @@ include("application_questions.php");
 				}
 				return true;
 			}
-
-			$("#formSubmit").click(function() {
-				if (checkform()) {
-
-					if ($("#rushEmail").val().trim().indexOf("@bu.edu", this.length - "@bu.edu".length) == -1 || $("#rushEmail").val().length > 15) {
-						alert("Please use your BU email");
-						return;
-					}
-
-					$("#rushForm").submit();
-				} else {
-					if( document.getElementById("rushPic").files.length == 0 ){
-						alert("Please include a picture of yourself with your application.");
-						return;
-					}
-					alert("Please fill all required fields.");
-				}
-			});
-
+			
+			var timeLeft = 10 * 60;
+			var textElement = $("#countdownClock > p")
+			function countdownTime() {
+				timeLeft--;
+				textElement.text("Time Left: " + Math.floor(timeLeft / 60) + ":" + (timeLeft % 60))
+				if (timeLeft == 0)
+					clearInterval(interval)
+			}
 
 			var Rushes = {};
 			var RushInfo;
@@ -220,6 +377,7 @@ include("application_questions.php");
 					. "RushInfo['Email'] = '" . strtolower(trim(str_replace("'","",$row['Email']))) . "';\n"
 					. "RushInfo['Phone'] = '" . trim(str_replace("'","",$row['Phone'])) . "';\n"
 					. "RushInfo['Majors'] = '" . trim(str_replace("'","",$row['Majors'])) . "';\n"
+					. "RushInfo['Minors'] = '" . trim(str_replace("'","",$row['Minors'])) . "';\n"
 					. "RushInfo['MajorSchools'] = '" . trim(str_replace("'","",$row['MajorSchools'])) . "';\n"
 					. "RushInfo['Grade'] = '" . trim(str_replace("'","",$row['Grade'])) . "';\n"
 					. "Rushes['" . trim(str_replace("'","",$row['Email'])) . "'] = RushInfo;";
