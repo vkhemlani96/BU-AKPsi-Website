@@ -309,6 +309,7 @@ if (array_key_exists($event, $eventList)) {
 				. "RushInfo['Email'] = '" . strtolower(trim(str_replace("'","",$row['Email']))) . "';\n"
 				. "RushInfo['Phone'] = '" . trim(str_replace("'","",$row['Phone'])) . "';\n"
 				. "RushInfo['Majors'] = '" . trim(str_replace("'","",$row['Majors'])) . "';\n"
+				. "RushInfo['Minors'] = '" . trim(str_replace("'","",$row['Minors'])) . "';\n"
 				. "RushInfo['MajorSchools'] = '" . trim(str_replace("'","",$row['MajorSchools'])) . "';\n"
 				. "RushInfo['Grade'] = '" . trim(str_replace("'","",$row['Grade'])) . "';\n"
 				. "Rushes['" . trim(str_replace("'","",$row['Email'])) . "'] = RushInfo;";
@@ -331,6 +332,7 @@ if (array_key_exists($event, $eventList)) {
 					$("input#rushLastName").val(rushesInfo['LastName']).parent().addClass("is-dirty");
 					$("input#rushPhone").val(rushesInfo['Phone']).parent().addClass("is-dirty");
 					$("input#rushMajors").val(rushesInfo['Majors']).parent().addClass("is-dirty");
+					$("input#rushMinors").val(rushesInfo['Minors']).parent().addClass("is-dirty");
 					$("input#rushGrade").val(rushesInfo['Grade']).parent().addClass("is-dirty");
 
 					$(".rush_grade .mdl-js-radio input[value='" + rushesInfo['Grade'] + "']").parent()[0].MaterialRadio.check();
