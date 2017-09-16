@@ -5,7 +5,14 @@
 
 // IF DATA HAS BEEN POSTED, ADD TO DB
 
-if (isset($_POST["rushFirstName"]) && isset($_POST["rushLastName"]) && isset($_POST['rushEmail'])  && isset($_POST['rushPhone'])  && isset($_POST['rushMajors'])  && isset($_POST['rushSchool']) && isset($_POST['rushGrade']) ) {
+if (isset($_POST["rushFirstName"]) &&
+	isset($_POST["rushLastName"]) &&
+	isset($_POST['rushEmail'])  &&
+	isset($_POST['rushPhone'])  &&
+	isset($_POST['rushMajors'])  &&
+	isset($_POST['rushSchool']) &&
+	isset($_POST['rushGrade']) ) {
+	
 	include("../db/credentials.php");
 
 	// Create connection
@@ -14,8 +21,17 @@ if (isset($_POST["rushFirstName"]) && isset($_POST["rushLastName"]) && isset($_P
 	if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
 	} 
-	$sql = "INSERT INTO $rushTable (Channel, FirstName, LastName, Email, Phone, Majors, MajorSchools, Grade, " . $_GET["event"] . ")
-	VALUES ('Event', '" . $_POST["rushFirstName"] . "', '" . $_POST["rushLastName"] . "', '" . $_POST["rushEmail"] . "', '" . $_POST["rushPhone"] . "', '" . $_POST["rushMajors"] . "', '" . $_POST["rushSchool"] . "', '" . $_POST["rushGrade"] . "', '1') ON DUPLICATE KEY UPDATE " . $_GET["event"] . "=VALUES(".$_GET['event'].")";
+	$sql = "INSERT INTO $rushTable (Channel, FirstName, LastName, Email, Phone, Majors, Minors, MajorSchools, Grade, " . $_GET["event"] . ")
+	VALUES ('Event', '" 
+		. $_POST["rushFirstName"] . "', '" 
+		. $_POST["rushLastName"] . "', '" 
+		. $_POST["rushEmail"] . "', '" 
+		. $_POST["rushPhone"] . "', '" 
+		. $_POST["rushMajors"] . "', '" 
+		. $_POST["rushMinors"] . "', '" 
+		. $_POST["rushSchool"] . "', '" 
+		. $_POST["rushGrade"] . "', '1')"
+		. "ON DUPLICATE KEY UPDATE " . $_GET["event"] . "=VALUES(".$_GET['event'].")";
 
 	if ($conn->query($sql) === TRUE) {
 		//		echo "New record created successfully";
@@ -37,8 +53,8 @@ $eventList = array(
 	"Info2" => "Infosession 2",
 	"Professional" => "Professional Night",
 	"Fashion" => "Fashion Night",
-	"CommunityService" => "Community Service",
-	"Speaker" => "Speaker Series",
+	"BBQ" => "Community Service",
+	"Etiquette" => "Etiquette and Resume Building Workshop",
 	"Mocktail" => "Mocktail Night",
 );
 
@@ -212,6 +228,10 @@ if (array_key_exists($event, $eventList)) {
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
 					<input class="mdl-textfield__input" type="text" id="rushMajors" name="rushMajors"/>
 					<label class="mdl-textfield__label" for="sample1">Major(s) / Concentration(s)</label>
+				</div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
+					<input class="mdl-textfield__input" type="text" id="rushMinors" name="rushMinors"/>
+					<label class="mdl-textfield__label" for="sample1">Minors(s) (Optional)</label>
 				</div>
 				<br>
 				<button class="button" type="button" id="formSubmit" name="formSubmit">SUBMIT</button>

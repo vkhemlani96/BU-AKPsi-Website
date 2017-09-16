@@ -18,7 +18,8 @@ if (isset($_POST["rushFirstName"]) && isset($_POST["rushLastName"]) && isset($_P
 	}
 
 	$sql = "INSERT INTO $rushTable (FirstName, LastName, Email, Phone, Majors, Minors, MajorSchools, Grade, Channel)
-	VALUES ('" . $_POST["rushFirstName"] . "', '" . $_POST["rushLastName"] . "', '" . $_POST["rushEmail"] . "', '" . $_POST["rushPhone"] . "', '" . $_POST["rushMajors"] . "', '" . $_POST["rushMinors"] . "', '" . $_POST["rushSchool"] . "', '" . $_POST["rushGrade"] . "', '" . $_POST["rushChannel"] . "')";
+	VALUES ('" 
+		. $_POST["rushFirstName"] . "', '" . $_POST["rushLastName"] . "', '" . $_POST["rushEmail"] . "', '" . $_POST["rushPhone"] . "', '" . $_POST["rushMajors"] . "', '" . $_POST["rushMinors"] . "', '" . $_POST["rushSchool"] . "', '" . $_POST["rushGrade"] . "', '" . $_POST["rushChannel"] . "')";
 
 	if ($conn->query($sql) === TRUE) {
 		echo "New record created successfully";
