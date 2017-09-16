@@ -20,7 +20,10 @@ if (isset($_POST["rushFirstName"]) &&
 	// Check connection
 	if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
-	} 
+	} 	
+	
+	$_POST['rushSchool'] = join(", ", $_POST['rushSchool']);
+
 	$sql = "INSERT INTO $rushTable (Channel, FirstName, LastName, Email, Phone, Majors, Minors, MajorSchools, Grade, " . $_GET["event"] . ")
 	VALUES ('Event', '" 
 		. $_POST["rushFirstName"] . "', '" 
