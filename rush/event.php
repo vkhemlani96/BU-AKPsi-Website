@@ -33,7 +33,8 @@ if (isset($_POST["rushFirstName"]) &&
 		. $_POST["rushMajors"] . "', '" 
 		. $_POST["rushMinors"] . "', '" 
 		. $_POST["rushSchool"] . "', '" 
-		. $_POST["rushGrade"] . "', '1')"
+		. $_POST["rushGrade"] . "',"
+		. "'1')"
 		. "ON DUPLICATE KEY UPDATE " . $_GET["event"] . "=VALUES(".$_GET['event'].")";
 
 	if ($conn->query($sql) === TRUE) {

@@ -1,19 +1,19 @@
 <?php
 $appQuestions = array(
 	array(
-		"What are you most passionate about? How have you taken steps to follow your passion?"
+		"Why Alpha Kappa Psi? What drew you to this organization?"
 	),
 	array(
-		"List three words that describe you."
+		"What are three goals that you hope to acheive by next year?"
 	),
 	array(
-		"What aspects of Alpha Kappa Psi interest you?"
+		"What have you done to pursue something you're passionate about in the past year?"
 	),
 	array(
-		"How do you believe you can benefit from being a part of Alpha Kappa Psi?"
+		"How would you describe yourself to a stranger?"
 	),
 	array(
-		"Please describe one notable interaction you have had with a brother."
+		"Describe notable interactions you've had with any 2 of our brothers."
 	),
 	array(
 		"<i>If this is not your first time applying</i>, what have you done to strengthen your candidacy?",
