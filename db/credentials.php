@@ -4,7 +4,8 @@ $hostname="68.178.217.54";
 $username="AKPsiBrotherhood";
 $password="Brotherhood88!";
 $dbname="AKPsiBrotherhood";
-$rushTable="rushFall2018";
+$rushTable="rushFall2017";
 $caseTable="caseSpring2016";
 $rushTableApps= $rushTable . "Apps";
+$rushTableLogin= $rushTable . "Logic";
 ?>
