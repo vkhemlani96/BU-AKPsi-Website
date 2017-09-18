@@ -117,7 +117,7 @@ include("application_questions.php");
 			
 			<div id="description">
 				<p class="vertical_padding center description" style="text-align: center">
-					Thank you for considering applying to join Alpha Kappa Psi Nu Chapter! This year, our application process consists of both, a written portion and a logical examination. Please be as specific as possible and complete the examination in one sitting with <i>absolute integrity</i>. The application can only be started once and should take no longer than 30 minutes.<br><br> <i>Note: The written portion is untimed. However, the logic examination has a 10-minute time limit and can only be completed once.</i>
+					Thank you for considering applying to join Alpha Kappa Psi Nu Chapter! This year, our application process consists of both, a written portion and a logical examination. Please be as specific as possible and complete the examination in one sitting with <i>absolute integrity</i>. The application can only be started once and should take no longer than 30 minutes.<br><br> <i>Note: The written portion is untimed. However, the logic examination has a 15-minute time limit and can only be completed once.</i>
 				</p>
 
 				<div class="table_seperator" style="width: 66%"></div>
@@ -222,7 +222,7 @@ include("application_questions.php");
 				<div id="application_logic" class="hidden">
 				
 					<div id="countdownClock">
-						<p>Time Left: 10:00</p>
+						<p>Time Left: 15:00</p>
 					</div>
 					
 					<div class="vertical_padding">
@@ -284,7 +284,7 @@ include("application_questions.php");
 		<script>
 			
 			var appIndex = 0;
-			var totalTime = 10 * 60;
+			var totalTime = 15 * 60;
 			var timeLeft = totalTime;
 			var interval = null;
 			function moveToNextPart() {
@@ -342,7 +342,7 @@ include("application_questions.php");
 						return
 					}
 					
-					if (confirm("The following portion of the application has a 10 minute time limit and must be completed in one sitting. Press 'OK' to begin.")) {
+					if (confirm("The following portion of the application has a 15 minute time limit and must be completed in one sitting. Press 'OK' to begin.")) {
 						appIndex = 2;
 						interval = setInterval(countdownTime, 1000)
 						$("#application_written").addClass("hidden")
@@ -411,8 +411,16 @@ include("application_questions.php");
 				} else {
 					textElement.text("Time Left: " + Math.floor(timeLeft / 60) + ":" + (timeLeft % 60))
 				}
-				if (timeLeft == 0)
+				if (timeLeft == 0) {
 					clearInterval(interval)
+					autoSubmit()
+				}
+			}
+			
+			function autoSubmit() {
+				alert("Thank you for applying! Unfortunately time has run out for the logical portion of this test. Your application will now be submitted.")
+				$("input[name=time]").val((totalTime - timeLeft).toString())
+				$("#rushForm").submit();
 			}
 
 			var Rushes = {};

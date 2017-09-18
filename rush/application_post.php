@@ -15,20 +15,17 @@ function isValid($appQ, $fbQ, $lQ) {
 			return false;
 		}
 	}
-	foreach($lQ as $count => $question) {
-		if (!isset($_POST["l".$count])) {
-			return false;
-		}
-	}
 	return isset($_POST["rushEmail"]) && isset($_POST["rushGPA"]) && isset($_POST["time"]);
 }
 
 function gradeLogic($logicQuestions) {
 	$grade = 0;
 	foreach($logicQuestions as $count => $question) {
+		if (isset($_POST["l".$count])) {
 		$submitted = $_POST["l".$count];
-		if ($submitted == $question['answer']) {
-			$grade += 1;
+			if ($submitted == $question['answer']) {
+				$grade += 1;
+			}
 		}
 	}
 	return $grade;
@@ -104,7 +101,9 @@ function gradeLogic($logicQuestions) {
 //			Insert into Logic table
 			$sql = "INSERT INTO $rushTableLogic (email, score, time";
 			foreach($logicQuestions as $key => $question) {
-				$sql .= ", l" . $key;
+				if (isset($_POST["l".$key])) {
+					$sql .= ", l" . $key;
+				}
 			}
 			
 //			Insert static values (email, address, gpa)
@@ -112,7 +111,9 @@ function gradeLogic($logicQuestions) {
 			
 //			Append question answers
 			foreach($logicQuestions as $key => $question) {
-				$sql .= ", '" . $_POST["l".$key] . "'";
+				if (isset($_POST["l".$key])) {
+					$sql .= ", '" . $_POST["l".$key] . "'";
+				}
 			}
 
 			$sql .= ")";
@@ -145,7 +146,9 @@ function gradeLogic($logicQuestions) {
 				}
 				$message .= "\r\nLogic:\r\n";
 				foreach($logicQuestions as $count => $question) {
-					$message .= $_POST["l".$count] . "\r\n";
+					if (isset($_POST["l".$count])) {
+						$message .= $_POST["l".$count] . "\r\n";
+					}
 				}
 				$message = strip_tags($message);
 
