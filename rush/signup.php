@@ -31,11 +31,11 @@ if (isset($_POST["rushFirstName"]) && isset($_POST["rushLastName"]) && isset($_P
 
 	if ($conn->query($sql) === TRUE) {
 		echo "New record created successfully";
-	} else {u
-		//		echo "Error: " . $sql . "<br>" . $conn->error;
+	} else {
 		if (strpos($conn->error,'Duplicate') !== false) {
 			die('THIS USER ALREADY EXISTS');
 		}
+		//		echo "Error: " . $sql . "<br>" . $conn->error;
 	}
 
 	$conn->close();
