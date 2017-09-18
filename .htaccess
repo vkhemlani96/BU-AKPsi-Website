@@ -1,5 +1,3 @@
-php_flag display_errors 1
-
 Redirect /eye2eye/donate /eye2eye/donate.php
 Redirect /vote /vote.php
 Redirect /apply /rush/application.php
