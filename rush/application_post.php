@@ -1,5 +1,38 @@
 <?php
 include("application_questions.php");
+include("../db/credentials.php");
+ini_set('display_errors', 1);
+
+
+function isValid($appQ, $fbQ, $lQ) {
+	foreach($appQ as $count => $question) {
+		if (!isset($_POST["q".$count])) {
+			return false;
+		}
+	}
+	foreach($fbQ as $count => $question) {
+		if (!isset($_POST["fb".$count])) {
+			return false;
+		}
+	}
+	foreach($lQ as $count => $question) {
+		if (!isset($_POST["l".$count])) {
+			return false;
+		}
+	}
+	return isset($_POST["rushEmail"]) && isset($_POST["rushGPA"]) && isset($_POST["time"]);
+}
+
+function gradeLogic($logicQuestions) {
+	$grade = 0;
+	foreach($logicQuestions as $count => $question) {
+		$submitted = $_POST["l".$count];
+		if ($submitted == $question['answer']) {
+			$grade += 1;
+		}
+	}
+	return $grade;
+}
 ?>
 
 
@@ -31,25 +64,10 @@ include("application_questions.php");
 
 		<?php
 
-		function isValid($appQ, $fbQ) {
-			foreach($appQ as $count => $question) {
-				if (!isset($_POST["q".$count])) {
-					return false;
-				}
-			}
-			foreach($fbQ as $count => $question) {
-				if (!isset($_POST["fb".$count])) {
-					return false;
-				}
-			}
-			return isset($_POST["rushEmail"]) && isset($_POST["rushGPA"]);
-		}
 
 		$no_error = false;
 
-		if (isValid($appQuestions, $feedbackQuestions)) {
-
-			include("../db/credentials.php");
+		if (isValid($appQuestions, $feedbackQuestions, $logicQuestions)) {
 
 			// Create connection
 			$conn = new mysqli($hostname, $username, $password, $dbname);
@@ -73,30 +91,51 @@ include("application_questions.php");
 			
 //			Append question answers
 			foreach($appQuestions as $key => $question) {
-				$sql .= ", '" . $_POST["q".$key] . "'";
+				$sql .= ", '" . addslashes($_POST["q".$key]) . "'";
 			}
 			foreach($feedbackQuestions as $key => $question) {
-				$sql .= ", '" . $_POST["fb".$key] . "'";
+				$sql .= ", '" . addslashes($_POST["fb".$key]) . "'";
 			}
 
 			$sql .= ")";
 			
+			$appConfirm = $conn->query($sql);
+				
+//			Insert into Logic table
+			$sql = "INSERT INTO $rushTableLogic (email, score, time";
+			foreach($logicQuestions as $key => $question) {
+				$sql .= ", l" . $key;
+			}
+			
+//			Insert static values (email, address, gpa)
+			$sql .= ") VALUES ('" . $_POST["rushEmail"] . "', '" . gradeLogic($logicQuestions) . "', " . $_POST["time"];
+			
+//			Append question answers
+			foreach($logicQuestions as $key => $question) {
+				$sql .= ", '" . $_POST["l".$key] . "'";
+			}
+
+			$sql .= ")";
+			
+			$logicConfirm = $conn->query($sql);
+			
 //			Send email to rush if data was successfully added with confirmation
-			if ($conn->query($sql) === TRUE) {
+			if ($appConfirm && $logicConfirm) {
 				//		echo "New record created successfully";
 				$no_error = true;
 
 				$to      = $_POST["rushEmail"];
-				$subject = "Alpha Kappa Psi Fall 2016 Recruitment Application Confirmation";
-				$message = "Dear ".$_POST['rushFirstName'].",\r\n\r\nThank you for your application! We look forward to reviewing your application and will contact you with further details on your candidacy by Monday morning. Below is a copy of your application for your own record.\r\n\r\n------------------------------\r\n\r\n".
+				$subject = "Alpha Kappa Psi Fall 2017 Recruitment Application Confirmation";
+				$message = "Dear ".$_POST['rushFirstName'].",\r\n\r\nThank you for your application! We look forward to reviewing your application and will contact you with further details on your candidacy by Saturday night. Below is a copy of your application for your own record.\r\n\r\n------------------------------\r\n\r\n".
 					"Email: " . $_POST["rushEmail"] . "\r\n".
 					"First Name: " . $_POST["rushFirstName"] . "\r\n".
 					"Last Name: " . $_POST["rushLastName"] . "\r\n".
 					"Grade: " . $_POST["rushGrade"] . "\r\n".
 					"School: " . $_POST["rushSchool"] . "\r\n".
 					"Majors: " . $_POST["rushMajors"] . "\r\n".
+					"Minors: " . $_POST["rushMinors"] . "\r\n".
 					"Phone: " . $_POST["rushPhone"] . "\r\n".
-					"Phone: " . $_POST["rushAddress"] . "\r\n".
+					"Address: " . $_POST["rushAddress"] . "\r\n".
 					"GPA: " . $_POST["rushGPA"] . "\r\n". "\r\n";
 				foreach($appQuestions as $count => $question) {
 					$message .= $question[0] . " " . "\r\n" . $_POST["q".$count] . "\r\n". "\r\n";
@@ -104,10 +143,14 @@ include("application_questions.php");
 				foreach($feedbackQuestions as $count => $question) {
 					$message .= $question . " " . "\r\n" . $_POST["fb".$count] . "\r\n". "\r\n";
 				}
+				$message .= "\r\nLogic:\r\n";
+				foreach($logicQuestions as $count => $question) {
+					$message .= $_POST["l".$count] . "\r\n";
+				}
 				$message = strip_tags($message);
 
-				$sql = "INSERT INTO $rushTable (FirstName, LastName, Email, Phone, Majors, MajorSchools, Grade, AppSubmitted)
-	VALUES ('" . $_POST["rushFirstName"] . "', '" . $_POST["rushLastName"] . "', '" . $_POST["rushEmail"] . "', '" . $_POST["rushPhone"] . "', '" . $_POST["rushMajors"] . "', '" . $_POST["rushSchool"] . "', '" . $_POST["rushGrade"] . "', '1') ON DUPLICATE KEY UPDATE AppSubmitted=VALUES(AppSubmitted)";
+//				$sql = "INSERT INTO $rushTable (FirstName, LastName, Email, Phone, Majors, MajorSchools, Grade, AppSubmitted)
+//	VALUES ('" . $_POST["rushFirstName"] . "', '" . $_POST["rushLastName"] . "', '" . $_POST["rushEmail"] . "', '" . $_POST["rushPhone"] . "', '" . $_POST["rushMajors"] . "', '" . $_POST["rushSchool"] . "', '" . $_POST["rushGrade"] . "', '1') ON DUPLICATE KEY UPDATE AppSubmitted=VALUES(AppSubmitted)";
 
 				$headers = 'From: AKΨ Nu Chapter <akpsi.nu.recruitment@gmail.com>';
 
@@ -115,7 +158,7 @@ include("application_questions.php");
 
 
 		?>
-		<h2 style="margin: 200px 100px;"><strong>Thank you for your submission!</strong><br>We will review your application and contact you with further details by Wednesday morning. A confirmation email will be sent to you shortly.</h2>
+		<h2 style="margin: 200px 100px;"><strong>Thank you for your submission!</strong><br>We will review your application and contact you with further details by Wednesday morning. A confirmation email will be sent to you shortly.<br><b>If you did not recieve a confirmation email, please check your "Junk" folder.</b></h2>
 
 		<?
 

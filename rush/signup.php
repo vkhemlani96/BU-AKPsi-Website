@@ -6,7 +6,9 @@
 // echo "Field ".htmlspecialchars($key)." is ".htmlspecialchars($value)."<br>";
 
 if (isset($_POST["rushFirstName"]) && isset($_POST["rushLastName"]) && isset($_POST['rushEmail'])  && isset($_POST['rushPhone'])  && isset($_POST['rushMajors'])  && isset($_POST['rushSchool']) && isset($_POST['rushGrade']) ) {
-	$_POST['rushSchool'] = join(", ", $_POST['rushSchool']);
+	if (gettype($_POST['rushSchool']) == 'array') {
+		$_POST['rushSchool'] = join(", ", $_POST['rushSchool']);
+	}
 
 	include("../db/credentials.php");
 

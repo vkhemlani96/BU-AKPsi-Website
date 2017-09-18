@@ -1,5 +1,4 @@
 <?php
-ini_set('display_errors', 1);
 include("application_questions.php");
 ?>
 
@@ -83,6 +82,9 @@ include("application_questions.php");
 			#rushForm #application_logic .table_seperator {
 				opacity: .7;
 			}
+			#rushForm button[disabled] {
+				opacity: .5;
+			}
 			#countdownClock {
 				position: fixed;
 				width: 200px;
@@ -115,7 +117,7 @@ include("application_questions.php");
 			
 			<div id="description">
 				<p class="vertical_padding center description" style="text-align: center">
-					Thank you for considering applying to join Alpha Kappa Psi Nu Chapter! This year, our application process consists of both, a written portion and a logical examination. Please be as specific as possible and complete the examination in one sitting with <i>absolute integrity</i>. The entire application should take no longer than 30 minutes.<br><br> <i>Note: The written portion is untimed. However, the logic examination has a 10-minute time limit and can only be completed once.</i>
+					Thank you for considering applying to join Alpha Kappa Psi Nu Chapter! This year, our application process consists of both, a written portion and a logical examination. Please be as specific as possible and complete the examination in one sitting with <i>absolute integrity</i>. The application can only be started once and should take no longer than 30 minutes.<br><br> <i>Note: The written portion is untimed. However, the logic examination has a 10-minute time limit and can only be completed once.</i>
 				</p>
 
 				<div class="table_seperator" style="width: 66%"></div>
@@ -174,7 +176,7 @@ include("application_questions.php");
 					</div>
 
 					<div style="text-align:center; margin-bottom: 35px;">
-						<button class="button" type="button" onclick="moveToNextPart()">Begin Written Application</button>
+						<button class="button" type="button" onclick="moveToNextPart()" id="beginApp">Begin Written Application</button>
 					</div>
 					
 				</div>
@@ -257,6 +259,7 @@ include("application_questions.php");
 						<?
 						}
 						?>
+						<input type="hidden" name="time">
 					</div>
 
 					<div style="text-align:center; margin-bottom: 35px;">
@@ -281,13 +284,15 @@ include("application_questions.php");
 		<script>
 			
 			var appIndex = 0;
+			var totalTime = 10 * 60;
+			var timeLeft = totalTime;
 			var interval = null;
 			function moveToNextPart() {
 				if (appIndex == 0) {
 					
-					if (true || checkform()) {
+					if (checkBasicDetails()) {
 
-						if (false && $("#rushEmail").val().trim().indexOf("@bu.edu", this.length - "@bu.edu".length) == -1 || $("#rushEmail").val().length > 15) {
+						if ($("#rushEmail").val().trim().indexOf("@bu.edu", this.length - "@bu.edu".length) == -1 || $("#rushEmail").val().length > 15) {
 							alert("Please use your BU email");
 							return;
 						}
@@ -296,8 +301,32 @@ include("application_questions.php");
 						$("#description").addClass("hidden")
 						$("#application_start").addClass("hidden")
 						$("#application_written").removeClass("hidden")
+						window.scrollTo(0,0);
+						
+						if (!($("#rushEmail").val().toLowerCase() in Rushes)) {
+							$.ajax({
+								type: "POST",
+								url: "signup.php",
+								data: {
+									rushFirstName: $("#rushFirstName").val(),
+									rushLastName: $("#rushLastName").val(),
+									rushEmail: $("#rushEmail").val(),
+									rushPhone: $("#rushPhone").val(),
+									rushMajors: $("#rushMajors").val(),
+									rushMinors: $("#rushMinors").val(),
+									rushSchool: $("#rushSchool").val(),
+									rushGrade: $("#rushGrade").val(),
+									rushChannel: 'Application' // various ways to store the ID, you can choose
+								},
+								success: function(data) {
+								  // POST was successful - do something with the response
+								},
+								error: function(data) {
+								  // Server error, e.g. 404, 500, error
+								}
+							});
+						}
 
-//						$("#rushForm").submit();
 					} else {
 						if( document.getElementById("rushPic").files.length == 0 ){
 							alert("Please include a picture of yourself with your application.");
@@ -308,31 +337,61 @@ include("application_questions.php");
 					
 				} else if (appIndex == 1) {
 					
+					if (!checkTextareas()) {
+						alert("Please answer all required questions.");
+						return
+					}
+					
 					if (confirm("The following portion of the application has a 10 minute time limit and must be completed in one sitting. Press 'OK' to begin.")) {
 						appIndex = 2;
 						interval = setInterval(countdownTime, 1000)
 						$("#application_written").addClass("hidden")
 						$("#application_logic").removeClass("hidden")
+						window.scrollTo(0,0);
+						
+						$.ajax({
+								type: "POST",
+								url: "startedLogic.php",
+								data: {
+									email: $("#rushEmail").val(),
+								},
+								success: function(data) {
+								  // POST was successful - do something with the response
+								},
+								error: function(data) {
+								  // Server error, e.g. 404, 500, error
+								}
+							});
 					}
 					
 				} else if (appIndex == 2) {
 					
-					if (confirm("Are you sure you want to submit your application?"))
+					clearInterval(interval)
+					
+					if (confirm("Are you sure you want to submit your application?")) {
+						$("input[name=time]").val((totalTime - timeLeft).toString())
 						$("#rushForm").submit();
+					} else {
+						interval = setInterval(countdownTime, 1000)
+					}
 				}
 			}
 
-			function checkform() {
+			function checkBasicDetails() {
 				// get all the inputs within the submitted form
 				var inputs = document.getElementById("rushForm").getElementsByTagName('input');
 				for (var i = 0; i < inputs.length; i++) {
 					// only validate the inputs that have the required attribute
-					if(inputs[i].value == ""){
+					if(inputs[i].name.indexOf("rush") > -1 && inputs[i].value == ""){
 						// found an empty field that is required
 						return false;
 					}
 				}
-				inputs = document.getElementById("rushForm").getElementsByTagName('textarea');
+				return true;
+			}
+			
+			function checkTextareas() {
+				var inputs = document.getElementById("rushForm").getElementsByTagName('textarea');
 				for (var i = 0; i < inputs.length; i++) {
 					// only validate the inputs that have the required attribute
 					if(inputs[i].className != "notRequired" && inputs[i].value == "" && inputs[i].name != "q9_second"){
@@ -341,14 +400,17 @@ include("application_questions.php");
 						return false;
 					}
 				}
-				return true;
+				return true
 			}
 			
-			var timeLeft = 10 * 60;
 			var textElement = $("#countdownClock > p")
 			function countdownTime() {
 				timeLeft--;
-				textElement.text("Time Left: " + Math.floor(timeLeft / 60) + ":" + (timeLeft % 60))
+				if (timeLeft % 60 < 10) {
+					textElement.text("Time Left: " + Math.floor(timeLeft / 60) + ":0" + (timeLeft % 60))
+				} else {
+					textElement.text("Time Left: " + Math.floor(timeLeft / 60) + ":" + (timeLeft % 60))
+				}
 				if (timeLeft == 0)
 					clearInterval(interval)
 			}
@@ -371,7 +433,7 @@ include("application_questions.php");
 
 			while($row = mysqli_fetch_array($result)) {
 
-				echo "RushInfo = {};\n"
+				echo "\nRushInfo = {};\n"
 					. "RushInfo['FirstName'] = '" . trim(str_replace("'","",$row['FirstName'])) . "';\n"
 					. "RushInfo['LastName'] = '" . trim(str_replace("'","",$row['LastName'])) . "';\n"
 					. "RushInfo['Email'] = '" . strtolower(trim(str_replace("'","",$row['Email']))) . "';\n"
@@ -380,6 +442,8 @@ include("application_questions.php");
 					. "RushInfo['Minors'] = '" . trim(str_replace("'","",$row['Minors'])) . "';\n"
 					. "RushInfo['MajorSchools'] = '" . trim(str_replace("'","",$row['MajorSchools'])) . "';\n"
 					. "RushInfo['Grade'] = '" . trim(str_replace("'","",$row['Grade'])) . "';\n"
+					. "RushInfo['AppSubmitted'] = '" . trim(str_replace("'","",$row['AppSubmitted'])) . "';\n"
+					. "RushInfo['StartedLogic'] = '" . trim(str_replace("'","",$row['StartedLogic'])) . "';\n"
 					. "Rushes['" . trim(str_replace("'","",$row['Email'])) . "'] = RushInfo;";
 			}
 			?>
@@ -398,8 +462,24 @@ include("application_questions.php");
 						$("input#rushLastName").val(rushesInfo['LastName']).parent().addClass("is-dirty");
 						$("input#rushPhone").val(rushesInfo['Phone']).parent().addClass("is-dirty");
 						$("input#rushMajors").val(rushesInfo['Majors']).parent().addClass("is-dirty");
+						$("input#rushMinors").val(rushesInfo['Majors']).parent().addClass("is-dirty");
 						$("input#rushSchool").val(rushesInfo['MajorSchools']).parent().addClass("is-dirty");
 						$("input#rushGrade").val(rushesInfo['Grade']).parent().addClass("is-dirty");
+						console.log(rushesInfo['AppSubmitted'])
+						
+						if (rushesInfo['AppSubmitted'] === "1") {
+							setTimeout(function() {
+								alert("Our records indicate that you've already submitted your application. If you need to make changes or believe there is an error, please email akpsi.nu.recruitment@gmail.com.")
+								$("#beginApp").prop("disabled",true);
+								return;
+							}, 200)
+						} else if (rushesInfo['StartedLogic'] === "1") {
+							setTimeout(function() {
+								alert("Our records indicate that you've already started this application once. If you need to make changes or believe there is an error, please email akpsi.nu.recruitment@gmail.com.")
+								$("#beginApp").prop("disabled",true);
+								return;
+							}, 200)
+						}
 						
 						$("input#rushAddress").focus();
 					} else {
