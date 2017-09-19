@@ -95,6 +95,7 @@ function gradeLogic($logicQuestions) {
 			}
 
 			$sql .= ")";
+			echo $sql . "<br>";
 			
 			$appConfirm = $conn->query($sql);
 				
@@ -117,6 +118,7 @@ function gradeLogic($logicQuestions) {
 			}
 
 			$sql .= ")";
+			echo $sql . "<br>";
 			
 			$logicConfirm = $conn->query($sql);
 			
