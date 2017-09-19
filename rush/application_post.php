@@ -95,7 +95,7 @@ function gradeLogic($logicQuestions) {
 			}
 
 			$sql .= ")";
-			echo $sql . "<br>";
+			$error1 = $conn->error;
 			
 			$appConfirm = $conn->query($sql);
 				
@@ -118,7 +118,7 @@ function gradeLogic($logicQuestions) {
 			}
 
 			$sql .= ")";
-			echo $sql . "<br>";
+			$error2 = $conn->error;
 			
 			$logicConfirm = $conn->query($sql);
 			
@@ -208,7 +208,7 @@ function gradeLogic($logicQuestions) {
 		<?
 				echo "<p class='center'>";
 
-				echo $conn->error . "<br>";
+				echo $error1 . "<br>" . $error2 . "<br>";
 
 				foreach($_POST as $stuff ) {
 					if( is_array( $stuff ) ) {
