@@ -163,7 +163,7 @@ function gradeLogic($logicQuestions) {
 
 
 		?>
-		<h2 style="margin: 200px 100px;"><strong>Thank you for your submission!</strong><br>We will review your application and contact you with further details by Wednesday morning. A confirmation email will be sent to you shortly.<br><b>If you did not recieve a confirmation email, please check your "Junk" folder.</b></h2>
+		<h2 style="margin: 200px 100px;"><strong>Thank you for your submission!</strong><br>We will review your application and contact you with further details by Saturday morning. A confirmation email will be sent to you shortly.<br><b>If you did not recieve a confirmation email, please check your "Junk" folder.</b></h2>
 
 		<?
 
