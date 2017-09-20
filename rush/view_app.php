@@ -1,4 +1,5 @@
 <?php
+	
 	include("/home/content/03/5577503/html/rush/password_protect_cookie.php");
 
 	include("../db/credentials.php");
@@ -13,7 +14,15 @@
 	echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	}
 
-	$query = "SELECT * FROM $rushTableApps JOIN $rushTable ON $rushTableApps.email = $rushTable.Email AND $rushTableApps.email = '".$_GET["email"]."'";
+
+	$query = "	SELECT * 
+				FROM   $rushTable 
+					JOIN $rushTableApps 
+					  ON $rushTable.email = $rushTableApps.email 
+					JOIN $rushTableLogic
+					  ON $rushTable.email = $rushTableLogic.email
+						AND $rushTableApps.email = '". $_GET["email"] . "'; ";
+
 	$result = mysqli_query($con,$query);
 
 	$row = mysqli_fetch_array($result);
@@ -23,13 +32,15 @@
 	$phone = $row["Phone"];
 	$major = $row["Majors"];
 	$majorSchools = $row["MajorSchools"];
+	$minor = $row["Minors"];
+	$score = $row["score"];
+	$logicTime = (int) $row["time"];
 	$grade = $row["Grade"];
 	$channel = $row["Channel"];
 	$info1 = $row["Info1"] ? "Yes" : "No";
 	$info2 = $row["Info2"] ? "Yes" : "No";
 	$event1 = $row["Professional"] ? "Yes" : "No";
 	$event2 = $row["Fashion"] ? "Yes" : "No";
-	$event3 = $row["CommunityService"] ? "Yes" : "No";
 	$gpa = $row["gpa"];
 	$address = $row["address"];
 
@@ -80,6 +91,10 @@
 			padding: 20px 0 10px;
 			font-weight:bold;
 		}
+		.applicationLogic {
+			padding-left: 20%;
+			padding-right: 20%;
+		}
 	</style>
 	
 	<div class="center vertical_padding">
@@ -99,11 +114,13 @@
 					<p><strong>Grade: </strong><? echo $grade;?></p>
 					<p><strong>School: </strong><? echo $majorSchools;?></p>
 					<p><strong>Majors: </strong><? echo $major;?></p>
+					<p><strong>Minors: </strong><? echo $minor;?></p>
 					<p><strong>Email: </strong><? echo $email;?></p>
 					<p><strong>Phone: </strong><? echo $phone;?></p>
 					<p><strong>GPA: </strong><? echo $gpa;?></p>
 					<p><strong>Address: </strong><? echo $address;?></p>
 				</td><td>
+					<p><strong>Logic Score: </strong><? echo $score;?>/10 (in <? echo floor($logicTime / 60);?>:<? if($logicTime % 60 < 10) echo "0"; echo $logicTime % 60;?></p>
 					<p><strong>Channel: </strong><? echo $channel;?></p>
 					<p><strong>Info1: </strong><? echo $info1;?></p>
 					<p><strong>Info2: </strong><? echo $info2;?></p>
@@ -125,6 +142,22 @@
 					}
 				}
 			?>
+				<div class="table_seperator" style="width: 66%"></div>
+				<div class="applicationLogic vertical_padding">
+			<?
+				foreach($logicQuestions as $count => $question) {
+					if (isset($row["l".$count])) {
+			?>
+				<p style="font-weight: 700; width: 19%; display: inline-block; color: 
+					<? echo $question["answer"] === $row["l".$count] ? "green" : "red" ?>">
+					<? echo $count+1 . ") " . $row["l".$count];?>
+				</p>
+			<?
+					}
+				}
+			?>
+				</div>
+				<div class="table_seperator" style="width: 66%"></div>
 				<div style="opacity:.5">
 					<?
 						foreach($feedbackQuestions as $key => $question) {
