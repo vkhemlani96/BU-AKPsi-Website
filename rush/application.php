@@ -155,7 +155,7 @@ include("application_questions.php");
 						</div>
 						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
 							<input class="mdl-textfield__input" type="text" id="rushMinors" name="rushMinors"/>
-							<label class="mdl-textfield__label" for="sample1">Minors(s)</label>
+							<label class="mdl-textfield__label" for="sample1">Minors(s) (Optional)</label>
 						</div>
 						<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label textfield-demo">
 							<input class="mdl-textfield__input" type="text" id="rushPhone" name="rushPhone"/>
@@ -332,7 +332,7 @@ include("application_questions.php");
 							alert("Please include a picture of yourself with your application.");
 							return;
 						}
-						alert("Please fill all required fields.");
+						alert("Please fill all required fields/fix invalid fields.");
 					}
 					
 				} else if (appIndex == 1) {
@@ -382,7 +382,8 @@ include("application_questions.php");
 				var inputs = document.getElementById("rushForm").getElementsByTagName('input');
 				for (var i = 0; i < inputs.length; i++) {
 					// only validate the inputs that have the required attribute
-					if(inputs[i].name.indexOf("rush") > -1 && inputs[i].value == ""){
+					if(inputs[i].name.indexOf("rush") > -1 && inputs[i].name != "rushMinors" && (inputs[i].value == "" || !inputs[i].validity.valid)){
+						console.log(inputs[i].name)
 						// found an empty field that is required
 						return false;
 					}
