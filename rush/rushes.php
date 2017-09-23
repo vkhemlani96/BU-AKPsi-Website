@@ -154,7 +154,7 @@ ini_set('display_errors', 1);
 	}
 	echo "</table>";
 
-	$query = "SELECT `Sign Up Time`, FirstName, LastName, Email, Phone, MajorSchools, Majors, Minors, Grade, Channel, AppSubmitted, InvitedToClosed, " . join(", ", $fields) . " FROM $rushTable ORDER BY `Sign Up Time`";
+	$query = "SELECT `Sign Up Time`, FirstName, LastName, Email, Phone, MajorSchools, Majors, Minors, Grade, Channel, AppSubmitted, InvitedToClosed, " . join(", ", $fields) . " FROM $rushTable ORDER BY InvitedToClosed DESC, AppSubmitted DESC, `Sign Up Time` ASC;";
 	$result = mysqli_query($con,$query);
 	$fields = mysqli_num_fields($result);
 
