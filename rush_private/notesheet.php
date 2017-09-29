@@ -143,8 +143,7 @@ ini_set('display_errors', 1); ?>
 			$y = 0;
 			$wave = "1";
 			$dir    = '/home/content/03/5577503/html/rush/rushPics/';
-//			$files1 = scandir($dir);
-			$img = "";
+			$files1 = scandir($dir);
 
 			while($row = mysqli_fetch_row($result)) { 
 				if ($x == 5) {
@@ -156,15 +155,15 @@ ini_set('display_errors', 1); ?>
 				}
 				$x++;
 				$y++;
-//
-//				foreach ($files1 as $value) {
-//					if (strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($row[4]))) !== FALSE) {
-//						$img = $value;
-//						break;
-//					}
-//					//			$img = strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($email))) >= 0 ? $value : $image;
-//					//			echo $img;
-//				}
+
+				foreach ($files1 as $value) {
+					if (strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($row[4]))) !== FALSE) {
+						$img = $value;
+						break;
+					}
+					//			$img = strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($email))) >= 0 ? $value : $image;
+					//			echo $img;
+				}
 			?>
 			<tr class="rushRow">
 				<td>
