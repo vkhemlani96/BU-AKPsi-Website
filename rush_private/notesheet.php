@@ -1,4 +1,6 @@
-<?php include("/home/content/03/5577503/html/rush/password_protect.php"); ini_set('display_errors', 1); ?>
+<?php
+//include("/home/content/03/5577503/html/rush/password_protect.php");
+ini_set('display_errors', 1); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,8 +77,12 @@
 				text-align: center;
 				margin: 5px 0;
 			}
-			.rushComments table tr:first-child p {
+			.rushComments table tr p {
 				text-align: center;
+			}
+			.rushComments table tr td:first-child p {
+				text-align: left;
+				margin: 1.5px 0 1.5px 1.5px;
 			}
 			.rushPic {
 				width: 1.4in;
@@ -114,7 +120,7 @@
 	</head>
 
 	<?php
-
+	
 	include("../db/credentials.php");
 
 	// Create connection
@@ -137,25 +143,28 @@
 			$y = 0;
 			$wave = "1";
 			$dir    = '/home/content/03/5577503/html/rush/rushPics/';
-			$files1 = scandir($dir);
+//			$files1 = scandir($dir);
+			$img = "";
 
 			while($row = mysqli_fetch_row($result)) { 
-				if ($x == 5 || $row[5] != $wave) {
-					$wave = $row[5];
-					$x = 0; 
+				if ($x == 5) {
 					echo '</table><table class="headTable">';
+					$x = 0; 
+				}
+				if ($row[5] != $wave) {
+					$wave = $row[5];
 				}
 				$x++;
 				$y++;
-
-				foreach ($files1 as $value) {
-					if (strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($row[4]))) !== FALSE) {
-						$img = $value;
-						break;
-					}
-					//			$img = strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($email))) >= 0 ? $value : $image;
-					//			echo $img;
-				}
+//
+//				foreach ($files1 as $value) {
+//					if (strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($row[4]))) !== FALSE) {
+//						$img = $value;
+//						break;
+//					}
+//					//			$img = strpos(".".strtolower($value), str_replace("@bu.edu","",strtolower($email))) >= 0 ? $value : $image;
+//					//			echo $img;
+//				}
 			?>
 			<tr class="rushRow">
 				<td>
@@ -166,30 +175,31 @@
 					<div class="rushComments">
 						<h2><b><? echo $row[0] . " " . $row[1] ?> </b> (<? echo $row[2] . ", " . $row[3] ?>)</p>
 						<table style="border-left:none; border-right:none">
-							<tr style="border-left:none; border-right:none">
-								<td style="border-left:none"></td>
-								<td width="100"><p>Needs Works</p></td>
-								<td width="100"><p>Meets</p></td>
-								<td width="100"><p>Exceeds</p></td>
-								<td width="186" style="border-right: none; border-bottom: none"><p style="text-align: left; font-weight: bold;">Feedback:</p></td>
-								<!--								<td><p>Feedback</p></td>-->
-							</tr><tr>
-							<td style="border-left:none"><p>Executive Presence</p></td>
-							<td></td><td></td><td></td>
-							<td style="border:none"></td>
-							</tr><tr>
-							<td style="border-left:none"><p>Problem Solving</p></td>
-							<td></td><td></td><td></td>
-							<td style="border:none"></td>
-							</tr><tr>
-							<td style="border-left:none"><p>Passion</p></td>
-							<td></td><td></td><td></td>
-							<td style="border:none"></td>
-							</tr>
 							<tr>
-							<td style="border-left:none"><p>Leadership</p></td>
-							<td></td><td></td><td></td>
-							<td style="border:none"></td>
+							<td width="380" style="border-left:none"><p>Passionate?</p></td>
+							<td width="80"><p>Yes</p></td>
+							<td width="80"><p>No</p></td>
+							<td width="80" style="border-right:none"><p>Maybe</p></td>
+							</tr><tr>
+							<td width="380" style="border-left:none"><p>Exemplify Professional Behavior?</p></td>
+							<td width="80"><p>Yes</p></td>
+							<td width="80"><p>No</p></td>
+							<td width="80" style="border-right:none"><p>Maybe</p></td>
+							</tr><tr>
+							<td width="380" style="border-left:none"><p>Personable?</p></td>
+							<td width="80"><p>Yes</p></td>
+							<td width="80"><p>No</p></td>
+							<td width="80" style="border-right:none"><p>Maybe</p></td>
+							</tr><tr>
+							<td width="380" style="border-left:none"><p>Potential to make impact in and outside AKPsi?</p></td>
+							<td width="80"><p>Yes</p></td>
+							<td width="80"><p>No</p></td>
+							<td width="80" style="border-right:none"><p>Maybe</p></td>
+							</tr><tr>
+							<td width="380" style="border-left:none"><p>See them wearing our letters?</p></td>
+							<td width="80"><p>Yes</p></td>
+							<td width="80"><p>No</p></td>
+							<td width="80" style="border-right:none"><p>Maybe</p></td>
 							</tr>
 						</table>
 						<p><b>Comments: </b></p>
